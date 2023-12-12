@@ -1,0 +1,761 @@
+_add:
+  AON:
+    description: Always-ON periherals
+    baseAddress: 0x2000f000
+    addressBlock:
+      offset: 0x0
+      size: 0x1000
+      usage: registers
+    registers:
+      aon:
+        description: aon.
+        addressOffset: 0x800
+        fields:
+          aon_resv:
+            bitOffset: 0
+            bitWidth: 8
+          pu_aon_dc_tbuf:
+            bitOffset: 12
+            bitWidth: 1
+          ldo11_rt_pulldown:
+            bitOffset: 20
+            bitWidth: 1
+          ldo11_rt_pulldown_sel:
+            bitOffset: 21
+            bitWidth: 1
+          sw_pu_ldo11_rt:
+            bitOffset: 22
+            bitWidth: 1
+      aon_common:
+        description: aon_common.
+        addressOffset: 0x804
+        fields:
+          tmux_aon:
+            bitOffset: 0
+            bitWidth: 3
+          ten_aon:
+            bitOffset: 4
+            bitWidth: 1
+          ten_vddcore_aon:
+            bitOffset: 8
+            bitWidth: 1
+          ten_ldo11soc_aon:
+            bitOffset: 9
+            bitWidth: 1
+          ten_dcdc_0_aon:
+            bitOffset: 10
+            bitWidth: 1
+          ten_dcdc_1_aon:
+            bitOffset: 11
+            bitWidth: 1
+          ten_bg_sys_aon:
+            bitOffset: 12
+            bitWidth: 1
+          ten_ldo15rf_aon:
+            bitOffset: 16
+            bitWidth: 1
+          ten_xtal_aon:
+            bitOffset: 17
+            bitWidth: 1
+          dten_xtal_aon:
+            bitOffset: 18
+            bitWidth: 1
+          ten_mbg_aon:
+            bitOffset: 19
+            bitWidth: 1
+          ten_cip_misc_aon:
+            bitOffset: 20
+            bitWidth: 1
+      aon_misc:
+        description: aon_misc.
+        addressOffset: 0x808
+        fields:
+          sw_soc_en_aon:
+            bitOffset: 0
+            bitWidth: 1
+          sw_wb_en_aon:
+            bitOffset: 1
+            bitWidth: 1
+      bg_sys_top:
+        description: bg_sys_top.
+        addressOffset: 0x810
+        fields:
+          pu_bg_sys_aon:
+            bitOffset: 0
+            bitWidth: 1
+          istart_ctrl_aon:
+            bitOffset: 1
+            bitWidth: 1
+          pmip_resv_aon:
+            bitOffset: 8
+            bitWidth: 8
+      dcdc_top_0:
+        description: dcdc_top_0.
+        addressOffset: 0x814
+        fields:
+          dcdc_vout_sel_aon:
+            bitOffset: 0
+            bitWidth: 5
+          dcdc_vpfm_aon:
+            bitOffset: 8
+            bitWidth: 4
+          dcdc_osc_2m_mode_aon:
+            bitOffset: 12
+            bitWidth: 1
+          dcdc_osc_freq_trim_aon:
+            bitOffset: 16
+            bitWidth: 4
+          dcdc_slope_curr_sel_aon:
+            bitOffset: 20
+            bitWidth: 5
+          dcdc_en_stop_osc_aon:
+            bitOffset: 25
+            bitWidth: 1
+          dcdc_en_slow_osc_aon:
+            bitOffset: 26
+            bitWidth: 1
+          dcdc_en_osc_inhibit_t2_aon:
+            bitOffset: 27
+            bitWidth: 1
+          dcdc_sstart_time_aon:
+            bitOffset: 28
+            bitWidth: 2
+          dcdc_dis_aon:
+            bitOffset: 30
+            bitWidth: 1
+          dcdc_rdy_aon:
+            bitOffset: 31
+            bitWidth: 1
+      dcdc_top_1:
+        description: dcdc_top_1.
+        addressOffset: 0x818
+        fields:
+          dcdc_force_en_cs_zvs_aon:
+            bitOffset: 0
+            bitWidth: 1
+          dcdc_cs_delay_aon:
+            bitOffset: 1
+            bitWidth: 3
+          dcdc_zvs_td_opt_aon:
+            bitOffset: 4
+            bitWidth: 3
+          dcdc_nonoverlap_td_aon:
+            bitOffset: 8
+            bitWidth: 5
+          dcdc_rc_sel_aon:
+            bitOffset: 16
+            bitWidth: 4
+          dcdc_chf_sel_aon:
+            bitOffset: 20
+            bitWidth: 4
+          dcdc_cfb_sel_aon:
+            bitOffset: 24
+            bitWidth: 4
+          dcdc_en_antiring_aon:
+            bitOffset: 28
+            bitWidth: 1
+          dcdc_pulldown_aon:
+            bitOffset: 29
+            bitWidth: 1
+      ldo11soc_and_dctest:
+        description: ldo11soc_and_dctest.
+        addressOffset: 0x81C
+        fields:
+          ldo11soc_vout_trim_aon:
+            bitOffset: 0
+            bitWidth: 4
+          pu_ldo11soc_aon:
+            bitOffset: 4
+            bitWidth: 1
+          ldo11soc_sstart_en_aon:
+            bitOffset: 5
+            bitWidth: 1
+          ldo11soc_sstart_delay_aon:
+            bitOffset: 8
+            bitWidth: 2
+          ldo11soc_pulldown_aon:
+            bitOffset: 10
+            bitWidth: 1
+          ldo11soc_pulldown_sel_aon:
+            bitOffset: 11
+            bitWidth: 1
+          ldo11soc_vth_sel_aon:
+            bitOffset: 12
+            bitWidth: 2
+          ldo11soc_cc_aon:
+            bitOffset: 24
+            bitWidth: 2
+          ldo11soc_rdy_aon:
+            bitOffset: 28
+            bitWidth: 1
+          ldo11soc_power_good_aon:
+            bitOffset: 29
+            bitWidth: 1
+          pmip_dc_tp_out_en_aon:
+            bitOffset: 31
+            bitWidth: 1
+      psw_irrcv:
+        description: psw_irrcv.
+        addressOffset: 0x820
+        fields:
+          pu_ir_psw_aon:
+            bitOffset: 0
+            bitWidth: 1
+      dcdc_top_2:
+        description: dcdc_top_2.
+        addressOffset: 0x824
+        fields:
+          dcdc_vout_trim_aon:
+            bitOffset: 0
+            bitWidth: 4
+          dcdc_osc_ss_rstn_aon:
+            bitOffset: 4
+            bitWidth: 1
+          dcdc_osc_ss_en_aon:
+            bitOffset: 5
+            bitWidth: 1
+          dcdc_osc_ss_period_aon:
+            bitOffset: 8
+            bitWidth: 2
+          dcdc_osc_ss_fdev_aon:
+            bitOffset: 10
+            bitWidth: 2
+          dcdc_comp_gm_sel_aon:
+            bitOffset: 12
+            bitWidth: 3
+          dcdc_isense_trim_aon:
+            bitOffset: 16
+            bitWidth: 3
+          dcdc_vc_clamp_vth_aon:
+            bitOffset: 20
+            bitWidth: 3
+          dcdc_ocp_vth_aon:
+            bitOffset: 24
+            bitWidth: 3
+          dcdc_ocp_rst_aon:
+            bitOffset: 27
+            bitWidth: 1
+          dcdc_ocp_out_aon:
+            bitOffset: 28
+            bitWidth: 1
+          dcdc_drv_sr_aon:
+            bitOffset: 29
+            bitWidth: 2
+      psw_misc:
+        description: psw_misc.
+        addressOffset: 0x82C
+        fields:
+          pu_psw_irrcv_aon:
+            bitOffset: 0
+            bitWidth: 1
+          usb20_rref_ext_en_aon:
+            bitOffset: 19
+            bitWidth: 1
+          en_por33_aon:
+            bitOffset: 20
+            bitWidth: 1
+          usb20_rref_hiz_aon:
+            bitOffset: 21
+            bitWidth: 1
+          usb20_rcal_code_aon:
+            bitOffset: 24
+            bitWidth: 6
+      rf_top_aon:
+        description: rf_top_aon.
+        addressOffset: 0x880
+        fields:
+          pu_mbg_aon:
+            bitOffset: 0
+            bitWidth: 1
+          pu_ldo15rf_aon:
+            bitOffset: 1
+            bitWidth: 1
+          pu_sfreg_aon:
+            bitOffset: 2
+            bitWidth: 1
+          pu_xtal_buf_aon:
+            bitOffset: 4
+            bitWidth: 1
+          pu_xtal_aon:
+            bitOffset: 5
+            bitWidth: 1
+          ldo15rf_sstart_sel_aon:
+            bitOffset: 8
+            bitWidth: 1
+          ldo15rf_sstart_delay_aon:
+            bitOffset: 9
+            bitWidth: 2
+          ldo15rf_pulldown_aon:
+            bitOffset: 12
+            bitWidth: 1
+          ldo15rf_pulldown_sel_aon:
+            bitOffset: 13
+            bitWidth: 1
+          ldo15rf_vout_sel_aon:
+            bitOffset: 16
+            bitWidth: 3
+          ldo15rf_cc_aon:
+            bitOffset: 24
+            bitWidth: 2
+          ldo15rf_bypass_aon:
+            bitOffset: 27
+            bitWidth: 1
+          ldo15rf_vout_trim_aon:
+            bitOffset: 28
+            bitWidth: 4
+      xtal_cfg:
+        description: xtal_cfg.
+        addressOffset: 0x884
+        fields:
+          xtal_bk_aon:
+            bitOffset: 0
+            bitWidth: 2
+          xtal_capcode_extra_aon:
+            bitOffset: 2
+            bitWidth: 1
+          xtal_ext_sel_aon:
+            bitOffset: 3
+            bitWidth: 1
+          xtal_buf_en_aon:
+            bitOffset: 4
+            bitWidth: 2
+          xtal_acbuf_en_aon:
+            bitOffset: 6
+            bitWidth: 1
+          xtal_acbuf_mode_aon:
+            bitOffset: 7
+            bitWidth: 1
+          xtal_buf_hp_aon:
+            bitOffset: 8
+            bitWidth: 2
+          xtal_socbuf_en_aon:
+            bitOffset: 11
+            bitWidth: 1
+          xtal_fast_startup_aon:
+            bitOffset: 12
+            bitWidth: 1
+          xtal_sleep_aon:
+            bitOffset: 13
+            bitWidth: 1
+          xtal_amp_ctrl_aon:
+            bitOffset: 14
+            bitWidth: 2
+          xtal_capcode_out_aon:
+            bitOffset: 16
+            bitWidth: 6
+          xtal_capcode_in_aon:
+            bitOffset: 22
+            bitWidth: 6
+          xtal_gm_boost_aon:
+            bitOffset: 28
+            bitWidth: 2
+          xtal_rdy_sel_aon:
+            bitOffset: 30
+            bitWidth: 2
+      tsen:
+        description: tsen.
+        addressOffset: 0x888
+        fields:
+          tsen_refcode_corner:
+            bitOffset: 0
+            bitWidth: 12
+          tsen_refcode_rfcal:
+            bitOffset: 16
+            bitWidth: 12
+          xtal_rdy:
+            bitOffset: 28
+            bitWidth: 1
+          xtal_inn_cfg_en_aon:
+            bitOffset: 29
+            bitWidth: 1
+          xtal_rdy_int_sel_aon:
+            bitOffset: 30
+            bitWidth: 2
+      acomp0_ctrl:
+        description: acomp0_ctrl.
+        addressOffset: 0x900
+        fields:
+          acomp0_en:
+            bitOffset: 0
+            bitWidth: 1
+          acomp0_hyst_seln:
+            bitOffset: 4
+            bitWidth: 3
+          acomp0_hyst_selp:
+            bitOffset: 7
+            bitWidth: 3
+          acomp0_bias_prog:
+            bitOffset: 10
+            bitWidth: 2
+          acomp0_level_sel:
+            bitOffset: 12
+            bitWidth: 6
+          acomp0_neg_sel:
+            bitOffset: 18
+            bitWidth: 4
+          acomp0_pos_sel:
+            bitOffset: 22
+            bitWidth: 4
+          acomp0_muxen:
+            bitOffset: 26
+            bitWidth: 1
+      acomp1_ctrl:
+        description: acomp1_ctrl.
+        addressOffset: 0x904
+        fields:
+          acomp1_en:
+            bitOffset: 0
+            bitWidth: 1
+          acomp1_hyst_seln:
+            bitOffset: 4
+            bitWidth: 3
+          acomp1_hyst_selp:
+            bitOffset: 7
+            bitWidth: 3
+          acomp1_bias_prog:
+            bitOffset: 10
+            bitWidth: 2
+          acomp1_level_sel:
+            bitOffset: 12
+            bitWidth: 6
+          acomp1_neg_sel:
+            bitOffset: 18
+            bitWidth: 4
+          acomp1_pos_sel:
+            bitOffset: 22
+            bitWidth: 4
+          acomp1_muxen:
+            bitOffset: 26
+            bitWidth: 1
+      acomp_ctrl:
+        description: acomp_ctrl.
+        addressOffset: 0x908
+        fields:
+          acomp1_rstn_ana:
+            bitOffset: 0
+            bitWidth: 1
+          acomp0_rstn_ana:
+            bitOffset: 1
+            bitWidth: 1
+          acomp1_test_en:
+            bitOffset: 8
+            bitWidth: 1
+          acomp0_test_en:
+            bitOffset: 9
+            bitWidth: 1
+          acomp1_test_sel:
+            bitOffset: 10
+            bitWidth: 2
+          acomp0_test_sel:
+            bitOffset: 12
+            bitWidth: 2
+          acomp1_out_raw:
+            bitOffset: 17
+            bitWidth: 1
+          acomp0_out_raw:
+            bitOffset: 19
+            bitWidth: 1
+          acomp_vref_sel:
+            bitOffset: 24
+            bitWidth: 6
+      gpadc_reg_cmd:
+        description: gpadc_reg_cmd.
+        addressOffset: 0x90C
+        fields:
+          gpadc_global_en:
+            bitOffset: 0
+            bitWidth: 1
+          gpadc_conv_start:
+            bitOffset: 1
+            bitWidth: 1
+          gpadc_soft_rst:
+            bitOffset: 2
+            bitWidth: 1
+          gpadc_neg_sel:
+            bitOffset: 3
+            bitWidth: 5
+          gpadc_pos_sel:
+            bitOffset: 8
+            bitWidth: 5
+          gpadc_neg_gnd:
+            bitOffset: 13
+            bitWidth: 1
+          gpadc_micbias_en:
+            bitOffset: 14
+            bitWidth: 1
+          gpadc_micpga_en:
+            bitOffset: 15
+            bitWidth: 1
+          gpadc_byp_micboost:
+            bitOffset: 16
+            bitWidth: 1
+          gpadc_rcal_en:
+            bitOffset: 17
+            bitWidth: 1
+          gpadc_dwa_en:
+            bitOffset: 18
+            bitWidth: 1
+          gpadc_mic2_diff:
+            bitOffset: 19
+            bitWidth: 1
+          gpadc_mic1_diff:
+            bitOffset: 20
+            bitWidth: 1
+          gpadc_mic_pga2_gain:
+            bitOffset: 21
+            bitWidth: 2
+          gpadc_micboost_32db_en:
+            bitOffset: 23
+            bitWidth: 1
+          gpadc_chip_sen_pu:
+            bitOffset: 27
+            bitWidth: 1
+          gpadc_sen_sel:
+            bitOffset: 28
+            bitWidth: 3
+          gpadc_sen_test_en:
+            bitOffset: 31
+            bitWidth: 1
+      gpadc_reg_config1:
+        description: gpadc_reg_config1.
+        addressOffset: 0x910
+        fields:
+          gpadc_cal_os_en:
+            bitOffset: 0
+            bitWidth: 1
+          gpadc_cont_conv_en:
+            bitOffset: 1
+            bitWidth: 1
+          gpadc_res_sel:
+            bitOffset: 2
+            bitWidth: 3
+          gpadc_vcm_sel_en:
+            bitOffset: 8
+            bitWidth: 1
+          gpadc_vcm_hyst_sel:
+            bitOffset: 9
+            bitWidth: 1
+          gpadc_lowv_det_en:
+            bitOffset: 10
+            bitWidth: 1
+          gpadc_pwm_trg_en:
+            bitOffset: 11
+            bitWidth: 1
+          gpadc_clk_ana_dly:
+            bitOffset: 12
+            bitWidth: 4
+          gpadc_clk_ana_dly_en:
+            bitOffset: 16
+            bitWidth: 1
+          gpadc_clk_ana_inv:
+            bitOffset: 17
+            bitWidth: 1
+          gpadc_clk_div_ratio:
+            bitOffset: 18
+            bitWidth: 3
+          gpadc_scan_length:
+            bitOffset: 21
+            bitWidth: 4
+          gpadc_scan_en:
+            bitOffset: 25
+            bitWidth: 1
+          gpadc_dither_en:
+            bitOffset: 26
+            bitWidth: 1
+          gpadc_v11_sel:
+            bitOffset: 27
+            bitWidth: 2
+          gpadc_v18_sel:
+            bitOffset: 29
+            bitWidth: 2
+      gpadc_reg_config2:
+        description: gpadc_reg_config2.
+        addressOffset: 0x914
+        fields:
+          gpadc_diff_mode:
+            bitOffset: 2
+            bitWidth: 1
+          gpadc_vref_sel:
+            bitOffset: 3
+            bitWidth: 1
+          gpadc_vbat_en:
+            bitOffset: 4
+            bitWidth: 1
+          gpadc_tsext_sel:
+            bitOffset: 5
+            bitWidth: 1
+          gpadc_ts_en:
+            bitOffset: 6
+            bitWidth: 1
+          gpadc_pga_vcm:
+            bitOffset: 7
+            bitWidth: 2
+          gpadc_pga_os_cal:
+            bitOffset: 9
+            bitWidth: 4
+          gpadc_pga_en:
+            bitOffset: 13
+            bitWidth: 1
+          gpadc_pga_vcmi_en:
+            bitOffset: 14
+            bitWidth: 1
+          gpadc_chop_mode:
+            bitOffset: 15
+            bitWidth: 2
+          gpadc_bias_sel:
+            bitOffset: 17
+            bitWidth: 1
+          gpadc_test_en:
+            bitOffset: 18
+            bitWidth: 1
+          gpadc_test_sel:
+            bitOffset: 19
+            bitWidth: 3
+          gpadc_pga2_gain:
+            bitOffset: 22
+            bitWidth: 3
+          gpadc_pga1_gain:
+            bitOffset: 25
+            bitWidth: 3
+          gpadc_dly_sel:
+            bitOffset: 28
+            bitWidth: 3
+          gpadc_tsvbe_low:
+            bitOffset: 31
+            bitWidth: 1
+          gpadc_scan_pos_0:
+            bitOffset: 0
+            bitWidth: 5
+          gpadc_scan_pos_1:
+            bitOffset: 5
+            bitWidth: 5
+          gpadc_scan_pos_2:
+            bitOffset: 10
+            bitWidth: 5
+          gpadc_scan_pos_3:
+            bitOffset: 15
+            bitWidth: 5
+          gpadc_scan_pos_4:
+            bitOffset: 20
+            bitWidth: 5
+          gpadc_scan_pos_5:
+            bitOffset: 25
+            bitWidth: 5
+          gpadc_scan_pos_6:
+            bitOffset: 0
+            bitWidth: 5
+          gpadc_scan_pos_7:
+            bitOffset: 5
+            bitWidth: 5
+          gpadc_scan_pos_8:
+            bitOffset: 10
+            bitWidth: 5
+          gpadc_scan_pos_9:
+            bitOffset: 15
+            bitWidth: 5
+          gpadc_scan_pos_10:
+            bitOffset: 20
+            bitWidth: 5
+          gpadc_scan_pos_11:
+            bitOffset: 25
+            bitWidth: 5
+          gpadc_scan_neg_0:
+            bitOffset: 0
+            bitWidth: 5
+          gpadc_scan_neg_1:
+            bitOffset: 5
+            bitWidth: 5
+          gpadc_scan_neg_2:
+            bitOffset: 10
+            bitWidth: 5
+          gpadc_scan_neg_3:
+            bitOffset: 15
+            bitWidth: 5
+          gpadc_scan_neg_4:
+            bitOffset: 20
+            bitWidth: 5
+          gpadc_scan_neg_5:
+            bitOffset: 25
+            bitWidth: 5
+          gpadc_scan_neg_6:
+            bitOffset: 0
+            bitWidth: 5
+          gpadc_scan_neg_7:
+            bitOffset: 5
+            bitWidth: 5
+          gpadc_scan_neg_8:
+            bitOffset: 10
+            bitWidth: 5
+          gpadc_scan_neg_9:
+            bitOffset: 15
+            bitWidth: 5
+          gpadc_scan_neg_10:
+            bitOffset: 20
+            bitWidth: 5
+          gpadc_scan_neg_11:
+            bitOffset: 25
+            bitWidth: 5
+      gpadc_reg_status:
+        description: gpadc_reg_status.
+        addressOffset: 0x928
+        fields:
+          gpadc_data_rdy:
+            bitOffset: 0
+            bitWidth: 1
+      gpadc_reg_isr:
+        description: gpadc_reg_isr.
+        addressOffset: 0x92C
+        fields:
+          gpadc_neg_satur:
+            bitOffset: 0
+            bitWidth: 1
+          gpadc_pos_satur:
+            bitOffset: 1
+            bitWidth: 1
+          gpadc_neg_satur_clr:
+            bitOffset: 4
+            bitWidth: 1
+          gpadc_pos_satur_clr:
+            bitOffset: 5
+            bitWidth: 1
+          gpadc_neg_satur_mask:
+            bitOffset: 8
+            bitWidth: 1
+          gpadc_pos_satur_mask:
+            bitOffset: 9
+            bitWidth: 1
+      gpadc_reg_result:
+        description: gpadc_reg_result.
+        addressOffset: 0x930
+        fields:
+          gpadc_data_out:
+            bitOffset: 0
+            bitWidth: 26
+      gpadc_reg_raw_result:
+        description: gpadc_reg_raw_result.
+        addressOffset: 0x934
+        fields:
+          gpadc_raw_data:
+            bitOffset: 0
+            bitWidth: 12
+      gpadc_reg_define:
+        description: gpadc_reg_define.
+        addressOffset: 0x938
+        fields:
+          gpadc_os_cal_data:
+            bitOffset: 0
+            bitWidth: 16
+      hbncore_resv0:
+        description: hbncore_resv0.
+        addressOffset: 0x93C
+        fields:
+          hbncore_resv0_data:
+            bitOffset: 0
+            bitWidth: 32
+      hbncore_resv1:
+        description: hbncore_resv1.
+        addressOffset: 0x940
+        fields:
+          hbncore_resv1_data:
+            bitOffset: 0
+            bitWidth: 32

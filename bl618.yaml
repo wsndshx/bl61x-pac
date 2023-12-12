@@ -1,0 +1,7 @@
+# Path to the SVD file we're targeting. Relative to this file.
+# This must be included only in the device YAML file.
+_svd: "./svd/bl616.svd"
+
+# # Include other YAML files. Path relative to this file.
+_include:
+    - "./peripherals/AON.yaml"
