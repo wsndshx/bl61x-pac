@@ -1,0 +1,1742 @@
+GLB:
+  chip_inform:
+    _delete:
+      - ready
+      - version
+    _add:
+      chip_rdy:
+        description: Chip ready signal
+        bitOffset: 27
+        bitWidth: 1
+      glb_id:
+        bitOffset: 28
+        bitWidth: 4
+  clock_config_1:
+    _add:
+      reg_bclk_div_act_pulse:
+        bitOffset: 0
+        bitWidth: 1
+      reg_bclk_div_bypass:
+        bitOffset: 1
+        bitWidth: 1
+      sts_bclk_prot_done:
+        bitOffset: 2
+        bitWidth: 1
+      reg_bclk_sw_done_cnt:
+        bitOffset: 4
+        bitWidth: 4
+      fclk_sw_state:
+        bitOffset: 24
+        bitWidth: 3
+  bus_config_0:
+    _add:
+      rg_apb2_pck_force:
+        bitOffset: 0
+        bitWidth: 16
+      rg_apb_pck_force:
+        bitOffset: 16
+        bitWidth: 16
+  gpadc_config:
+    _add:
+      gpadc_32m_clk_div:
+        bitOffset: 0
+        bitWidth: 6
+      gpadc_32m_clk_sel:
+        bitOffset: 7
+        bitWidth: 1
+      gpadc_32m_div_en:
+        bitOffset: 8
+        bitWidth: 1
+  gpdac_config_0:
+    _add:
+      gpdaca_rstn_ana:
+        bitOffset: 0
+        bitWidth: 1
+      gpdacb_rstn_ana:
+        bitOffset: 1
+        bitWidth: 1
+      gpdac_test_en:
+        bitOffset: 7
+        bitWidth: 1
+      gpdac_ref_sel:
+        bitOffset: 8
+        bitWidth: 1
+      gpdac_test_sel:
+        bitOffset: 9
+        bitWidth: 3
+      gpdac_ana_clk_sel:
+        bitOffset: 12
+        bitWidth: 1
+      gpdac_dat_cha_sel:
+        bitOffset: 13
+        bitWidth: 1
+      gpdac_dat_chb_sel:
+        bitOffset: 14
+        bitWidth: 1
+  gpdac_config_1:
+    _add:
+      gpdac_a_en:
+        bitOffset: 0
+        bitWidth: 1
+      gpdac_ioa_en:
+        bitOffset: 1
+        bitWidth: 1
+      gpdac_a_rng:
+        bitOffset: 18
+        bitWidth: 2
+      gpdac_a_outmux:
+        bitOffset: 20
+        bitWidth: 3
+  gpdac_config_2:
+    _add:
+      gpdac_b_en:
+        bitOffset: 0
+        bitWidth: 1
+      gpdac_iob_en:
+        bitOffset: 1
+        bitWidth: 1
+      gpdac_b_rng:
+        bitOffset: 18
+        bitWidth: 2
+      gpdac_b_outmux:
+        bitOffset: 20
+        bitWidth: 3
+  gpdac_config_3:
+    _add:
+      gpdac_b_data:
+        bitOffset: 0
+        bitWidth: 12
+      gpdac_a_data:
+        bitOffset: 16
+        bitWidth: 12
+  dma_config_0:
+    _add:
+      dma_clk_en:
+        bitOffset: 24
+        bitWidth: 8
+  dma_config_1:
+    _add:
+      dma2_clk_en:
+        bitOffset: 24
+        bitWidth: 8
+  dma_config_2:
+    _add:
+      reg_dma_cn_sel:
+        bitOffset: 0
+        bitWidth: 32
+  ir_config_0:
+    _add:
+      ir_clk_div:
+        bitOffset: 16
+        bitWidth: 6
+      ir_clk_en:
+        bitOffset: 23
+        bitWidth: 1
+  ir_config_1:
+    _add:
+      ir_rx_gpio_sel:
+        bitOffset: 8
+        bitWidth: 4
+  i2s_config:
+    _add:
+      reg_i2s_ref_clk_div:
+        bitOffset: 0
+        bitWidth: 6
+      reg_i2s_di_ref_clk_sel:
+        bitOffset: 6
+        bitWidth: 1
+      reg_i2s_ref_clk_en:
+        bitOffset: 7
+        bitWidth: 1
+      reg_i2s_do_ref_clk_sel:
+        bitOffset: 8
+        bitWidth: 1
+  pwm_config:
+    _add:
+      reg_pdm_io_sel:
+        bitOffset: 0
+        bitWidth: 1
+  digit_clock_0:
+    _add:
+      dig_32k_div:
+        bitOffset: 0
+        bitWidth: 11
+      dig_32k_en:
+        bitOffset: 12
+        bitWidth: 1
+      dig_32k_comp:
+        bitOffset: 13
+        bitWidth: 1
+      dig_512k_div:
+        bitOffset: 16
+        bitWidth: 7
+      dig_512k_en:
+        bitOffset: 24
+        bitWidth: 1
+      dig_512k_comp:
+        bitOffset: 25
+        bitWidth: 1
+      dig_clk_src_sel:
+        bitOffset: 28
+        bitWidth: 2
+      reg_en_platform_wakeup:
+        bitOffset: 31
+        bitWidth: 1
+  digit_clock_1:
+    _add:
+      reg_isp_muxpll_80m_sel:
+        bitOffset: 0
+        bitWidth: 2
+      reg_top_muxpll_80m_sel:
+        bitOffset: 8
+        bitWidth: 2
+      reg_top_muxpll_160m_sel:
+        bitOffset: 10
+        bitWidth: 2
+  digit_clock_2:
+    _add:
+      chip_clk_out_0_sel:
+        bitOffset: 0
+        bitWidth: 2
+      chip_clk_out_1_sel:
+        bitOffset: 2
+        bitWidth: 2
+      chip_clk_out_2_sel:
+        bitOffset: 4
+        bitWidth: 2
+      chip_clk_out_3_sel:
+        bitOffset: 6
+        bitWidth: 2
+      chip_clk_out_0_en:
+        bitOffset: 8
+        bitWidth: 1
+      chip_clk_out_1_en:
+        bitOffset: 9
+        bitWidth: 1
+      chip_clk_out_2_en:
+        bitOffset: 10
+        bitWidth: 1
+      chip_clk_out_3_en:
+        bitOffset: 11
+        bitWidth: 1
+      gpio_tmr_clk_sel:
+        bitOffset: 12
+        bitWidth: 2
+  debug_config_0:
+    _add:
+      reg_dbg_ll_ctrl:
+        bitOffset: 0
+        bitWidth: 30
+      reg_dbg_ll_sel:
+        bitOffset: 30
+        bitWidth: 2
+  debug_config_1:
+    _add:
+      reg_dbg_lh_ctrl:
+        bitOffset: 0
+        bitWidth: 30
+      reg_dbg_lh_sel:
+        bitOffset: 30
+        bitWidth: 2
+  debug_config_2:
+    _add:
+      reg_dbg_hl_ctrl:
+        bitOffset: 0
+        bitWidth: 30
+      reg_dbg_hl_sel:
+        bitOffset: 30
+        bitWidth: 2
+  debug_config_3:
+    _add:
+      reg_dbg_hh_ctrl:
+        bitOffset: 0
+        bitWidth: 30
+      reg_dbg_hh_sel:
+        bitOffset: 30
+        bitWidth: 2
+  debug_config_4:
+    _add:
+      debug_oe:
+        bitOffset: 0
+        bitWidth: 1
+      debug_i:
+        bitOffset: 1
+        bitWidth: 31
+  self_test_0:
+    _add:
+      ocram_mbist_mode:
+        bitOffset: 0
+        bitWidth: 4
+      wram_mbist_mode:
+        bitOffset: 4
+        bitWidth: 2
+      reg_wram_ocram_mbist_rst_n:
+        bitOffset: 8
+        bitWidth: 1
+      ocram_mbist_done:
+        bitOffset: 16
+        bitWidth: 4
+      wram_mbist_done:
+        bitOffset: 20
+        bitWidth: 2
+      ocram_mbist_fail:
+        bitOffset: 24
+        bitWidth: 4
+      wram_mbist_fail:
+        bitOffset: 28
+        bitWidth: 2
+  self_test_1:
+    _add:
+      top_mbist_mode:
+        bitOffset: 0
+        bitWidth: 1
+      reg_top_mbist_rst_n:
+        bitOffset: 8
+        bitWidth: 1
+      ef_mbist_done:
+        bitOffset: 16
+        bitWidth: 2
+      usb_mbist_done:
+        bitOffset: 18
+        bitWidth: 1
+      sdh_mbist_done:
+        bitOffset: 19
+        bitWidth: 1
+      sec_mbist_done:
+        bitOffset: 20
+        bitWidth: 1
+      sf_mbist_done:
+        bitOffset: 21
+        bitWidth: 1
+      emac_mbist_done:
+        bitOffset: 22
+        bitWidth: 1
+      ef_mbist_fail:
+        bitOffset: 24
+        bitWidth: 2
+      usb_mbist_fail:
+        bitOffset: 26
+        bitWidth: 1
+      sdh_mbist_fail:
+        bitOffset: 27
+        bitWidth: 1
+      sec_mbist_fail:
+        bitOffset: 28
+        bitWidth: 1
+      sf_mbist_fail:
+        bitOffset: 29
+        bitWidth: 1
+      emac_mbist_fail:
+        bitOffset: 30
+        bitWidth: 1
+  audio_config_0:
+    _add:
+      reg_audio_adc_clk_div:
+        bitOffset: 8
+        bitWidth: 6
+      reg_audio_adc_clk_en:
+        bitOffset: 15
+        bitWidth: 1
+      reg_audio_auto_div_en:
+        bitOffset: 31
+        bitWidth: 1
+  audio_config_1:
+    _add:
+      reg_audio_solo_clk_div:
+        bitOffset: 16
+        bitWidth: 8
+      reg_audio_solo_clk_en:
+        bitOffset: 24
+        bitWidth: 1
+  emac_config:
+    _add:
+      cfg_sel_eth_ref_clk_o:
+        bitOffset: 5
+        bitWidth: 1
+      cfg_inv_eth_ref_clk_o:
+        bitOffset: 6
+        bitWidth: 1
+      cfg_inv_eth_tx_clk:
+        bitOffset: 7
+        bitWidth: 1
+      cfg_inv_eth_rx_clk:
+        bitOffset: 10
+        bitWidth: 1
+  sdh_config:
+    _add:
+      reg_sdh_clk_div:
+        bitOffset: 9
+        bitWidth: 3
+      reg_sdh_clk_sel:
+        bitOffset: 12
+        bitWidth: 1
+      reg_sdh_clk_en:
+        bitOffset: 13
+        bitWidth: 1
+  permit_config:
+    _add:
+      tzc_glb_pwron_rst_lock:
+        bitOffset: 12
+        bitWidth: 1
+      tzc_glb_cpu_reset_lock:
+        bitOffset: 13
+        bitWidth: 1
+      tzc_glb_sys_reset_lock:
+        bitOffset: 14
+        bitWidth: 1
+      tzc_glb_cpu2_reset_lock:
+        bitOffset: 15
+        bitWidth: 1
+      tzc_glb_pwr_lock:
+        bitOffset: 21
+        bitWidth: 1
+      tzc_glb_int_lock:
+        bitOffset: 22
+        bitWidth: 1
+      tzc_glb_cpupll_lock:
+        bitOffset: 24
+        bitWidth: 1
+      tzc_glb_misc_lock:
+        bitOffset: 25
+        bitWidth: 1
+      tzc_glb_sram_lock:
+        bitOffset: 26
+        bitWidth: 1
+      tzc_glb_swrst_lock:
+        bitOffset: 27
+        bitWidth: 1
+      tzc_glb_bmx_lock:
+        bitOffset: 28
+        bitWidth: 1
+      tzc_glb_dbg_lock:
+        bitOffset: 29
+        bitWidth: 1
+      tzc_glb_mbist_lock:
+        bitOffset: 30
+        bitWidth: 1
+      tzc_glb_clk_lock:
+        bitOffset: 31
+        bitWidth: 1
+  psram_config:
+    _add:
+      reg_psramB_clk_en:
+        bitOffset: 27
+        bitWidth: 1
+      reg_psramB_clk_sel:
+        bitOffset: 28
+        bitWidth: 1
+      reg_psramB_clk_div:
+        bitOffset: 30
+        bitWidth: 2
+  wifi_pll_config_0:
+    _add:
+      wifipll_sdm_rstb:
+        bitOffset: 0
+        bitWidth: 1
+      wifipll_postdiv_rstb:
+        bitOffset: 1
+        bitWidth: 1
+      wifipll_fbdv_rstb:
+        bitOffset: 2
+        bitWidth: 1
+      wifipll_refdiv_rstb:
+        bitOffset: 3
+        bitWidth: 1
+      pu_wifipll_clktree:
+        bitOffset: 4
+        bitWidth: 1
+      pu_wifipll_postdiv:
+        bitOffset: 5
+        bitWidth: 1
+      pu_wifipll_fbdv:
+        bitOffset: 6
+        bitWidth: 1
+      pu_wifipll_clamp_op:
+        bitOffset: 7
+        bitWidth: 1
+      pu_wifipll_pfd:
+        bitOffset: 8
+        bitWidth: 1
+      pu_wifipll_cp:
+        bitOffset: 9
+        bitWidth: 1
+      pu_wifipll_sfreg:
+        bitOffset: 10
+        bitWidth: 1
+      pu_wifipll:
+        bitOffset: 11
+        bitWidth: 1
+  wifi_pll_config_1:
+    _add:
+      wifipll_postdiv:
+        bitOffset: 0
+        bitWidth: 7
+      wifipll_refdiv_ratio:
+        bitOffset: 8
+        bitWidth: 4
+      wifipll_refclk_sel:
+        bitOffset: 16
+        bitWidth: 2
+      wifipll_vg11_sel:
+        bitOffset: 20
+        bitWidth: 2
+      wifipll_vg13_sel:
+        bitOffset: 24
+        bitWidth: 2
+  wifi_pll_config_2:
+    _add:
+      wifipll_sel_cp_bias:
+        bitOffset: 0
+        bitWidth: 1
+      wifipll_icp_5u:
+        bitOffset: 4
+        bitWidth: 2
+      wifipll_icp_1u:
+        bitOffset: 6
+        bitWidth: 2
+      wifipll_int_frac_sw:
+        bitOffset: 8
+        bitWidth: 1
+      wifipll_cp_startup_en:
+        bitOffset: 9
+        bitWidth: 1
+      wifipll_cp_opamp_en:
+        bitOffset: 10
+        bitWidth: 1
+  wifi_pll_config_3:
+    _add:
+      wifipll_c4_en:
+        bitOffset: 0
+        bitWidth: 1
+      wifipll_r4:
+        bitOffset: 4
+        bitWidth: 2
+      wifipll_r4_short:
+        bitOffset: 8
+        bitWidth: 1
+      wifipll_c3:
+        bitOffset: 12
+        bitWidth: 2
+      wifipll_cz:
+        bitOffset: 14
+        bitWidth: 2
+      wifipll_rz:
+        bitOffset: 16
+        bitWidth: 3
+  wifi_pll_config_4:
+    _add:
+      wifipll_sel_sample_clk:
+        bitOffset: 0
+        bitWidth: 2
+      wifipll_sel_fb_clk:
+        bitOffset: 4
+        bitWidth: 2
+      wifipll_sdmclk_sel:
+        bitOffset: 8
+        bitWidth: 1
+  wifi_pll_config_5:
+    _add:
+      wifipll_vco_speed:
+        bitOffset: 0
+        bitWidth: 3
+      wifipll_vco_div3_en:
+        bitOffset: 3
+        bitWidth: 1
+      wifipll_vco_div2_en:
+        bitOffset: 4
+        bitWidth: 1
+      wifipll_vco_div1_en:
+        bitOffset: 5
+        bitWidth: 1
+  wifi_pll_config_6:
+    _add:
+      wifipll_sdmin:
+        bitOffset: 0
+        bitWidth: 26
+      wifipll_sdm_bypass:
+        bitOffset: 26
+        bitWidth: 1
+      wifipll_sdm_bypass_hw:
+        bitOffset: 30
+        bitWidth: 1
+      wifipll_sdm_ctrl_hw:
+        bitOffset: 31
+        bitWidth: 1
+  wifi_pll_config_7:
+    _add:
+      wifipll_sdm_order_sel:
+        bitOffset: 0
+        bitWidth: 2
+      wifipll_sdm_noi_prbs_sel:
+        bitOffset: 4
+        bitWidth: 2
+      wifipll_sdm_noi_prbs_en:
+        bitOffset: 8
+        bitWidth: 1
+      wifipll_sdm_sig_prbs_sel:
+        bitOffset: 12
+        bitWidth: 2
+      wifipll_sdm_sig_dith_sel:
+        bitOffset: 16
+        bitWidth: 2
+  wifi_pll_config_8:
+    _add:
+      wifipll_en_rf_div3:
+        bitOffset: 0
+        bitWidth: 1
+      wifipll_en_rf_div6:
+        bitOffset: 1
+        bitWidth: 1
+      wifipll_sel_div3_div6:
+        bitOffset: 2
+        bitWidth: 1
+      wifipll_sel_div6_div12:
+        bitOffset: 3
+        bitWidth: 1
+      wifipll_en_div3:
+        bitOffset: 4
+        bitWidth: 1
+      wifipll_en_div4:
+        bitOffset: 5
+        bitWidth: 1
+      wifipll_en_div5:
+        bitOffset: 6
+        bitWidth: 1
+      wifipll_en_div6:
+        bitOffset: 7
+        bitWidth: 1
+      wifipll_en_div8:
+        bitOffset: 8
+        bitWidth: 1
+      wifipll_en_div10:
+        bitOffset: 9
+        bitWidth: 1
+      wifipll_en_div12:
+        bitOffset: 10
+        bitWidth: 1
+      wifipll_en_div20:
+        bitOffset: 11
+        bitWidth: 1
+      wifipll_en_div30:
+        bitOffset: 12
+        bitWidth: 1
+      wifipll_en_rf_div3_hw:
+        bitOffset: 20
+        bitWidth: 1
+      wifipll_en_ctrl_hw:
+        bitOffset: 31
+        bitWidth: 1
+  wifi_pll_config_9:
+    _add:
+      wifipll_dc_tp_out_en:
+        bitOffset: 0
+        bitWidth: 1
+      ten_wifipll:
+        bitOffset: 1
+        bitWidth: 1
+      ten_wifipll_sfreg:
+        bitOffset: 2
+        bitWidth: 1
+      dten_wifipll_fin:
+        bitOffset: 4
+        bitWidth: 1
+      dten_wifipll_fref:
+        bitOffset: 5
+        bitWidth: 1
+      dten_wifipll_fsdm:
+        bitOffset: 6
+        bitWidth: 1
+      dten_wifipll_div30:
+        bitOffset: 7
+        bitWidth: 1
+      dten_wifipll_div10:
+        bitOffset: 8
+        bitWidth: 1
+      dten_wifipll_postdiv_clk:
+        bitOffset: 9
+        bitWidth: 1
+      dten_usbpll_pclk:
+        bitOffset: 10
+        bitWidth: 1
+      dten_usbpll_clkout:
+        bitOffset: 11
+        bitWidth: 1
+      dten_sscdiv_pclk:
+        bitOffset: 12
+        bitWidth: 1
+      dten_sscdiv_clkout:
+        bitOffset: 13
+        bitWidth: 1
+      dtest_pulldown:
+        bitOffset: 14
+        bitWidth: 1
+  wifi_pll_config_10:
+    _add:
+      usbpll_sdmin:
+        bitOffset: 0
+        bitWidth: 19
+      usbpll_sdm_bypass:
+        bitOffset: 20
+        bitWidth: 1
+      usbpll_sdm_order_sel:
+        bitOffset: 21
+        bitWidth: 1
+      usbpll_sdm_sig_dith_sel:
+        bitOffset: 22
+        bitWidth: 2
+      usbpll_div2_en:
+        bitOffset: 24
+        bitWidth: 1
+      usbpll_clkout_en:
+        bitOffset: 25
+        bitWidth: 1
+      usbpll_sel_sample_clk:
+        bitOffset: 26
+        bitWidth: 2
+      usbpll_rstb:
+        bitOffset: 28
+        bitWidth: 1
+      pu_usbpll_mmdiv:
+        bitOffset: 29
+        bitWidth: 1
+  wifi_pll_config_11:
+    _add:
+      usbpll_ssc_cnt:
+        bitOffset: 0
+        bitWidth: 9
+      usbpll_ssc_start:
+        bitOffset: 9
+        bitWidth: 1
+      usbpll_ssc_start_gate_en:
+        bitOffset: 10
+        bitWidth: 1
+      usbpll_ssc_gain:
+        bitOffset: 12
+        bitWidth: 3
+      usbpll_ssc_en:
+        bitOffset: 16
+        bitWidth: 1
+  wifi_pll_config_12:
+    _add:
+      sscdiv_sdmin:
+        bitOffset: 0
+        bitWidth: 19
+      sscdiv_sdm_bypass:
+        bitOffset: 20
+        bitWidth: 1
+      sscdiv_sdm_order_sel:
+        bitOffset: 21
+        bitWidth: 1
+      sscdiv_sdm_sig_dith_sel:
+        bitOffset: 22
+        bitWidth: 2
+      sscdiv_div2_en:
+        bitOffset: 24
+        bitWidth: 1
+      sscdiv_clkout_en:
+        bitOffset: 25
+        bitWidth: 1
+      sscdiv_sel_sample_clk:
+        bitOffset: 26
+        bitWidth: 2
+      sscdiv_rstb:
+        bitOffset: 28
+        bitWidth: 1
+      pu_sscdiv_mmdiv:
+        bitOffset: 29
+        bitWidth: 1
+  wifi_pll_config_13:
+    _add:
+      sscdiv_ssc_cnt:
+        bitOffset: 0
+        bitWidth: 9
+      sscdiv_ssc_start:
+        bitOffset: 9
+        bitWidth: 1
+      sscdiv_ssc_start_gate_en:
+        bitOffset: 10
+        bitWidth: 1
+      sscdiv_ssc_gain:
+        bitOffset: 12
+        bitWidth: 3
+      sscdiv_ssc_en:
+        bitOffset: 16
+        bitWidth: 1
+  wifi_pll_config_14:
+    _add:
+      wifipll_resv:
+        bitOffset: 0
+        bitWidth: 16
+      sscdiv_dl_ctrl:
+        bitOffset: 16
+        bitWidth: 1
+      usbpll_dl_ctrl:
+        bitOffset: 17
+        bitWidth: 1
+      wifipll_dl_ctrl_30:
+        bitOffset: 18
+        bitWidth: 1
+      wifipll_dl_ctrl_20:
+        bitOffset: 19
+        bitWidth: 1
+      wifipll_dl_ctrl_12:
+        bitOffset: 20
+        bitWidth: 1
+      wifipll_dl_ctrl_10:
+        bitOffset: 21
+        bitWidth: 1
+      wifipll_dl_ctrl_8:
+        bitOffset: 22
+        bitWidth: 1
+      wifipll_dl_ctrl_6_rf:
+        bitOffset: 23
+        bitWidth: 1
+      wifipll_dl_ctrl_6:
+        bitOffset: 24
+        bitWidth: 1
+      wifipll_dl_ctrl_5:
+        bitOffset: 25
+        bitWidth: 1
+      wifipll_dl_ctrl_4:
+        bitOffset: 26
+        bitWidth: 1
+      wifipll_dl_ctrl_3_rf:
+        bitOffset: 27
+        bitWidth: 1
+      wifipll_dl_ctrl_3:
+        bitOffset: 28
+        bitWidth: 1
+  ldo18:
+    _add:
+      pu_ldo18io:
+        bitOffset: 0
+        bitWidth: 1
+      ldo18io_bypass:
+        bitOffset: 1
+        bitWidth: 1
+      ten_ldo18io:
+        bitOffset: 2
+        bitWidth: 1
+      ldo18io_ocp_out:
+        bitOffset: 3
+        bitWidth: 1
+      ldo18io_bm:
+        bitOffset: 4
+        bitWidth: 3
+      ldo18io_cc:
+        bitOffset: 8
+        bitWidth: 3
+      ldo18io_ocp_th:
+        bitOffset: 12
+        bitWidth: 3
+      ldo18io_ocp_en:
+        bitOffset: 15
+        bitWidth: 1
+      ldo18io_pulldown:
+        bitOffset: 16
+        bitWidth: 1
+      ldo18io_pulldown_sel:
+        bitOffset: 17
+        bitWidth: 1
+      ldo18io_sstart_delay:
+        bitOffset: 20
+        bitWidth: 3
+      ldo18io_sstart_en:
+        bitOffset: 23
+        bitWidth: 1
+      ldo18io_vout_sel:
+        bitOffset: 24
+        bitWidth: 4
+      ldo18io_vout_trim:
+        bitOffset: 28
+        bitWidth: 4
+  _add:
+    core_cfg16:
+      description: core_cfg16.
+      addressOffset: 0x50
+      fields:
+        np_int_sta0:
+          bitOffset: 0
+          bitWidth: 32
+    core_cfg17:
+      description: core_cfg17.
+      addressOffset: 0x54
+      fields:
+        np_int_sta1:
+          bitOffset: 0
+          bitWidth: 32
+    core_cfg18:
+      description: core_cfg18.
+      addressOffset: 0x58
+      fields:
+        np_int_mask0:
+          bitOffset: 0
+          bitWidth: 32
+    core_cfg19:
+      description: core_cfg19.
+      addressOffset: 0x5C
+      fields:
+        np_int_mask1:
+          bitOffset: 0
+          bitWidth: 32
+    core_cfg20:
+      description: core_cfg20.
+      addressOffset: 0x60
+      fields:
+        np_int_clr0:
+          bitOffset: 0
+          bitWidth: 32
+    core_cfg21:
+      description: core_cfg21.
+      addressOffset: 0x64
+      fields:
+        np_int_clr1:
+          bitOffset: 0
+          bitWidth: 32
+    pio_cfg0:
+      description: pio_cfg0.
+      addressOffset: 0x1C0
+      fields:
+        pio_clk_div:
+          bitOffset: 0
+          bitWidth: 5
+        pio_clk_en:
+          bitOffset: 8
+          bitWidth: 1
+        pio_clk_sel:
+          bitOffset: 9
+          bitWidth: 1
+    pwm_cfg0:
+      description: pwm_cfg0.
+      addressOffset: 0x1D0
+      fields:
+        reg_pwm1_io_sel:
+          bitOffset: 0
+          bitWidth: 1
+    bmx_cfg0:
+      description: bmx_cfg0.
+      addressOffset: 0x320
+      fields:
+        reg_bmx_timeout_en:
+          bitOffset: 0
+          bitWidth: 4
+        reg_bmx_arb_mode:
+          bitOffset: 5
+          bitWidth: 1
+        reg_bmx_timeout_clr:
+          bitOffset: 6
+          bitWidth: 1
+        sts_bmx_timeout_sts:
+          bitOffset: 11
+          bitWidth: 4
+        pds_apb_cfg:
+          bitOffset: 16
+          bitWidth: 8
+        hbn_apb_cfg:
+          bitOffset: 24
+          bitWidth: 8
+    bmx_cfg1:
+      description: bmx_cfg1.
+      addressOffset: 0x324
+      fields:
+        reg_bmx_berr_int_en:
+          bitOffset: 0
+          bitWidth: 1
+        reg_mcu_berr_int_en:
+          bitOffset: 1
+          bitWidth: 1
+        reg_bmx_qos_cpu:
+          bitOffset: 16
+          bitWidth: 1
+        reg_bmx_qos_sdu:
+          bitOffset: 17
+          bitWidth: 1
+        reg_bmx_qos_sec0:
+          bitOffset: 18
+          bitWidth: 1
+        reg_bmx_qos_sec1:
+          bitOffset: 19
+          bitWidth: 1
+        reg_bmx_qos_sec2:
+          bitOffset: 20
+          bitWidth: 1
+        reg_bmx_qos_dma:
+          bitOffset: 21
+          bitWidth: 1
+        reg_bmx_qos_cci:
+          bitOffset: 22
+          bitWidth: 1
+        reg_bmx_qos_pldma:
+          bitOffset: 23
+          bitWidth: 1
+        reg_bmx_qos_blem:
+          bitOffset: 24
+          bitWidth: 1
+        reg_bmx_qos_emacA:
+          bitOffset: 25
+          bitWidth: 1
+        reg_bmx_qos_sdhm:
+          bitOffset: 27
+          bitWidth: 1
+        bmx_dbg_sel:
+          bitOffset: 28
+          bitWidth: 4
+    bmx_cfg2:
+      description: bmx_cfg2.
+      addressOffset: 0x328
+      fields:
+        reg_bmx_berr_en:
+          bitOffset: 0
+          bitWidth: 10
+        reg_mcu_berr_en:
+          bitOffset: 16
+          bitWidth: 1
+    bmx_cfg3:
+      description: bmx_cfg3.
+      addressOffset: 0x32C
+      fields:
+        reg_bmx_berr_clr:
+          bitOffset: 0
+          bitWidth: 1
+        reg_bmx_berr_last:
+          bitOffset: 1
+          bitWidth: 1
+        reg_mcu_berr_clr:
+          bitOffset: 8
+          bitWidth: 1
+        reg_mcu_berr_last:
+          bitOffset: 9
+          bitWidth: 1
+        sts_bmx_berr:
+          bitOffset: 16
+          bitWidth: 1
+        sts_mcu_berr:
+          bitOffset: 17
+          bitWidth: 1
+        sts_bmx_berr_write:
+          bitOffset: 24
+          bitWidth: 1
+        sts_mcu_berr_write:
+          bitOffset: 25
+          bitWidth: 1
+    bmx_cfg4:
+      description: bmx_cfg4.
+      addressOffset: 0x330
+      fields:
+        sts_bmx_berr_src:
+          bitOffset: 0
+          bitWidth: 10
+        sts_mcu_berr_src:
+          bitOffset: 16
+          bitWidth: 1
+        sts_mcu_berr_id:
+          bitOffset: 24
+          bitWidth: 8
+    bmx_cfg5:
+      description: bmx_cfg5.
+      addressOffset: 0x334
+      fields:
+        sts_bmx_berr_addr:
+          bitOffset: 0
+          bitWidth: 32
+    bmx_cfg6:
+      description: bmx_cfg6.
+      addressOffset: 0x338
+      fields:
+        sts_mcu_berr_addr:
+          bitOffset: 0
+          bitWidth: 32
+    cam_cfg0:
+      description: cam_cfg0.
+      addressOffset: 0x420
+      fields:
+        reg_cam_ref_clk_en:
+          bitOffset: 27
+          bitWidth: 1
+        reg_cam_ref_clk_src_sel:
+          bitOffset: 28
+          bitWidth: 2
+        reg_cam_ref_clk_div:
+          bitOffset: 30
+          bitWidth: 2
+    sdio_cfg0:
+      description: sdio_cfg0.
+      addressOffset: 0x440
+      fields:
+        reg_sdio_int_sys_dis:
+          bitOffset: 0
+          bitWidth: 1
+        reg_sd_rst_sd_dis:
+          bitOffset: 1
+          bitWidth: 1
+        reg_sdu_rst_sd_dis:
+          bitOffset: 2
+          bitWidth: 1
+        reg_sys_rst_sd_en:
+          bitOffset: 3
+          bitWidth: 1
+        sdu_cmdRcvd:
+          bitOffset: 12
+          bitWidth: 1
+        sdu_clk_switch_ok:
+          bitOffset: 13
+          bitWidth: 1
+        sd_pwup:
+          bitOffset: 14
+          bitWidth: 1
+        sdu_dbg:
+          bitOffset: 16
+          bitWidth: 16
+    glb_parm_cfg0:
+      description: glb_parm_cfg0.
+      addressOffset: 0x510
+      fields:
+        uart_swap_set:
+          bitOffset: 2
+          bitWidth: 4
+        swap_sflash_io_3_io_0:
+          bitOffset: 8
+          bitWidth: 1
+        sel_embedded_sflash:
+          bitOffset: 9
+          bitWidth: 1
+        swap_sflash_io_2_cs:
+          bitOffset: 10
+          bitWidth: 1
+        swap_sflash2_io_3_io_0:
+          bitOffset: 11
+          bitWidth: 1
+        reg_spi_0_master_mode:
+          bitOffset: 12
+          bitWidth: 1
+        reg_spi_0_swap:
+          bitOffset: 13
+          bitWidth: 1
+        ant_switch_sel:
+          bitOffset: 15
+          bitWidth: 1
+        p3_cci_use_io_10_13:
+          bitOffset: 19
+          bitWidth: 1
+        audio_test_mode:
+          bitOffset: 29
+          bitWidth: 1
+        sel_rf_audio_test:
+          bitOffset: 30
+          bitWidth: 2
+    debug_cfg1:
+      description: debug_cfg1.
+      addressOffset: 0x524
+      fields:
+        debug_ndreset_gate:
+          bitOffset: 20
+          bitWidth: 1
+    reset_sts0:
+      description: reset_sts0.
+      addressOffset: 0x530
+      fields:
+        top_reset_recorder:
+          bitOffset: 0
+          bitWidth: 7
+        clr_top_reset_recorder:
+          bitOffset: 7
+          bitWidth: 1
+        swrst_s00:
+          bitOffset: 0
+          bitWidth: 1
+        swrst_s01:
+          bitOffset: 1
+          bitWidth: 1
+        swrst_s20:
+          bitOffset: 4
+          bitWidth: 1
+        swrst_s30:
+          bitOffset: 8
+          bitWidth: 1
+        swrst_s31:
+          bitOffset: 9
+          bitWidth: 1
+        swrst_s32:
+          bitOffset: 10
+          bitWidth: 1
+        swrst_s33:
+          bitOffset: 11
+          bitWidth: 1
+        swrst_s1_ext_emi_misc:
+          bitOffset: 16
+          bitWidth: 1
+        swrst_s1_ext_psram0_ctrl:
+          bitOffset: 17
+          bitWidth: 1
+        swrst_s1_ext_psram1_ctrl:
+          bitOffset: 18
+          bitWidth: 1
+        swrst_s1_ext_usb:
+          bitOffset: 19
+          bitWidth: 1
+        swrst_s1_ext_mix2:
+          bitOffset: 20
+          bitWidth: 1
+        swrst_s1_ext_audio:
+          bitOffset: 21
+          bitWidth: 1
+        swrst_s1_ext_sdh:
+          bitOffset: 22
+          bitWidth: 1
+        swrst_s1_ext_emac:
+          bitOffset: 23
+          bitWidth: 1
+        swrst_s1_ext_dma2:
+          bitOffset: 24
+          bitWidth: 1
+        swrst_d2xA:
+          bitOffset: 25
+          bitWidth: 1
+        swrst_d2xB:
+          bitOffset: 26
+          bitWidth: 1
+        swrst_jenc:
+          bitOffset: 27
+          bitWidth: 1
+        swrst_s1_ext_pio:
+          bitOffset: 28
+          bitWidth: 1
+    swrst_s1:
+      description: swrst_s1.
+      addressOffset: 0x544
+      fields:
+        swrst_s10:
+          bitOffset: 0
+          bitWidth: 1
+        swrst_s11:
+          bitOffset: 1
+          bitWidth: 1
+        swrst_s12:
+          bitOffset: 2
+          bitWidth: 1
+        swrst_s13:
+          bitOffset: 3
+          bitWidth: 1
+        swrst_s14:
+          bitOffset: 4
+          bitWidth: 1
+        swrst_s15:
+          bitOffset: 5
+          bitWidth: 1
+        swrst_s16:
+          bitOffset: 6
+          bitWidth: 1
+        swrst_s17:
+          bitOffset: 7
+          bitWidth: 1
+        swrst_s18:
+          bitOffset: 8
+          bitWidth: 1
+        swrst_s19:
+          bitOffset: 9
+          bitWidth: 1
+        swrst_s1a:
+          bitOffset: 10
+          bitWidth: 1
+        swrst_s1b:
+          bitOffset: 11
+          bitWidth: 1
+        swrst_s1c:
+          bitOffset: 12
+          bitWidth: 1
+        swrst_s1d:
+          bitOffset: 13
+          bitWidth: 1
+        swrst_s1e:
+          bitOffset: 14
+          bitWidth: 1
+        swrst_s1f:
+          bitOffset: 15
+          bitWidth: 1
+        swrst_s1a0:
+          bitOffset: 16
+          bitWidth: 1
+        swrst_s1a1:
+          bitOffset: 17
+          bitWidth: 1
+        swrst_s1a2:
+          bitOffset: 18
+          bitWidth: 1
+        swrst_s1a3:
+          bitOffset: 19
+          bitWidth: 1
+        swrst_s1a4:
+          bitOffset: 20
+          bitWidth: 1
+        swrst_s1a5:
+          bitOffset: 21
+          bitWidth: 1
+        swrst_s1a6:
+          bitOffset: 22
+          bitWidth: 1
+        swrst_s1a7:
+          bitOffset: 23
+          bitWidth: 1
+        swrst_s1a8:
+          bitOffset: 24
+          bitWidth: 1
+        swrst_s1a9:
+          bitOffset: 25
+          bitWidth: 1
+        swrst_s1aa:
+          bitOffset: 26
+          bitWidth: 1
+        swrst_s1ab:
+          bitOffset: 27
+          bitWidth: 1
+        swrst_s1ac:
+          bitOffset: 28
+          bitWidth: 1
+        swrst_s1ad:
+          bitOffset: 29
+          bitWidth: 1
+        swrst_s1ae:
+          bitOffset: 30
+          bitWidth: 1
+        swrst_s1af:
+          bitOffset: 31
+          bitWidth: 1
+    swrst_cfg2:
+      description: swrst_cfg2.
+      addressOffset: 0x548
+      fields:
+        reg_ctrl_pwron_rst:
+          bitOffset: 0
+          bitWidth: 1
+        reg_ctrl_cpu_reset:
+          bitOffset: 1
+          bitWidth: 1
+        reg_ctrl_sys_reset:
+          bitOffset: 2
+          bitWidth: 1
+        reg_ctrl_pico_reset:
+          bitOffset: 3
+          bitWidth: 1
+        reg_ctrl_cpu2_reset:
+          bitOffset: 4
+          bitWidth: 1
+        reg_ctrl_chip_reset:
+          bitOffset: 5
+          bitWidth: 1
+        pka_clk_sel:
+          bitOffset: 24
+          bitWidth: 1
+        reg_ctrl_reset_dummy:
+          bitOffset: 28
+          bitWidth: 4
+        disrst_s12:
+          bitOffset: 2
+          bitWidth: 1
+        disrst_s14:
+          bitOffset: 4
+          bitWidth: 1
+        disrst_s18:
+          bitOffset: 8
+          bitWidth: 1
+        disrst_s1b:
+          bitOffset: 11
+          bitWidth: 1
+        disrst_s1a0:
+          bitOffset: 16
+          bitWidth: 1
+        disrst_s1a1:
+          bitOffset: 17
+          bitWidth: 1
+        disrst_s1a2:
+          bitOffset: 18
+          bitWidth: 1
+        disrst_s1a3:
+          bitOffset: 19
+          bitWidth: 1
+        disrst_s1a4:
+          bitOffset: 20
+          bitWidth: 1
+        disrst_s1a5:
+          bitOffset: 21
+          bitWidth: 1
+        disrst_s1a6:
+          bitOffset: 22
+          bitWidth: 1
+        disrst_s1a7:
+          bitOffset: 23
+          bitWidth: 1
+        disrst_s1a8:
+          bitOffset: 24
+          bitWidth: 1
+        disrst_s1a9:
+          bitOffset: 25
+          bitWidth: 1
+        disrst_s1aa:
+          bitOffset: 26
+          bitWidth: 1
+    cgen_m:
+      description: cgen_m.
+      addressOffset: 0x580
+      fields:
+        cgen_m_cpu:
+          bitOffset: 0
+          bitWidth: 1
+        cgen_m_sdu:
+          bitOffset: 1
+          bitWidth: 1
+        cgen_m_sec:
+          bitOffset: 2
+          bitWidth: 1
+        cgen_m_dma:
+          bitOffset: 3
+          bitWidth: 1
+        cgen_m_cci:
+          bitOffset: 4
+          bitWidth: 1
+        cgen_s1_rsvd0:
+          bitOffset: 0
+          bitWidth: 1
+        cgen_s1_gpip:
+          bitOffset: 2
+          bitWidth: 1
+        cgen_s1_sec_dbg:
+          bitOffset: 3
+          bitWidth: 1
+        cgen_s1_sec_eng:
+          bitOffset: 4
+          bitWidth: 1
+        cgen_s1_tz:
+          bitOffset: 5
+          bitWidth: 1
+        cgen_s1_rsvd6:
+          bitOffset: 6
+          bitWidth: 1
+        cgen_s1_ef_ctrl:
+          bitOffset: 7
+          bitWidth: 1
+        cgen_s1_rsvd8:
+          bitOffset: 8
+          bitWidth: 1
+        cgen_s1_rsvd9:
+          bitOffset: 9
+          bitWidth: 1
+        cgen_s1_rsvd10:
+          bitOffset: 10
+          bitWidth: 1
+        cgen_s1_sf_ctrl:
+          bitOffset: 11
+          bitWidth: 1
+        cgen_s1_dma:
+          bitOffset: 12
+          bitWidth: 1
+        cgen_s1_rsvd13:
+          bitOffset: 13
+          bitWidth: 1
+        cgen_s1_rsvd14:
+          bitOffset: 14
+          bitWidth: 1
+        cgen_s1_rsvd15:
+          bitOffset: 15
+          bitWidth: 1
+        cgen_s1a_uart0:
+          bitOffset: 16
+          bitWidth: 1
+        cgen_s1a_uart1:
+          bitOffset: 17
+          bitWidth: 1
+        cgen_s1a_spi:
+          bitOffset: 18
+          bitWidth: 1
+        cgen_s1a_i2c:
+          bitOffset: 19
+          bitWidth: 1
+        cgen_s1a_pwm:
+          bitOffset: 20
+          bitWidth: 1
+        cgen_s1a_timer:
+          bitOffset: 21
+          bitWidth: 1
+        cgen_s1a_ir:
+          bitOffset: 22
+          bitWidth: 1
+        cgen_s1a_cks:
+          bitOffset: 23
+          bitWidth: 1
+        cgen_s1a_dbi:
+          bitOffset: 24
+          bitWidth: 1
+        cgen_s1a_i2c1:
+          bitOffset: 25
+          bitWidth: 1
+        cgen_s1a_uart2:
+          bitOffset: 26
+          bitWidth: 1
+        cgen_s1a_rsvd11:
+          bitOffset: 27
+          bitWidth: 1
+        cgen_s1a_rsvd12:
+          bitOffset: 28
+          bitWidth: 1
+        cgen_s1a_rsvd13:
+          bitOffset: 29
+          bitWidth: 1
+        cgen_s1a_rsvd14:
+          bitOffset: 30
+          bitWidth: 1
+        cgen_s1a_rsvd15:
+          bitOffset: 31
+          bitWidth: 1
+        cgen_s0:
+          bitOffset: 0
+          bitWidth: 1
+        cgen_s2_wifi:
+          bitOffset: 4
+          bitWidth: 1
+        cgen_s3_bt_ble2:
+          bitOffset: 10
+          bitWidth: 1
+        cgen_s3_m1542:
+          bitOffset: 11
+          bitWidth: 1
+        cgen_s1_ext_emi_misc:
+          bitOffset: 16
+          bitWidth: 1
+        cgen_s1_ext_psram0_ctrl:
+          bitOffset: 17
+          bitWidth: 1
+        cgen_s1_ext_psram_ctrl:
+          bitOffset: 18
+          bitWidth: 1
+        cgen_s1_ext_usb:
+          bitOffset: 19
+          bitWidth: 1
+        cgen_s1_ext_mix2:
+          bitOffset: 20
+          bitWidth: 1
+        cgen_s1_ext_audio:
+          bitOffset: 21
+          bitWidth: 1
+        cgen_s1_ext_sdh:
+          bitOffset: 22
+          bitWidth: 1
+        cgen_s1_ext_emac:
+          bitOffset: 23
+          bitWidth: 1
+        cgen_s1_ext_dma2:
+          bitOffset: 24
+          bitWidth: 1
+        cgen_s1_ext_pio:
+          bitOffset: 25
+          bitWidth: 1
+        cgen_s1_ext_rsvd10:
+          bitOffset: 26
+          bitWidth: 1
+        cgen_s1_ext_rsvd11:
+          bitOffset: 27
+          bitWidth: 1
+    cgen_cfg3:
+      description: cgen_cfg3.
+      addressOffset: 0x58C
+      fields:
+        cgen_isp_wifipll_80m:
+          bitOffset: 2
+          bitWidth: 1
+        cgen_isp_aupll_div5:
+          bitOffset: 3
+          bitWidth: 1
+        cgen_isp_aupll_div6:
+          bitOffset: 4
+          bitWidth: 1
+        cgen_top_aupll_div5:
+          bitOffset: 5
+          bitWidth: 1
+        cgen_top_aupll_div6:
+          bitOffset: 6
+          bitWidth: 1
+        cgen_psramB_wifipll_320m:
+          bitOffset: 7
+          bitWidth: 1
+        cgen_psramB_aupll_div1:
+          bitOffset: 8
+          bitWidth: 1
+        cgen_top_wifipll_240m:
+          bitOffset: 13
+          bitWidth: 1
+        cgen_top_wifipll_320m:
+          bitOffset: 14
+          bitWidth: 1
+        cgen_top_aupll_div2:
+          bitOffset: 15
+          bitWidth: 1
+        cgen_top_aupll_div1:
+          bitOffset: 16
+          bitWidth: 1
+    hw_rsv0:
+      description: hw_rsv0.
+      addressOffset: 0x5C0
+      fields:
+        rsvd_31_0:
+          bitOffset: 0
+          bitWidth: 32
+    hw_rsv1:
+      description: hw_rsv1.
+      addressOffset: 0x5C4
+      fields:
+        rsvd_31_0:
+          bitOffset: 0
+          bitWidth: 32
+    hw_rsv2:
+      description: hw_rsv2.
+      addressOffset: 0x5C8
+      fields:
+        rsvd_31_0:
+          bitOffset: 0
+          bitWidth: 32
+    hw_rsv3:
+      description: hw_rsv3.
+      addressOffset: 0x5CC
+      fields:
+        rsvd_31_0:
+          bitOffset: 0
+          bitWidth: 32
+    reg_sram_ret:
+      description: reg_sram_ret.
+      addressOffset: 0x600
+      fields:
+        cr_mcu_cache_ret:
+          bitOffset: 0
+          bitWidth: 2
+        cr_mcu_hsram_ret:
+          bitOffset: 2
+          bitWidth: 4
+        cr_wb_ram_ret:
+          bitOffset: 8
+          bitWidth: 1
+        cr_misc_ram_ret:
+          bitOffset: 9
+          bitWidth: 2
+    reg_sram_slp:
+      description: reg_sram_slp.
+      addressOffset: 0x604
+      fields:
+        cr_mcu_cache_slp:
+          bitOffset: 0
+          bitWidth: 2
+        cr_mcu_hsram_slp:
+          bitOffset: 2
+          bitWidth: 4
+        cr_mcu_rom_slp:
+          bitOffset: 6
+          bitWidth: 2
+        cr_wb_ram_slp:
+          bitOffset: 8
+          bitWidth: 1
+        cr_misc_ram_slp:
+          bitOffset: 9
+          bitWidth: 2
+    reg_sram_parm:
+      description: reg_sram_parm.
+      addressOffset: 0x608
+      fields:
+        cr_mcu_cache_dvse:
+          bitOffset: 0
+          bitWidth: 1
+        cr_mcu_hsram_dvse:
+          bitOffset: 1
+          bitWidth: 1
+        cr_mcu_rom_dvse:
+          bitOffset: 2
+          bitWidth: 1
+        cr_wb_ram_dvse:
+          bitOffset: 3
+          bitWidth: 1
+        cr_misc_ram_dvse:
+          bitOffset: 4
+          bitWidth: 1
+        cr_ocram_dvse:
+          bitOffset: 5
+          bitWidth: 1
+        cr_wram_dvse:
+          bitOffset: 6
+          bitWidth: 1
+        cr_mcu_cache_nap:
+          bitOffset: 8
+          bitWidth: 1
+        cr_mcu_hsram_nap:
+          bitOffset: 9
+          bitWidth: 1
+        cr_wb_ram_nap:
+          bitOffset: 11
+          bitWidth: 1
+        cr_misc_ram_nap:
+          bitOffset: 12
+          bitWidth: 1
+        cr_ocram_nap:
+          bitOffset: 13
+          bitWidth: 1
+        cr_wram_nap:
+          bitOffset: 14
+          bitWidth: 1
+    sram_cfg3:
+      description: sram_cfg3.
+      addressOffset: 0x60C
+      fields:
+        em_sel:
+          bitOffset: 0
+          bitWidth: 4
+    reg_sram_parm2:
+      description: reg_sram_parm2.
+      addressOffset: 0x610
+      fields:
+        cr_mcu_cache_dvs:
+          bitOffset: 0
+          bitWidth: 4
+        cr_mcu_hsram_dvs:
+          bitOffset: 4
+          bitWidth: 4
+        cr_mcu_rom_dvs:
+          bitOffset: 8
+          bitWidth: 4
+        cr_wb_ram_dvs:
+          bitOffset: 12
+          bitWidth: 4
+        cr_misc_ram_dvs:
+          bitOffset: 16
+          bitWidth: 4
+        cr_ocram_dvs:
+          bitOffset: 20
+          bitWidth: 4
+        cr_wram_dvs:
+          bitOffset: 24
+          bitWidth: 4
+    proc_mon:
+      description: proc_mon.
+      addressOffset: 0x6F0
+      fields:
+        pu_proc_mon:
+          bitOffset: 0
+          bitWidth: 1
+        osc_en_rvt:
+          bitOffset: 1
+          bitWidth: 1
+        osc_en_lvt:
+          bitOffset: 2
+          bitWidth: 1
+        osc_sel:
+          bitOffset: 3
+          bitWidth: 1
+        rstn_ringcount:
+          bitOffset: 4
+          bitWidth: 1
+        rstn_refcount:
+          bitOffset: 5
+          bitWidth: 1
+        refcount_div_onehot:
+          bitOffset: 8
+          bitWidth: 4
+        ring_freq:
+          bitOffset: 12
+          bitWidth: 16
+        ring_freq_rdy:
+          bitOffset: 28
+          bitWidth: 1

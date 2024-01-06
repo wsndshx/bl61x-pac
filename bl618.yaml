@@ -4,4 +4,8 @@ _svd: "./svd/bl616.svd"
 
 # # Include other YAML files. Path relative to this file.
 _include:
-    - "./peripherals/AON.yaml"
+  - "./peripherals/AON.yaml"
+  - "./peripherals/GLB.yaml"
+  - "./peripherals/HBN.yaml"
+  - "./peripherals/PDS.yaml"
+  - "./peripherals/CCI.yaml"

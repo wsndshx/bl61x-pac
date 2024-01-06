@@ -2,24 +2,27 @@
 
 # This script generates the Rust library code from the bl616/618 SVD file.
 
-fail() {
-  echo "Error: $*"
-  exit 1
-}
+# fail() {
+#   echo "Error: $*"
+#   exit 1
+# }
 
-if [ $# -lt 2 ]; then
-  echo "Usage: $0 <path to svd> <path to src output dir> <path to yaml>"
-  exit 1
-fi
+# if [ $# -lt 2 ]; then
+#   echo "Usage: $0 <path to svd> <path to src output dir> <path to yaml>"
+#   exit 1
+# fi
 
 command -v svdtools > /dev/null || fail "Please install svdtools (https://github.com/rust-embedded/svdtools)"
 command -v svd2rust > /dev/null || fail "Please install rust2vd (https://github.com/rust-embedded/svd2rust)"
 command -v form > /dev/null || fail "Please install form (https://github.com/djmcgill/form)"
 command -v rustfmt > /dev/null || fail "Please install rustfmt"
 
-svd_path="${1}"
-src_path="${2}"
-yaml_path="${3}"
+# svd_path="${1}"
+# src_path="${2}"
+# yaml_path="${3}"
+svd_path="svd\bl616.svd.patched"
+src_path="src"
+yaml_path="bl618.yaml"
 
 if [ ! -d "${src_path}" ]; then
   fail "src output dir (\`${src_path}') is not a directory"

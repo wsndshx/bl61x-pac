@@ -1,0 +1,385 @@
+HBN:
+  control:
+    _add:
+      rtc_ctl:
+        bitOffset: 0
+        bitWidth: 4
+      rtc_dly_option:
+        bitOffset: 4
+        bitWidth: 1
+      hbn_mode:
+        bitOffset: 7
+        bitWidth: 1
+      trap_mode:
+        bitOffset: 8
+        bitWidth: 1
+      pwrdn_hbn_core:
+        bitOffset: 9
+        bitWidth: 1
+      pwrdn_hbn_rtc:
+        bitOffset: 11
+        bitWidth: 1
+      sw_rst:
+        bitOffset: 12
+        bitWidth: 1
+      hbn_dis_pwr_off_ldo11:
+        bitOffset: 13
+        bitWidth: 1
+      hbn_dis_pwr_off_ldo11_rt:
+        bitOffset: 14
+        bitWidth: 1
+      hbn_ldo11_rt_vout_sel:
+        bitOffset: 15
+        bitWidth: 4
+      hbn_ldo11_aon_vout_sel:
+        bitOffset: 19
+        bitWidth: 4
+      pu_dcdc18_aon:
+        bitOffset: 24
+        bitWidth: 1
+      pwr_on_option:
+        bitOffset: 25
+        bitWidth: 1
+      sram_slp_option:
+        bitOffset: 26
+        bitWidth: 1
+      sram_slp:
+        bitOffset: 27
+        bitWidth: 1
+      hbn_state:
+        bitOffset: 28
+        bitWidth: 4
+  time_lo:
+    _add:
+      hbn_time_l:
+        bitOffset: 0
+        bitWidth: 32
+  time_hi:
+    _add:
+      hbn_time_h:
+        bitOffset: 0
+        bitWidth: 8
+  rtc_time_lo:
+    _add:
+      rtc_time_latch_l:
+        bitOffset: 0
+        bitWidth: 32
+  rtc_time_hi:
+    _add:
+      rtc_time_latch_h:
+        bitOffset: 0
+        bitWidth: 8
+      rtc_time_latch:
+        bitOffset: 31
+        bitWidth: 1
+  interrupt_mode:
+    _add:
+      hbn_pin_wakeup_mode:
+        bitOffset: 0
+        bitWidth: 4
+      hbn_pin_wakeup_mask:
+        bitOffset: 4
+        bitWidth: 4
+      reg_en_hw_pu_pd:
+        bitOffset: 16
+        bitWidth: 1
+      irq_bor_en:
+        bitOffset: 18
+        bitWidth: 1
+      irq_acomp0_en:
+        bitOffset: 20
+        bitWidth: 2
+      irq_acomp1_en:
+        bitOffset: 22
+        bitWidth: 2
+      pin_wakeup_sel:
+        bitOffset: 24
+        bitWidth: 3
+      pin_wakeup_en:
+        bitOffset: 27
+        bitWidth: 1
+  interrupt_state:
+    _add:
+      irq_stat:
+        bitOffset: 0
+        bitWidth: 32
+  interrupt_clear:
+    _add:
+      irq_clr:
+        bitOffset: 0
+        bitWidth: 32
+  global:
+    _add:
+      hbn_root_clk_sel:
+        bitOffset: 0
+        bitWidth: 2
+      hbn_uart_clk_sel:
+        bitOffset: 2
+        bitWidth: 1
+      hbn_f32k_sel:
+        bitOffset: 3
+        bitWidth: 2
+      hbn_pu_rc32k:
+        bitOffset: 5
+        bitWidth: 1
+      hbn_reset_event:
+        bitOffset: 7
+        bitWidth: 5
+      hbn_uart_clk_sel2:
+        bitOffset: 15
+        bitWidth: 1
+      sw_ldo11soc_vout_sel_aon:
+        bitOffset: 16
+        bitWidth: 4
+      sw_ldo11_rt_vout_sel:
+        bitOffset: 24
+        bitWidth: 4
+      sw_ldo11_aon_vout_sel:
+        bitOffset: 28
+        bitWidth: 4
+  sram:
+    _add:
+      retram_ret:
+        bitOffset: 6
+        bitWidth: 1
+      retram_slp:
+        bitOffset: 7
+        bitWidth: 1
+  rc32k:
+    _add:
+      rc32k_cal_done:
+        bitOffset: 0
+        bitWidth: 1
+      rc32k_rdy:
+        bitOffset: 1
+        bitWidth: 1
+      rc32k_cal_inprogress:
+        bitOffset: 2
+        bitWidth: 1
+      rc32k_cal_div:
+        bitOffset: 3
+        bitWidth: 2
+      rc32k_cal_precharge:
+        bitOffset: 5
+        bitWidth: 1
+      rc32k_dig_code_fr_cal:
+        bitOffset: 6
+        bitWidth: 10
+      rc32k_vref_dly:
+        bitOffset: 16
+        bitWidth: 2
+      rc32k_allow_cal:
+        bitOffset: 18
+        bitWidth: 1
+      rc32k_ext_code_en:
+        bitOffset: 19
+        bitWidth: 1
+      rc32k_cal_en:
+        bitOffset: 20
+        bitWidth: 1
+      pu_rc32k:
+        bitOffset: 21
+        bitWidth: 1
+      rc32k_code_fr_ext:
+        bitOffset: 22
+        bitWidth: 10
+  xtal32k:
+    _add:
+      xtal32k_ext_sel:
+        bitOffset: 2
+        bitWidth: 1
+      xtal32k_amp_ctrl:
+        bitOffset: 3
+        bitWidth: 2
+      xtal32k_reg:
+        bitOffset: 5
+        bitWidth: 2
+      xtal32k_outbuf_stre:
+        bitOffset: 7
+        bitWidth: 1
+      xtal32k_otf_short:
+        bitOffset: 8
+        bitWidth: 1
+      xtal32k_inv_stre:
+        bitOffset: 9
+        bitWidth: 2
+      xtal32k_capbank:
+        bitOffset: 11
+        bitWidth: 6
+      xtal32k_ac_cap_short:
+        bitOffset: 17
+        bitWidth: 1
+      pu_xtal32k_buf:
+        bitOffset: 18
+        bitWidth: 1
+      pu_xtal32k:
+        bitOffset: 19
+        bitWidth: 1
+      xtal32k_lowv_en:
+        bitOffset: 20
+        bitWidth: 1
+      xtal32k_hiz_en:
+        bitOffset: 21
+        bitWidth: 1
+      dten_xtal32k:
+        bitOffset: 22
+        bitWidth: 1
+      ten_xtal32k:
+        bitOffset: 23
+        bitWidth: 1
+  _add:
+    HBN_PIR_CFG:
+      description: HBN_PIR_CFG.
+      addressOffset: 0x20
+      fields:
+        pir_hpf_sel:
+          bitOffset: 0
+          bitWidth: 2
+        pir_lpf_sel:
+          bitOffset: 2
+          bitWidth: 1
+        pir_dis:
+          bitOffset: 4
+          bitWidth: 2
+        pir_en:
+          bitOffset: 7
+          bitWidth: 1
+        gpadc_cs:
+          bitOffset: 8
+          bitWidth: 1
+    HBN_PIR_VTH:
+      description: HBN_PIR_VTH.
+      addressOffset: 0x24
+      fields:
+        pir_vth:
+          bitOffset: 0
+          bitWidth: 14
+    HBN_PIR_INTERVAL:
+      description: HBN_PIR_INTERVAL.
+      addressOffset: 0x28
+      fields:
+        pir_interval:
+          bitOffset: 0
+          bitWidth: 12
+    HBN_BOR_CFG:
+      description: HBN_BOR_CFG.
+      addressOffset: 0x2C
+      fields:
+        bod_sel:
+          bitOffset: 0
+          bitWidth: 1
+        bod_vth:
+          bitOffset: 1
+          bitWidth: 3
+        pu_bod:
+          bitOffset: 4
+          bitWidth: 1
+        r_bod_out:
+          bitOffset: 5
+          bitWidth: 1
+    HBN_PAD_CTRL_0:
+      description: HBN_PAD_CTRL_0.
+      addressOffset: 0x38
+      fields:
+        reg_aon_pad_ie_smt:
+          bitOffset: 0
+          bitWidth: 4
+        reg_aon_led_sel:
+          bitOffset: 10
+          bitWidth: 9
+        reg_en_aon_ctrl_gpio:
+          bitOffset: 20
+          bitWidth: 4
+        cr_gpio_keep_en:
+          bitOffset: 28
+          bitWidth: 3
+        reg_aon_gpio_iso_mode:
+          bitOffset: 31
+          bitWidth: 1
+    HBN_PAD_CTRL_1:
+      description: HBN_PAD_CTRL_1.
+      addressOffset: 0x3C
+      fields:
+        reg_aon_pad_oe:
+          bitOffset: 0
+          bitWidth: 4
+        reg_aon_pad_pd:
+          bitOffset: 10
+          bitWidth: 4
+        reg_aon_pad_pu:
+          bitOffset: 20
+          bitWidth: 4
+    vbat_ldo:
+      description: vbat_ldo.
+      addressOffset: 0x40
+      fields:
+        ldo33_bm_aon:
+          bitOffset: 0
+          bitWidth: 2
+        ldo33_cc_aon:
+          bitOffset: 4
+          bitWidth: 3
+        ldo33_ocp_en_aon:
+          bitOffset: 7
+          bitWidth: 1
+        ldo33_ocp_th_aon:
+          bitOffset: 8
+          bitWidth: 3
+        ldo33_sstart_delay_aon:
+          bitOffset: 12
+          bitWidth: 3
+        ldo33_sstart_en_aon:
+          bitOffset: 15
+          bitWidth: 1
+        ldo33_vout_sel_aon:
+          bitOffset: 16
+          bitWidth: 4
+        ldo33_vout_trim_aon:
+          bitOffset: 20
+          bitWidth: 4
+        ldo33_otp_en_aon:
+          bitOffset: 24
+          bitWidth: 1
+        ldo33_otp_out_aon:
+          bitOffset: 25
+          bitWidth: 1
+        ldo33_ocp_out_aon:
+          bitOffset: 26
+          bitWidth: 1
+        ten_ldo33_aon:
+          bitOffset: 27
+          bitWidth: 1
+        ldo33_otp_th_aon:
+          bitOffset: 28
+          bitWidth: 3
+        ldo33_otp_sd_aon:
+          bitOffset: 31
+          bitWidth: 1
+    HBN_RSV0:
+      description: HBN_RSV0.
+      addressOffset: 0x100
+      fields:
+        HBN_RSV0:
+          bitOffset: 0
+          bitWidth: 32
+    HBN_RSV1:
+      description: HBN_RSV1.
+      addressOffset: 0x104
+      fields:
+        HBN_RSV1:
+          bitOffset: 0
+          bitWidth: 32
+    HBN_RSV2:
+      description: HBN_RSV2.
+      addressOffset: 0x108
+      fields:
+        HBN_RSV2:
+          bitOffset: 0
+          bitWidth: 32
+    HBN_RSV3:
+      description: HBN_RSV3.
+      addressOffset: 0x10C
+      fields:
+        HBN_RSV3:
+          bitOffset: 0
+          bitWidth: 32

@@ -1,0 +1,341 @@
+_add:
+  CCI:
+    description: CCI
+    baseAddress: 0x20008000
+    addressBlock:
+      offset: 0x0
+      size: 0x1000
+      usage: registers
+    registers:
+      cci_cfg:
+        description: cci_cfg.
+        addressOffset: 0x0
+        fields:
+          cci_en:
+            bitOffset: 0
+            bitWidth: 1
+          cci_slv_sel_cci2:
+            bitOffset: 1
+            bitWidth: 1
+          cci_mas_sel_cci2:
+            bitOffset: 2
+            bitWidth: 1
+          cci_mas_hw_mode:
+            bitOffset: 3
+            bitWidth: 1
+          reg_m_cci_sclk_en:
+            bitOffset: 4
+            bitWidth: 1
+          reg_div_m_cci_sclk:
+            bitOffset: 5
+            bitWidth: 2
+          cfg_cci1_pre_read:
+            bitOffset: 7
+            bitWidth: 1
+          reg_scci_clk_inv:
+            bitOffset: 8
+            bitWidth: 1
+          reg_mcci_clk_inv:
+            bitOffset: 9
+            bitWidth: 1
+          cfg_mcci_dly_r:
+            bitOffset: 16
+            bitWidth: 1
+      cci_addr:
+        description: cci_addr.
+        addressOffset: 0x4
+        fields:
+          apb_cci_addr:
+            bitOffset: 0
+            bitWidth: 32
+      cci_wdata:
+        description: cci_wdata.
+        addressOffset: 0x8
+        fields:
+          apb_cci_wdata:
+            bitOffset: 0
+            bitWidth: 32
+      cci_rdata:
+        description: cci_rdata.
+        addressOffset: 0xC
+        fields:
+          apb_cci_rdata:
+            bitOffset: 0
+            bitWidth: 32
+      cci_ctl:
+        description: cci_ctl.
+        addressOffset: 0x10
+        fields:
+          cci_write_flag:
+            bitOffset: 0
+            bitWidth: 1
+          cci_read_flag:
+            bitOffset: 1
+            bitWidth: 1
+          ahb_state:
+            bitOffset: 2
+            bitWidth: 2
+      audio_pll_cfg0:
+        description: audio_pll_cfg0.
+        addressOffset: 0x750
+        fields:
+          aupll_sdm_rstb:
+            bitOffset: 0
+            bitWidth: 1
+          aupll_postdiv_rstb:
+            bitOffset: 1
+            bitWidth: 1
+          aupll_fbdv_rstb:
+            bitOffset: 2
+            bitWidth: 1
+          aupll_refdiv_rstb:
+            bitOffset: 3
+            bitWidth: 1
+          pu_aupll_postdiv:
+            bitOffset: 4
+            bitWidth: 1
+          pu_aupll_fbdv:
+            bitOffset: 5
+            bitWidth: 1
+          pu_aupll_clamp_op:
+            bitOffset: 6
+            bitWidth: 1
+          pu_aupll_pfd:
+            bitOffset: 7
+            bitWidth: 1
+          pu_aupll_cp:
+            bitOffset: 8
+            bitWidth: 1
+          pu_aupll_sfreg:
+            bitOffset: 9
+            bitWidth: 1
+          pu_aupll:
+            bitOffset: 10
+            bitWidth: 1
+          pu_aupll_clktree:
+            bitOffset: 11
+            bitWidth: 1
+      audio_pll_cfg1:
+        description: audio_pll_cfg1.
+        addressOffset: 0x754
+        fields:
+          aupll_postdiv:
+            bitOffset: 0
+            bitWidth: 7
+          aupll_refdiv_ratio:
+            bitOffset: 8
+            bitWidth: 4
+          aupll_refclk_sel:
+            bitOffset: 16
+            bitWidth: 2
+          aupll_vg11_sel:
+            bitOffset: 20
+            bitWidth: 2
+          aupll_vg13_sel:
+            bitOffset: 24
+            bitWidth: 2
+      audio_pll_cfg2:
+        description: audio_pll_cfg2.
+        addressOffset: 0x758
+        fields:
+          aupll_sel_cp_bias:
+            bitOffset: 0
+            bitWidth: 1
+          aupll_icp_5u:
+            bitOffset: 4
+            bitWidth: 2
+          aupll_icp_1u:
+            bitOffset: 6
+            bitWidth: 2
+          aupll_int_frac_sw:
+            bitOffset: 8
+            bitWidth: 1
+          aupll_cp_startup_en:
+            bitOffset: 9
+            bitWidth: 1
+          aupll_cp_opamp_en:
+            bitOffset: 10
+            bitWidth: 1
+      audio_pll_cfg3:
+        description: audio_pll_cfg3.
+        addressOffset: 0x75C
+        fields:
+          aupll_c4_en:
+            bitOffset: 0
+            bitWidth: 1
+          aupll_r4:
+            bitOffset: 4
+            bitWidth: 2
+          aupll_r4_short:
+            bitOffset: 8
+            bitWidth: 1
+          aupll_c3:
+            bitOffset: 12
+            bitWidth: 2
+          aupll_cz:
+            bitOffset: 14
+            bitWidth: 2
+          aupll_rz:
+            bitOffset: 16
+            bitWidth: 3
+      audio_pll_cfg4:
+        description: audio_pll_cfg4.
+        addressOffset: 0x760
+        fields:
+          aupll_sel_sample_clk:
+            bitOffset: 0
+            bitWidth: 2
+          aupll_sel_fb_clk:
+            bitOffset: 4
+            bitWidth: 2
+          aupll_sdmclk_sel:
+            bitOffset: 8
+            bitWidth: 1
+      audio_pll_cfg5:
+        description: audio_pll_cfg5.
+        addressOffset: 0x764
+        fields:
+          aupll_vco_speed:
+            bitOffset: 0
+            bitWidth: 3
+      audio_pll_cfg6:
+        description: audio_pll_cfg6.
+        addressOffset: 0x768
+        fields:
+          aupll_sdmin:
+            bitOffset: 0
+            bitWidth: 19
+          aupll_sdm_bypass:
+            bitOffset: 24
+            bitWidth: 1
+      audio_pll_cfg7:
+        description: audio_pll_cfg7.
+        addressOffset: 0x76C
+        fields:
+          aupll_sdm_order_sel:
+            bitOffset: 0
+            bitWidth: 1
+          aupll_sdm_sig_dith_sel:
+            bitOffset: 16
+            bitWidth: 2
+      audio_pll_cfg8:
+        description: audio_pll_cfg8.
+        addressOffset: 0x770
+        fields:
+          aupll_en_div1:
+            bitOffset: 0
+            bitWidth: 1
+          aupll_en_div2:
+            bitOffset: 1
+            bitWidth: 1
+          aupll_en_div2p5:
+            bitOffset: 2
+            bitWidth: 1
+          aupll_en_div3:
+            bitOffset: 3
+            bitWidth: 1
+          aupll_en_div4:
+            bitOffset: 4
+            bitWidth: 1
+          aupll_en_div5:
+            bitOffset: 5
+            bitWidth: 1
+          aupll_en_div6:
+            bitOffset: 6
+            bitWidth: 1
+          aupll_en_div10:
+            bitOffset: 7
+            bitWidth: 1
+          aupll_en_div15:
+            bitOffset: 8
+            bitWidth: 1
+          aupll_sel_div1_div2:
+            bitOffset: 9
+            bitWidth: 1
+      audio_pll_cfg9:
+        description: audio_pll_cfg9.
+        addressOffset: 0x774
+        fields:
+          aupll_dc_tp_out_en:
+            bitOffset: 0
+            bitWidth: 1
+          ten_aupll:
+            bitOffset: 1
+            bitWidth: 1
+          ten_aupll_sfreg:
+            bitOffset: 2
+            bitWidth: 1
+          dten_aupll_fin:
+            bitOffset: 4
+            bitWidth: 1
+          dten_aupll_fref:
+            bitOffset: 5
+            bitWidth: 1
+          dten_aupll_fsdm:
+            bitOffset: 6
+            bitWidth: 1
+          dten_aupll_div15:
+            bitOffset: 7
+            bitWidth: 1
+          dten_aupll_div5:
+            bitOffset: 8
+            bitWidth: 1
+          dten_aupll_postdiv_clk:
+            bitOffset: 9
+            bitWidth: 1
+          dtest_aupll_pulldown:
+            bitOffset: 10
+            bitWidth: 1
+      audio_pll_cfg10:
+        description: audio_pll_cfg10.
+        addressOffset: 0x778
+        fields:
+          aupll_ssc_en:
+            bitOffset: 0
+            bitWidth: 1
+          aupll_ssc_cnt:
+            bitOffset: 4
+            bitWidth: 8
+          aupll_ssc_gain:
+            bitOffset: 12
+            bitWidth: 3
+          aupll_ssc_start_gate_en:
+            bitOffset: 16
+            bitWidth: 1
+          aupll_ssc_start:
+            bitOffset: 20
+            bitWidth: 1
+      audio_pll_cfg11:
+        description: audio_pll_cfg11.
+        addressOffset: 0x77C
+        fields:
+          aupll_resv:
+            bitOffset: 0
+            bitWidth: 16
+          aupll_dl_ctrl_15:
+            bitOffset: 23
+            bitWidth: 1
+          aupll_dl_ctrl_10:
+            bitOffset: 24
+            bitWidth: 1
+          aupll_dl_ctrl_6:
+            bitOffset: 25
+            bitWidth: 1
+          aupll_dl_ctrl_5:
+            bitOffset: 26
+            bitWidth: 1
+          aupll_dl_ctrl_4:
+            bitOffset: 27
+            bitWidth: 1
+          aupll_dl_ctrl_3:
+            bitOffset: 28
+            bitWidth: 1
+          aupll_dl_ctrl_2p5:
+            bitOffset: 29
+            bitWidth: 1
+          aupll_dl_ctrl_2:
+            bitOffset: 30
+            bitWidth: 1
+          aupll_dl_ctrl_1:
+            bitOffset: 31
+            bitWidth: 1

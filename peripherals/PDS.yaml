@@ -1,0 +1,552 @@
+_delete:
+  - PDS
+
+_add:
+  PDS:
+    description: Power-Down Sleep control
+    baseAddress: 0x2000E000
+    addressBlock:
+      offset: 0x0
+      size: 0x1000
+      usage: registers
+    registers:
+      PDS_CTL:
+        description: PDS_CTL.
+        addressOffset: 0x0
+        fields:
+          pds_start_ps:
+            bitOffset: 0
+            bitWidth: 1
+          cr_sleep_forever:
+            bitOffset: 1
+            bitWidth: 1
+          cr_xtal_force_off:
+            bitOffset: 2
+            bitWidth: 1
+          cr_pds_wifi_save_state:
+            bitOffset: 3
+            bitWidth: 1
+          cr_pds_pd_ldo11:
+            bitOffset: 4
+            bitWidth: 1
+          cr_pds_pd_bg_sys:
+            bitOffset: 5
+            bitWidth: 1
+          cr_pds_ctrl_gpio_ie_pu_pd:
+            bitOffset: 6
+            bitWidth: 1
+          cr_pds_pd_dcdc18:
+            bitOffset: 7
+            bitWidth: 1
+          cr_pds_gate_clk:
+            bitOffset: 8
+            bitWidth: 1
+          cr_pds_mem_stby:
+            bitOffset: 9
+            bitWidth: 1
+          cr_pds_glb_reg_reset_protect:
+            bitOffset: 10
+            bitWidth: 1
+          cr_pds_iso_en:
+            bitOffset: 11
+            bitWidth: 1
+          cr_pds_wait_xtal_rdy:
+            bitOffset: 12
+            bitWidth: 1
+          cr_pds_pwr_off:
+            bitOffset: 13
+            bitWidth: 1
+          cr_pds_pd_xtal:
+            bitOffset: 14
+            bitWidth: 1
+          cr_pds_ctrl_soc_enb:
+            bitOffset: 15
+            bitWidth: 1
+          cr_pds_rst_soc:
+            bitOffset: 16
+            bitWidth: 1
+          cr_pds_rc32m_off_dis:
+            bitOffset: 17
+            bitWidth: 1
+          cr_pds_ldo11_vsel_en:
+            bitOffset: 18
+            bitWidth: 1
+          cr_pds_ctrl_usbpll_pd:
+            bitOffset: 19
+            bitWidth: 1
+          cr_pds_ctrl_aupll_pd:
+            bitOffset: 20
+            bitWidth: 1
+          cr_pds_ctrl_wifipll_pd:
+            bitOffset: 22
+            bitWidth: 1
+          cr_pds_ldo11_vol:
+            bitOffset: 23
+            bitWidth: 5
+          cr_pds_ctrl_rf:
+            bitOffset: 28
+            bitWidth: 2
+          cr_pds_start_use_tbtt_sleep:
+            bitOffset: 30
+            bitWidth: 1
+          cr_pds_gpio_iso_mode:
+            bitOffset: 31
+            bitWidth: 1
+      PDS_TIME1:
+        description: PDS_TIME1.
+        addressOffset: 0x4
+        fields:
+          cr_sleep_duration:
+            bitOffset: 0
+            bitWidth: 32
+      PDS_INT:
+        description: PDS_INT.
+        addressOffset: 0xC
+        fields:
+          ro_pds_wake_int:
+            bitOffset: 0
+            bitWidth: 1
+          ro_pds_rf_done_int:
+            bitOffset: 1
+            bitWidth: 1
+          ro_pds_wifi_tbtt_sleep_irq:
+            bitOffset: 2
+            bitWidth: 1
+          ro_pds_wifi_tbtt_wakeup_irq:
+            bitOffset: 3
+            bitWidth: 1
+          cr_pds_wake_int_mask:
+            bitOffset: 4
+            bitWidth: 1
+          cr_pds_rf_done_int_mask:
+            bitOffset: 5
+            bitWidth: 1
+          cr_pds_wifi_tbtt_sleep_irq_mask:
+            bitOffset: 6
+            bitWidth: 1
+          cr_pds_wifi_tbtt_wakeup_irq_mask:
+            bitOffset: 7
+            bitWidth: 1
+          cr_pds_int_clr:
+            bitOffset: 8
+            bitWidth: 1
+          cr_pds_wakeup_src_en:
+            bitOffset: 10
+            bitWidth: 10
+          ro_pds_wakeup_event:
+            bitOffset: 21
+            bitWidth: 10
+      PDS_CTL2:
+        description: PDS_CTL2.
+        addressOffset: 0x10
+        fields:
+          cr_pds_force_np_pwr_off:
+            bitOffset: 0
+            bitWidth: 1
+          cr_pds_force_wb_pwr_off:
+            bitOffset: 2
+            bitWidth: 1
+          cr_pds_force_usb_pwr_off:
+            bitOffset: 3
+            bitWidth: 1
+          cr_pds_force_np_iso_en:
+            bitOffset: 4
+            bitWidth: 1
+          cr_pds_force_wb_iso_en:
+            bitOffset: 6
+            bitWidth: 1
+          cr_pds_force_usb_iso_en:
+            bitOffset: 7
+            bitWidth: 1
+          cr_pds_force_np_pds_rst:
+            bitOffset: 8
+            bitWidth: 1
+          cr_pds_force_wb_pds_rst:
+            bitOffset: 10
+            bitWidth: 1
+          cr_pds_force_usb_pds_rst:
+            bitOffset: 11
+            bitWidth: 1
+          cr_pds_force_np_mem_stby:
+            bitOffset: 12
+            bitWidth: 1
+          cr_pds_force_wb_mem_stby:
+            bitOffset: 14
+            bitWidth: 1
+          cr_pds_force_usb_mem_stby:
+            bitOffset: 15
+            bitWidth: 1
+          cr_pds_force_np_gate_clk:
+            bitOffset: 16
+            bitWidth: 1
+          cr_pds_force_wb_gate_clk:
+            bitOffset: 18
+            bitWidth: 1
+          cr_pds_force_usb_gate_clk:
+            bitOffset: 19
+            bitWidth: 1
+      PDS_CTL3:
+        description: PDS_CTL3.
+        addressOffset: 0x14
+        fields:
+          cr_pds_force_misc_pwr_off:
+            bitOffset: 1
+            bitWidth: 1
+          cr_pds_force_misc_iso_en:
+            bitOffset: 4
+            bitWidth: 1
+          cr_pds_force_misc_pds_rst:
+            bitOffset: 7
+            bitWidth: 1
+          cr_pds_force_misc_mem_stby:
+            bitOffset: 10
+            bitWidth: 1
+          cr_pds_force_misc_gate_clk:
+            bitOffset: 13
+            bitWidth: 1
+          cr_pds_np_iso_en:
+            bitOffset: 24
+            bitWidth: 1
+          cr_pds_wb_iso_en:
+            bitOffset: 27
+            bitWidth: 1
+          cr_pds_usb_iso_en:
+            bitOffset: 29
+            bitWidth: 1
+          cr_pds_misc_iso_en:
+            bitOffset: 30
+            bitWidth: 1
+      PDS_CTL4:
+        description: PDS_CTL4.
+        addressOffset: 0x18
+        fields:
+          cr_pds_np_pwr_off:
+            bitOffset: 0
+            bitWidth: 1
+          cr_pds_np_reset:
+            bitOffset: 1
+            bitWidth: 1
+          cr_pds_np_mem_stby:
+            bitOffset: 2
+            bitWidth: 1
+          cr_pds_np_gate_clk:
+            bitOffset: 3
+            bitWidth: 1
+          cr_pds_wb_pwr_off:
+            bitOffset: 12
+            bitWidth: 1
+          cr_pds_wb_reset:
+            bitOffset: 13
+            bitWidth: 1
+          cr_pds_wb_mem_stby:
+            bitOffset: 14
+            bitWidth: 1
+          cr_pds_wb_gate_clk:
+            bitOffset: 15
+            bitWidth: 1
+          cr_pds_usb_pwr_off:
+            bitOffset: 20
+            bitWidth: 1
+          cr_pds_usb_reset:
+            bitOffset: 21
+            bitWidth: 1
+          cr_pds_usb_mem_stby:
+            bitOffset: 22
+            bitWidth: 1
+          cr_pds_usb_gate_clk:
+            bitOffset: 23
+            bitWidth: 1
+          cr_pds_misc_pwr_off:
+            bitOffset: 24
+            bitWidth: 1
+          cr_pds_misc_reset:
+            bitOffset: 25
+            bitWidth: 1
+          cr_pds_misc_mem_stby:
+            bitOffset: 26
+            bitWidth: 1
+          cr_pds_misc_gate_clk:
+            bitOffset: 27
+            bitWidth: 1
+      pds_stat:
+        description: pds_stat.
+        addressOffset: 0x1C
+        fields:
+          ro_pds_state:
+            bitOffset: 0
+            bitWidth: 5
+          ro_pds_rf_state:
+            bitOffset: 8
+            bitWidth: 5
+          pds_reset_event:
+            bitOffset: 24
+            bitWidth: 3
+          pds_clr_reset_event:
+            bitOffset: 31
+            bitWidth: 1
+      pds_ram1:
+        description: pds_ram1.
+        addressOffset: 0x20
+        fields:
+          cr_pds_ram_clk_cnt:
+            bitOffset: 8
+            bitWidth: 6
+          cr_pds_ram_clk2_cnt:
+            bitOffset: 16
+            bitWidth: 6
+          cr_pds_ctrl_np_ram_clk:
+            bitOffset: 24
+            bitWidth: 1
+          cr_pds_ctrl_wb_ram_clk:
+            bitOffset: 26
+            bitWidth: 1
+          cr_pds_ctrl_usb_ram_clk:
+            bitOffset: 27
+            bitWidth: 1
+          cr_pds_ctrl_misc_ram_clk:
+            bitOffset: 28
+            bitWidth: 1
+          cr_pds_ctrl_ram_clk2:
+            bitOffset: 30
+            bitWidth: 1
+          cr_pds_ctrl_ram_clk:
+            bitOffset: 31
+            bitWidth: 1
+      PDS_CTL5:
+        description: PDS_CTL5.
+        addressOffset: 0x24
+        fields:
+          cr_np_wfi_mask:
+            bitOffset: 0
+            bitWidth: 1
+          cr_pds_pad_od_en:
+            bitOffset: 1
+            bitWidth: 1
+          cr_pds_ctrl_usb33:
+            bitOffset: 8
+            bitWidth: 1
+          cr_pds_pd_ldo18io:
+            bitOffset: 9
+            bitWidth: 1
+          cr_pds_gpio_keep_en:
+            bitOffset: 16
+            bitWidth: 3
+      PDS_RAM2:
+        description: PDS_RAM2.
+        addressOffset: 0x28
+        fields:
+          cr_wram_slp:
+            bitOffset: 0
+            bitWidth: 10
+          cr_wram_ret:
+            bitOffset: 10
+            bitWidth: 10
+      pds_gpio_i_set:
+        description: pds_gpio_i_set.
+        addressOffset: 0x30
+        fields:
+          cr_pds_gpio_ie_set:
+            bitOffset: 0
+            bitWidth: 2
+          cr_pds_gpio_pd_set:
+            bitOffset: 3
+            bitWidth: 2
+          cr_pds_gpio_pu_set:
+            bitOffset: 6
+            bitWidth: 2
+      pds_gpio_pd_set:
+        description: pds_gpio_pd_set.
+        addressOffset: 0x34
+        fields:
+          cr_pds_gpio_set_int_mask:
+            bitOffset: 0
+            bitWidth: 31
+      pds_gpio_int:
+        description: pds_gpio_int.
+        addressOffset: 0x40
+        fields:
+          pds_gpio_set1_int_clr:
+            bitOffset: 2
+            bitWidth: 1
+          pds_gpio_set1_int_mode:
+            bitOffset: 4
+            bitWidth: 4
+          pds_gpio_set2_int_clr:
+            bitOffset: 10
+            bitWidth: 1
+          pds_gpio_set2_int_mode:
+            bitOffset: 12
+            bitWidth: 4
+          pds_gpio_set3_int_clr:
+            bitOffset: 18
+            bitWidth: 1
+          pds_gpio_set3_int_mode:
+            bitOffset: 20
+            bitWidth: 4
+          pds_gpio_set4_int_clr:
+            bitOffset: 26
+            bitWidth: 1
+          pds_gpio_set4_int_mode:
+            bitOffset: 28
+            bitWidth: 4
+      pds_gpio_stat:
+        description: pds_gpio_stat.
+        addressOffset: 0x44
+        fields:
+          pds_gpio_int_stat:
+            bitOffset: 0
+            bitWidth: 31
+      PDS_RAM3:
+        description: PDS_RAM3.
+        addressOffset: 0x48
+        fields:
+          cr_ocram_ret:
+            bitOffset: 0
+            bitWidth: 20
+      PDS_RAM4:
+        description: PDS_RAM4.
+        addressOffset: 0x4C
+        fields:
+          cr_ocram_slp:
+            bitOffset: 0
+            bitWidth: 20
+      cpu_core_cfg1:
+        description: cpu_core_cfg1.
+        addressOffset: 0x114
+        fields:
+          reg_pll_sel:
+            bitOffset: 4
+            bitWidth: 2
+          reg_mcu1_clk_en:
+            bitOffset: 8
+            bitWidth: 1
+      cpu_core_cfg14:
+        description: cpu_core_cfg14.
+        addressOffset: 0x148
+        fields:
+          e906_rst_addr:
+            bitOffset: 0
+            bitWidth: 32
+      rc32m_ctrl0:
+        description: rc32m_ctrl0.
+        addressOffset: 0x300
+        fields:
+          rc32m_cal_done:
+            bitOffset: 0
+            bitWidth: 1
+          rc32m_rdy:
+            bitOffset: 1
+            bitWidth: 1
+          rc32m_cal_inprogress:
+            bitOffset: 2
+            bitWidth: 1
+          rc32m_cal_div:
+            bitOffset: 3
+            bitWidth: 2
+          rc32m_cal_precharge:
+            bitOffset: 5
+            bitWidth: 1
+          rc32m_dig_code_fr_cal:
+            bitOffset: 6
+            bitWidth: 8
+          rc32m_allow_cal:
+            bitOffset: 17
+            bitWidth: 1
+          rc32m_refclk_half:
+            bitOffset: 18
+            bitWidth: 1
+          rc32m_ext_code_en:
+            bitOffset: 19
+            bitWidth: 1
+          rc32m_cal_en:
+            bitOffset: 20
+            bitWidth: 1
+          rc32m_pd:
+            bitOffset: 21
+            bitWidth: 1
+          rc32m_code_fr_ext:
+            bitOffset: 22
+            bitWidth: 8
+      rc32m_ctrl1:
+        description: rc32m_ctrl1.
+        addressOffset: 0x304
+        fields:
+          rc32m_test_en:
+            bitOffset: 0
+            bitWidth: 1
+          rc32m_soft_rst:
+            bitOffset: 1
+            bitWidth: 1
+          rc32m_clk_soft_rst:
+            bitOffset: 2
+            bitWidth: 1
+          rc32m_clk_inv:
+            bitOffset: 3
+            bitWidth: 1
+          rc32m_clk_force_on:
+            bitOffset: 4
+            bitWidth: 1
+      rc32m_ctrl2:
+        description: rc32m_ctrl2.
+        addressOffset: 0x308
+        fields:
+          rc32m_code_fr_ext2:
+            bitOffset: 22
+            bitWidth: 8
+          rc32m_ext_code_sel:
+            bitOffset: 31
+            bitWidth: 1
+      pu_rst_clkpll:
+        description: pu_rst_clkpll.
+        addressOffset: 0x400
+        fields:
+          cr_pds_pu_clkpll_sfreg:
+            bitOffset: 9
+            bitWidth: 1
+          cr_pds_pu_clkpll:
+            bitOffset: 10
+            bitWidth: 1
+      usb_ctl:
+        description: usb_ctl.
+        addressOffset: 0x500
+        fields:
+          reg_usb_sw_rst_n:
+            bitOffset: 0
+            bitWidth: 1
+          reg_usb_ext_susp_n:
+            bitOffset: 1
+            bitWidth: 1
+          reg_usb_wakeup:
+            bitOffset: 2
+            bitWidth: 1
+          reg_usb_l1_wakeup:
+            bitOffset: 3
+            bitWidth: 1
+          reg_usb_drvbus_pol:
+            bitOffset: 4
+            bitWidth: 1
+          reg_usb_iddig:
+            bitOffset: 5
+            bitWidth: 1
+      usb_phy_ctrl:
+        description: usb_phy_ctrl.
+        addressOffset: 0x504
+        fields:
+          reg_usb_phy_ponrst:
+            bitOffset: 0
+            bitWidth: 1
+          reg_usb_phy_oscouten:
+            bitOffset: 1
+            bitWidth: 1
+          reg_usb_phy_xtlsel:
+            bitOffset: 2
+            bitWidth: 2
+          reg_usb_phy_outclksel:
+            bitOffset: 4
+            bitWidth: 1
+          reg_usb_phy_pllaliv:
+            bitOffset: 5
+            bitWidth: 1
+          reg_pu_usb20_psw:
+            bitOffset: 6
+            bitWidth: 1
