@@ -7926,9 +7926,34 @@ DMA request will not be asserted if `transmit_available` is less than this value
           <addressOffset>0x108</addressOffset>
           <fields>
             <field>
-              <name>HBN_RSV2</name>
+              <name>hbn_ldo18io_power_on_dly</name>
               <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
+              <bitWidth>11</bitWidth>
+            </field>
+            <field>
+              <name>hbn_ldo18io_power_off_dly</name>
+              <bitOffset>11</bitOffset>
+              <bitWidth>5</bitWidth>
+            </field>
+            <field>
+              <name>hbn_ldo18io_power_dly_sts</name>
+              <bitOffset>16</bitOffset>
+              <bitWidth>8</bitWidth>
+            </field>
+            <field>
+              <name>hbn_core_unhalt</name>
+              <bitOffset>25</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>hbn_user_boot_sel</name>
+              <bitOffset>26</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>hbn_release_core</name>
+              <bitOffset>28</bitOffset>
+              <bitWidth>4</bitWidth>
             </field>
           </fields>
         </register>
@@ -7938,9 +7963,44 @@ DMA request will not be asserted if `transmit_available` is less than this value
           <addressOffset>0x10C</addressOffset>
           <fields>
             <field>
-              <name>HBN_RSV3</name>
+              <name>hbn_xtal_type</name>
               <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>hbn_xtal_sts</name>
+              <bitOffset>4</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>hbn_flash_power_dly</name>
+              <bitOffset>8</bitOffset>
+              <bitWidth>8</bitWidth>
+            </field>
+            <field>
+              <name>hbn_flash_power_sts</name>
+              <bitOffset>16</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>pds_gpio_keep_pin</name>
+              <bitOffset>20</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>hbn_gpio_keep_pin</name>
+              <bitOffset>24</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>pds_gpio_keep_sts</name>
+              <bitOffset>28</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>hbn_gpio_keep_sts</name>
+              <bitOffset>30</bitOffset>
+              <bitWidth>2</bitWidth>
             </field>
           </fields>
         </register>

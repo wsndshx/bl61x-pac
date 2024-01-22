@@ -373,13 +373,49 @@ HBN:
       description: HBN_RSV2.
       addressOffset: 0x108
       fields:
-        HBN_RSV2:
+        hbn_ldo18io_power_on_dly:
           bitOffset: 0
-          bitWidth: 32
+          bitWidth: 11
+        hbn_ldo18io_power_off_dly:
+          bitOffset: 11
+          bitWidth: 5
+        hbn_ldo18io_power_dly_sts:
+          bitOffset: 16
+          bitWidth: 8
+        hbn_core_unhalt:
+          bitOffset: 25
+          bitWidth: 1
+        hbn_user_boot_sel:
+          bitOffset: 26
+          bitWidth: 2
+        hbn_release_core:
+          bitOffset: 28
+          bitWidth: 4
     HBN_RSV3:
       description: HBN_RSV3.
       addressOffset: 0x10C
       fields:
-        HBN_RSV3:
+        hbn_xtal_type:
           bitOffset: 0
-          bitWidth: 32
+          bitWidth: 4
+        hbn_xtal_sts:
+          bitOffset: 4
+          bitWidth: 4
+        hbn_flash_power_dly:
+          bitOffset: 8
+          bitWidth: 8
+        hbn_flash_power_sts:
+          bitOffset: 16
+          bitWidth: 4
+        pds_gpio_keep_pin:
+          bitOffset: 20
+          bitWidth: 4
+        hbn_gpio_keep_pin:
+          bitOffset: 24
+          bitWidth: 4
+        pds_gpio_keep_sts:
+          bitOffset: 28
+          bitWidth: 2
+        hbn_gpio_keep_sts:
+          bitOffset: 30
+          bitWidth: 2

@@ -2,23 +2,98 @@
 pub type R = crate::R<HBN_RSV2_SPEC>;
 #[doc = "Register `HBN_RSV2` writer"]
 pub type W = crate::W<HBN_RSV2_SPEC>;
-#[doc = "Field `HBN_RSV2` reader - "]
-pub type HBN_RSV2_R = crate::FieldReader<u32>;
-#[doc = "Field `HBN_RSV2` writer - "]
-pub type HBN_RSV2_W<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
+#[doc = "Field `hbn_ldo18io_power_on_dly` reader - "]
+pub type HBN_LDO18IO_POWER_ON_DLY_R = crate::FieldReader<u16>;
+#[doc = "Field `hbn_ldo18io_power_on_dly` writer - "]
+pub type HBN_LDO18IO_POWER_ON_DLY_W<'a, REG> = crate::FieldWriter<'a, REG, 11, u16>;
+#[doc = "Field `hbn_ldo18io_power_off_dly` reader - "]
+pub type HBN_LDO18IO_POWER_OFF_DLY_R = crate::FieldReader;
+#[doc = "Field `hbn_ldo18io_power_off_dly` writer - "]
+pub type HBN_LDO18IO_POWER_OFF_DLY_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
+#[doc = "Field `hbn_ldo18io_power_dly_sts` reader - "]
+pub type HBN_LDO18IO_POWER_DLY_STS_R = crate::FieldReader;
+#[doc = "Field `hbn_ldo18io_power_dly_sts` writer - "]
+pub type HBN_LDO18IO_POWER_DLY_STS_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
+#[doc = "Field `hbn_core_unhalt` reader - "]
+pub type HBN_CORE_UNHALT_R = crate::BitReader;
+#[doc = "Field `hbn_core_unhalt` writer - "]
+pub type HBN_CORE_UNHALT_W<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `hbn_user_boot_sel` reader - "]
+pub type HBN_USER_BOOT_SEL_R = crate::FieldReader;
+#[doc = "Field `hbn_user_boot_sel` writer - "]
+pub type HBN_USER_BOOT_SEL_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
+#[doc = "Field `hbn_release_core` reader - "]
+pub type HBN_RELEASE_CORE_R = crate::FieldReader;
+#[doc = "Field `hbn_release_core` writer - "]
+pub type HBN_RELEASE_CORE_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
-    #[doc = "Bits 0:31"]
+    #[doc = "Bits 0:10"]
     #[inline(always)]
-    pub fn hbn_rsv2(&self) -> HBN_RSV2_R {
-        HBN_RSV2_R::new(self.bits)
+    pub fn hbn_ldo18io_power_on_dly(&self) -> HBN_LDO18IO_POWER_ON_DLY_R {
+        HBN_LDO18IO_POWER_ON_DLY_R::new((self.bits & 0x07ff) as u16)
+    }
+    #[doc = "Bits 11:15"]
+    #[inline(always)]
+    pub fn hbn_ldo18io_power_off_dly(&self) -> HBN_LDO18IO_POWER_OFF_DLY_R {
+        HBN_LDO18IO_POWER_OFF_DLY_R::new(((self.bits >> 11) & 0x1f) as u8)
+    }
+    #[doc = "Bits 16:23"]
+    #[inline(always)]
+    pub fn hbn_ldo18io_power_dly_sts(&self) -> HBN_LDO18IO_POWER_DLY_STS_R {
+        HBN_LDO18IO_POWER_DLY_STS_R::new(((self.bits >> 16) & 0xff) as u8)
+    }
+    #[doc = "Bit 25"]
+    #[inline(always)]
+    pub fn hbn_core_unhalt(&self) -> HBN_CORE_UNHALT_R {
+        HBN_CORE_UNHALT_R::new(((self.bits >> 25) & 1) != 0)
+    }
+    #[doc = "Bits 26:27"]
+    #[inline(always)]
+    pub fn hbn_user_boot_sel(&self) -> HBN_USER_BOOT_SEL_R {
+        HBN_USER_BOOT_SEL_R::new(((self.bits >> 26) & 3) as u8)
+    }
+    #[doc = "Bits 28:31"]
+    #[inline(always)]
+    pub fn hbn_release_core(&self) -> HBN_RELEASE_CORE_R {
+        HBN_RELEASE_CORE_R::new(((self.bits >> 28) & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:31"]
+    #[doc = "Bits 0:10"]
     #[inline(always)]
     #[must_use]
-    pub fn hbn_rsv2(&mut self) -> HBN_RSV2_W<HBN_RSV2_SPEC> {
-        HBN_RSV2_W::new(self, 0)
+    pub fn hbn_ldo18io_power_on_dly(&mut self) -> HBN_LDO18IO_POWER_ON_DLY_W<HBN_RSV2_SPEC> {
+        HBN_LDO18IO_POWER_ON_DLY_W::new(self, 0)
+    }
+    #[doc = "Bits 11:15"]
+    #[inline(always)]
+    #[must_use]
+    pub fn hbn_ldo18io_power_off_dly(&mut self) -> HBN_LDO18IO_POWER_OFF_DLY_W<HBN_RSV2_SPEC> {
+        HBN_LDO18IO_POWER_OFF_DLY_W::new(self, 11)
+    }
+    #[doc = "Bits 16:23"]
+    #[inline(always)]
+    #[must_use]
+    pub fn hbn_ldo18io_power_dly_sts(&mut self) -> HBN_LDO18IO_POWER_DLY_STS_W<HBN_RSV2_SPEC> {
+        HBN_LDO18IO_POWER_DLY_STS_W::new(self, 16)
+    }
+    #[doc = "Bit 25"]
+    #[inline(always)]
+    #[must_use]
+    pub fn hbn_core_unhalt(&mut self) -> HBN_CORE_UNHALT_W<HBN_RSV2_SPEC> {
+        HBN_CORE_UNHALT_W::new(self, 25)
+    }
+    #[doc = "Bits 26:27"]
+    #[inline(always)]
+    #[must_use]
+    pub fn hbn_user_boot_sel(&mut self) -> HBN_USER_BOOT_SEL_W<HBN_RSV2_SPEC> {
+        HBN_USER_BOOT_SEL_W::new(self, 26)
+    }
+    #[doc = "Bits 28:31"]
+    #[inline(always)]
+    #[must_use]
+    pub fn hbn_release_core(&mut self) -> HBN_RELEASE_CORE_W<HBN_RSV2_SPEC> {
+        HBN_RELEASE_CORE_W::new(self, 28)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]
