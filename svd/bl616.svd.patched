@@ -11184,5 +11184,323 @@ DMA request will not be asserted if `transmit_available` is less than this value
         </register>
       </registers>
     </peripheral>
+    <peripheral>
+      <name>MCU_MISC</name>
+      <description>MCU Miscellaneous Registers</description>
+      <baseAddress>0x20009000</baseAddress>
+      <addressBlock>
+        <offset>0x0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <register>
+          <name>mcu_bus_cfg0</name>
+          <description>MCU Bus Configuration 0 Register. Controls MCU bus configuration settings.</description>
+          <addressOffset>0x0</addressOffset>
+          <fields>
+            <field>
+              <name>reg_mcu_infra_timeout_en</name>
+              <description>MCU infrastructure timeout enable. When this bit is set, a timeout occurs if a transaction through the MCU bus takes longer than reg_mcu_infra_timeout_value.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>reg_mcu_infra_timeout_clr</name>
+              <description>MCU infrastructure timeout clear. Writing 1 to this bit clears the timeout, if one is active.</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>sts_mcu_infra_timeout</name>
+              <description>MCU infrastructure timeout status. This bit is set when a timeout occurs.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>mcu_bus_cfg1</name>
+          <description>MCU Bus Configuration 1 Register. Controls MCU bus configuration settings.</description>
+          <addressOffset>0x4</addressOffset>
+          <fields>
+            <field>
+              <name>reg_mcu1_hqos</name>
+              <description>MCU1 high quality of service (QoS) enable. When this bit is set, MCU1 gets high QoS on the bus.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>reg_mcu1_awqos</name>
+              <description>MCU1 address write QoS enable. When this bit is set, MCU1 gets high QoS on address write operations on the bus.</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>reg_mcu1_arqos</name>
+              <description>MCU1 address read QoS enable. When this bit is set, MCU1 gets high QoS on address read operations on the bus.</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>reg_x_wthre_mcu2ext</name>
+              <description>Write threshold for MCU2 to external APB slaves. This field controls the write threshold for MCU2 to external APB slaves.</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>reg_mcu_infra_arb_mode</name>
+              <description>MCU infrastructure arbitration mode. This field controls the arbitration mode for the MCU infrastructure.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>mcu_e907_rtc</name>
+          <description>MCU E907 RTC Register. Controls the E907 RTC settings.</description>
+          <addressOffset>0x14</addressOffset>
+          <fields>
+            <field>
+              <name>reg_mcu_rtc_div</name>
+              <description>MCU RTC divider. This field controls the divider for the RTC clock.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>10</bitWidth>
+            </field>
+            <field>
+              <name>reg_mcu_rtc_clk_sel</name>
+              <description>MCU RTC clock select. This bit controls the clock source for the RTC.</description>
+              <bitOffset>29</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>reg_mcu_rtc_rst</name>
+              <description>MCU RTC reset. Writing 1 to this bit resets the RTC.</description>
+              <bitOffset>30</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>reg_mcu_rtc_en</name>
+              <description>MCU RTC enable. Writing 1 to this bit enables the RTC.</description>
+              <bitOffset>31</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>mcu_cfg1</name>
+          <description>MCU Configuration 1 Register. Controls miscellaneous MCU settings.</description>
+          <addressOffset>0x100</addressOffset>
+          <fields>
+            <field>
+              <name>reg_mcu1_dfs_req</name>
+              <description>MCU1 dynamic frequency scaling (DFS) request. Writing 1 to this bit requests a DFS transition.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>sts_mcu1_dfs_ack</name>
+              <description>MCU1 DFS acknowledge. This bit is set when a DFS transition is acknowledged.</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>reg_mcu1_srst_en</name>
+              <description>MCU1 soft reset enable. This field controls the soft reset enable for MCU1.</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>sts_mcu1_lpmd_b</name>
+              <description>MCU1 low power mode B status. This field indicates the current low power mode B state of MCU1.</description>
+              <bitOffset>10</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>MCU1_WFI_FORCE</name>
+              <description>MCU1 WFI force. Writing 1 to this bit forces MCU1 into WFI.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>mcu1_ndm_rstn_en</name>
+              <description>MCU1 NDM reset enable. Writing 1 to this bit enables the NDM reset for MCU1.</description>
+              <bitOffset>28</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>mcu1_hart_rstn_en</name>
+              <description>MCU1 hart reset enable. Writing 1 to this bit enables the hart reset for MCU1.</description>
+              <bitOffset>29</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>mcu1_log1</name>
+          <description>MCU1 Log 1 Register. Stores information about the last MCU1 exception.</description>
+          <addressOffset>0x110</addressOffset>
+          <fields>
+            <field>
+              <name>sts_mcu1_mcause</name>
+              <description>MCU1 machine cause. This field contains the cause of the last MCU1 exception.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>mcu1_log2</name>
+          <description>MCU1 Log 2 Register. Stores information about the last MCU1 interrupt.</description>
+          <addressOffset>0x114</addressOffset>
+          <fields>
+            <field>
+              <name>sts_mcu1_mintstatus</name>
+              <description>MCU1 machine interrupt status. This field contains the status of the last MCU1 interrupt.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>mcu1_log3</name>
+          <description>MCU1 Log 3 Register. Stores information about the last MCU1 machine status.</description>
+          <addressOffset>0x118</addressOffset>
+          <fields>
+            <field>
+              <name>sts_mcu1_mstatus</name>
+              <description>MCU1 machine status. This field contains the status of the last MCU1 machine instruction.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>mcu1_log4</name>
+          <description>MCU1 Log 4 Register. Stores information about the last MCU1 program counter.</description>
+          <addressOffset>0x11C</addressOffset>
+          <fields>
+            <field>
+              <name>sts_mcu1_sp</name>
+              <description>MCU1 stack pointer. This field contains the value of the MCU1 stack pointer at the time of the last exception.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>sts_mcu1_pc</name>
+              <description>MCU1 program counter. This field contains the value of the MCU1 program counter at the time of the last exception.</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>31</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>mcu1_log5</name>
+          <description>MCU1 Log 5 Register. Stores information about the last MCU1 lockup and halt status.</description>
+          <addressOffset>0x120</addressOffset>
+          <fields>
+            <field>
+              <name>sts_mcu1_lockup</name>
+              <description>MCU1 lockup status. This bit is set when MCU1 is in a lockup state.</description>
+              <bitOffset>24</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>sts_mcu1_halted</name>
+              <description>MCU1 halted status. This bit is set when MCU1 is in a halted state.</description>
+              <bitOffset>25</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>mcu1_ndm_rstn_req</name>
+              <description>MCU1 NDM reset request. Writing 1 to this bit requests a NDM reset for MCU1.</description>
+              <bitOffset>28</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>mcu1_hart_rstn_req</name>
+              <description>MCU1 hart reset request. Writing 1 to this bit requests a hart reset for MCU1.</description>
+              <bitOffset>29</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>cpu_mbist</name>
+          <description>CPU MBIST Register. Controls the CPU memory built-in self-test (MBIST).</description>
+          <addressOffset>0x200</addressOffset>
+          <fields>
+            <field>
+              <name>cpu_mbist_mode</name>
+              <description>CPU MBIST mode. This field controls the MBIST mode for the CPU.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>irom_mbist_mode</name>
+              <description>IROM MBIST mode. This field controls the MBIST mode for the IROM.</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>reg_cpu_mbist_rst_n</name>
+              <description>CPU MBIST reset. Writing 1 to this bit resets the CPU MBIST.</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>cpu_mbist_done</name>
+              <description>CPU MBIST done. This field indicates the status of the CPU MBIST.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>6</bitWidth>
+            </field>
+            <field>
+              <name>irom_mbist_done</name>
+              <description>IROM MBIST done. This field indicates the status of the IROM MBIST.</description>
+              <bitOffset>22</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>cpu_mbist_fail</name>
+              <description>CPU MBIST fail. This field indicates the status of the CPU MBIST.</description>
+              <bitOffset>24</bitOffset>
+              <bitWidth>6</bitWidth>
+            </field>
+            <field>
+              <name>irom_mbist_fail</name>
+              <description>IROM MBIST fail. This field indicates the status of the IROM MBIST.</description>
+              <bitOffset>30</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>irom1_misr_dataout_0</name>
+          <description>IROM1 MISR Data Out 0 Register. Stores the MISR data output for IROM1.</description>
+          <addressOffset>0x208</addressOffset>
+          <fields>
+            <field>
+              <name>irom_misr_dataout_0</name>
+              <description>IROM MISR data out 0. This field contains the MISR data output for IROM1.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>irom1_misr_dataout_1</name>
+          <description>IROM1 MISR Data Out 1 Register. Stores the MISR data output for IROM1.</description>
+          <addressOffset>0x20C</addressOffset>
+          <fields>
+            <field>
+              <name>irom_misr_dataout_1</name>
+              <description>IROM MISR data out 1. This field contains the MISR data output for IROM1.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+            </field>
+          </fields>
+        </register>
+      </registers>
+    </peripheral>
   </peripherals>
 </device>

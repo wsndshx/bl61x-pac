@@ -9,3 +9,4 @@ _include:
   - "./peripherals/HBN.yaml"
   - "./peripherals/PDS.yaml"
   - "./peripherals/CCI.yaml"
+  - "./peripherals/MCU_MISC.yaml"

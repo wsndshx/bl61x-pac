@@ -1535,6 +1535,52 @@ impl core::fmt::Debug for CCI {
 }
 #[doc = "CCI"]
 pub mod cci;
+#[doc = "MCU Miscellaneous Registers"]
+pub struct MCU_MISC {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for MCU_MISC {}
+impl MCU_MISC {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const mcu_misc::RegisterBlock = 0x2000_9000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const mcu_misc::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for MCU_MISC {
+    type Target = mcu_misc::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for MCU_MISC {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MCU_MISC").finish()
+    }
+}
+#[doc = "MCU Miscellaneous Registers"]
+pub mod mcu_misc;
 #[no_mangle]
 static mut DEVICE_PERIPHERALS: bool = false;
 #[doc = r" All the peripherals."]
@@ -1606,6 +1652,8 @@ pub struct Peripherals {
     pub PDS: PDS,
     #[doc = "CCI"]
     pub CCI: CCI,
+    #[doc = "MCU_MISC"]
+    pub MCU_MISC: MCU_MISC,
 }
 impl Peripherals {
     #[doc = r" Returns all the peripherals *once*."]
@@ -1725,6 +1773,9 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             CCI: CCI {
+                _marker: PhantomData,
+            },
+            MCU_MISC: MCU_MISC {
                 _marker: PhantomData,
             },
         }

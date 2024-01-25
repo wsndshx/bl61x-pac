@@ -1,0 +1,206 @@
+_add:
+  MCU_MISC:
+    description: MCU Miscellaneous Registers
+    baseAddress: 0x20009000
+    addressBlock:
+      offset: 0x0
+      size: 0x1000
+      usage: registers
+    registers:
+      mcu_bus_cfg0:
+        description: MCU Bus Configuration 0 Register. Controls MCU bus configuration settings.
+        addressOffset: 0x0
+        fields:
+          reg_mcu_infra_timeout_en:
+            description: MCU infrastructure timeout enable. When this bit is set, a timeout occurs if a transaction through the MCU bus takes longer than
+              reg_mcu_infra_timeout_value.
+            bitOffset: 0
+            bitWidth: 1
+          reg_mcu_infra_timeout_clr:
+            description: MCU infrastructure timeout clear. Writing 1 to this bit clears the timeout, if one is active.
+            bitOffset: 1
+            bitWidth: 1
+          sts_mcu_infra_timeout:
+            description: MCU infrastructure timeout status. This bit is set when a timeout occurs.
+            bitOffset: 16
+            bitWidth: 1
+      mcu_bus_cfg1:
+        description: MCU Bus Configuration 1 Register. Controls MCU bus configuration settings.
+        addressOffset: 0x4
+        fields:
+          reg_mcu1_hqos:
+            description: MCU1 high quality of service (QoS) enable. When this bit is set, MCU1 gets high QoS on the bus.
+            bitOffset: 0
+            bitWidth: 1
+          reg_mcu1_awqos:
+            description: MCU1 address write QoS enable. When this bit is set, MCU1 gets high QoS on address write operations on the bus.
+            bitOffset: 1
+            bitWidth: 1
+          reg_mcu1_arqos:
+            description: MCU1 address read QoS enable. When this bit is set, MCU1 gets high QoS on address read operations on the bus.
+            bitOffset: 2
+            bitWidth: 1
+          reg_x_wthre_mcu2ext:
+            description: Write threshold for MCU2 to external APB slaves. This field controls the write threshold for MCU2 to external APB slaves.
+            bitOffset: 7
+            bitWidth: 2
+          reg_mcu_infra_arb_mode:
+            description: MCU infrastructure arbitration mode. This field controls the arbitration mode for the MCU infrastructure.
+            bitOffset: 16
+            bitWidth: 1
+      mcu_e907_rtc:
+        description: MCU E907 RTC Register. Controls the E907 RTC settings.
+        addressOffset: 0x14
+        fields:
+          reg_mcu_rtc_div:
+            description: MCU RTC divider. This field controls the divider for the RTC clock.
+            bitOffset: 0
+            bitWidth: 10
+          reg_mcu_rtc_clk_sel:
+            description: MCU RTC clock select. This bit controls the clock source for the RTC.
+            bitOffset: 29
+            bitWidth: 1
+          reg_mcu_rtc_rst:
+            description: MCU RTC reset. Writing 1 to this bit resets the RTC.
+            bitOffset: 30
+            bitWidth: 1
+          reg_mcu_rtc_en:
+            description: MCU RTC enable. Writing 1 to this bit enables the RTC.
+            bitOffset: 31
+            bitWidth: 1
+      mcu_cfg1:
+        description: MCU Configuration 1 Register. Controls miscellaneous MCU settings.
+        addressOffset: 0x100
+        fields:
+          reg_mcu1_dfs_req:
+            description: MCU1 dynamic frequency scaling (DFS) request. Writing 1 to this bit requests a DFS transition.
+            bitOffset: 0
+            bitWidth: 1
+          sts_mcu1_dfs_ack:
+            description: MCU1 DFS acknowledge. This bit is set when a DFS transition is acknowledged.
+            bitOffset: 2
+            bitWidth: 1
+          reg_mcu1_srst_en:
+            description: MCU1 soft reset enable. This field controls the soft reset enable for MCU1.
+            bitOffset: 4
+            bitWidth: 2
+          sts_mcu1_lpmd_b:
+            description: MCU1 low power mode B status. This field indicates the current low power mode B state of MCU1.
+            bitOffset: 10
+            bitWidth: 2
+          MCU1_WFI_FORCE:
+            description: MCU1 WFI force. Writing 1 to this bit forces MCU1 into WFI.
+            bitOffset: 16
+            bitWidth: 1
+          mcu1_ndm_rstn_en:
+            description: MCU1 NDM reset enable. Writing 1 to this bit enables the NDM reset for MCU1.
+            bitOffset: 28
+            bitWidth: 1
+          mcu1_hart_rstn_en:
+            description: MCU1 hart reset enable. Writing 1 to this bit enables the hart reset for MCU1.
+            bitOffset: 29
+            bitWidth: 1
+      mcu1_log1:
+        description: MCU1 Log 1 Register. Stores information about the last MCU1 exception.
+        addressOffset: 0x110
+        fields:
+          sts_mcu1_mcause:
+            description: MCU1 machine cause. This field contains the cause of the last MCU1 exception.
+            bitOffset: 0
+            bitWidth: 32
+      mcu1_log2:
+        description: MCU1 Log 2 Register. Stores information about the last MCU1 interrupt.
+        addressOffset: 0x114
+        fields:
+          sts_mcu1_mintstatus:
+            description: MCU1 machine interrupt status. This field contains the status of the last MCU1 interrupt.
+            bitOffset: 0
+            bitWidth: 32
+      mcu1_log3:
+        description: MCU1 Log 3 Register. Stores information about the last MCU1 machine status.
+        addressOffset: 0x118
+        fields:
+          sts_mcu1_mstatus:
+            description: MCU1 machine status. This field contains the status of the last MCU1 machine instruction.
+            bitOffset: 0
+            bitWidth: 32
+      mcu1_log4:
+        description: MCU1 Log 4 Register. Stores information about the last MCU1 program counter.
+        addressOffset: 0x11C
+        fields:
+          sts_mcu1_sp:
+            description: MCU1 stack pointer. This field contains the value of the MCU1 stack pointer at the time of the last exception.
+            bitOffset: 0
+            bitWidth: 1
+          sts_mcu1_pc:
+            description: MCU1 program counter. This field contains the value of the MCU1 program counter at the time of the last exception.
+            bitOffset: 1
+            bitWidth: 31
+      mcu1_log5:
+        description: MCU1 Log 5 Register. Stores information about the last MCU1 lockup and halt status.
+        addressOffset: 0x120
+        fields:
+          sts_mcu1_lockup:
+            description: MCU1 lockup status. This bit is set when MCU1 is in a lockup state.
+            bitOffset: 24
+            bitWidth: 1
+          sts_mcu1_halted:
+            description: MCU1 halted status. This bit is set when MCU1 is in a halted state.
+            bitOffset: 25
+            bitWidth: 1
+          mcu1_ndm_rstn_req:
+            description: MCU1 NDM reset request. Writing 1 to this bit requests a NDM reset for MCU1.
+            bitOffset: 28
+            bitWidth: 1
+          mcu1_hart_rstn_req:
+            description: MCU1 hart reset request. Writing 1 to this bit requests a hart reset for MCU1.
+            bitOffset: 29
+            bitWidth: 1
+      cpu_mbist:
+        description: CPU MBIST Register. Controls the CPU memory built-in self-test (MBIST).
+        addressOffset: 0x200
+        fields:
+          cpu_mbist_mode:
+            description: CPU MBIST mode. This field controls the MBIST mode for the CPU.
+            bitOffset: 0
+            bitWidth: 1
+          irom_mbist_mode:
+            description: IROM MBIST mode. This field controls the MBIST mode for the IROM.
+            bitOffset: 1
+            bitWidth: 1
+          reg_cpu_mbist_rst_n:
+            description: CPU MBIST reset. Writing 1 to this bit resets the CPU MBIST.
+            bitOffset: 8
+            bitWidth: 1
+          cpu_mbist_done:
+            description: CPU MBIST done. This field indicates the status of the CPU MBIST.
+            bitOffset: 16
+            bitWidth: 6
+          irom_mbist_done:
+            description: IROM MBIST done. This field indicates the status of the IROM MBIST.
+            bitOffset: 22
+            bitWidth: 1
+          cpu_mbist_fail:
+            description: CPU MBIST fail. This field indicates the status of the CPU MBIST.
+            bitOffset: 24
+            bitWidth: 6
+          irom_mbist_fail:
+            description: IROM MBIST fail. This field indicates the status of the IROM MBIST.
+            bitOffset: 30
+            bitWidth: 1
+      irom1_misr_dataout_0:
+        description: IROM1 MISR Data Out 0 Register. Stores the MISR data output for IROM1.
+        addressOffset: 0x208
+        fields:
+          irom_misr_dataout_0:
+            description: IROM MISR data out 0. This field contains the MISR data output for IROM1.
+            bitOffset: 0
+            bitWidth: 32
+      irom1_misr_dataout_1:
+        description: IROM1 MISR Data Out 1 Register. Stores the MISR data output for IROM1.
+        addressOffset: 0x20C
+        fields:
+          irom_misr_dataout_1:
+            description: IROM MISR data out 1. This field contains the MISR data output for IROM1.
+            bitOffset: 0
+            bitWidth: 32
