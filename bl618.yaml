@@ -10,3 +10,4 @@ _include:
   - "./peripherals/PDS.yaml"
   - "./peripherals/CCI.yaml"
   - "./peripherals/MCU_MISC.yaml"
+  - "./peripherals/TZC_SEC.yaml"

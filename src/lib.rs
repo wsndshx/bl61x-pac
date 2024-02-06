@@ -1581,6 +1581,52 @@ impl core::fmt::Debug for MCU_MISC {
 }
 #[doc = "MCU Miscellaneous Registers"]
 pub mod mcu_misc;
+#[doc = "TrustZone Controller Secure Configuration"]
+pub struct TZC_SEC {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for TZC_SEC {}
+impl TZC_SEC {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const tzc_sec::RegisterBlock = 0x2000_5000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const tzc_sec::RegisterBlock {
+        Self::PTR
+    }
+    #[doc = r" Steal an instance of this peripheral"]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Ensure that the new instance of the peripheral cannot be used in a way"]
+    #[doc = r" that may race with any existing instances, for example by only"]
+    #[doc = r" accessing read-only or write-only registers, or by consuming the"]
+    #[doc = r" original peripheral and using critical sections to coordinate"]
+    #[doc = r" access between multiple new instances."]
+    #[doc = r""]
+    #[doc = r" Additionally, other software such as HALs may rely on only one"]
+    #[doc = r" peripheral instance existing to ensure memory safety; ensure"]
+    #[doc = r" no stolen instances are passed to such software."]
+    pub unsafe fn steal() -> Self {
+        Self {
+            _marker: PhantomData,
+        }
+    }
+}
+impl Deref for TZC_SEC {
+    type Target = tzc_sec::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for TZC_SEC {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TZC_SEC").finish()
+    }
+}
+#[doc = "TrustZone Controller Secure Configuration"]
+pub mod tzc_sec;
 #[no_mangle]
 static mut DEVICE_PERIPHERALS: bool = false;
 #[doc = r" All the peripherals."]
@@ -1654,6 +1700,8 @@ pub struct Peripherals {
     pub CCI: CCI,
     #[doc = "MCU_MISC"]
     pub MCU_MISC: MCU_MISC,
+    #[doc = "TZC_SEC"]
+    pub TZC_SEC: TZC_SEC,
 }
 impl Peripherals {
     #[doc = r" Returns all the peripherals *once*."]
@@ -1776,6 +1824,9 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             MCU_MISC: MCU_MISC {
+                _marker: PhantomData,
+            },
+            TZC_SEC: TZC_SEC {
                 _marker: PhantomData,
             },
         }

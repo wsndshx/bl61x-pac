@@ -11502,5 +11502,2100 @@ DMA request will not be asserted if `transmit_available` is less than this value
         </register>
       </registers>
     </peripheral>
+    <peripheral>
+      <name>TZC_SEC</name>
+      <description>TrustZone Controller Secure Configuration</description>
+      <baseAddress>0x20005000</baseAddress>
+      <addressBlock>
+        <offset>0x0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <register>
+          <name>tzc_rom_tzsrg_ctrl</name>
+          <description>TZC ROM TrustZone Security Region Control</description>
+          <addressOffset>0x40</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_rom_tzsrg_r0_id_en</name>
+              <description>TZC ROM TrustZone Security Region 0 ID Enable</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>tzc_rom_tzsrg_r1_id_en</name>
+              <description>TZC ROM TrustZone Security Region 1 ID Enable</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>tzc_rom_tzsrg_r2_id_en</name>
+              <description>TZC ROM TrustZone Security Region 2 ID Enable</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>tzc_rom_tzsrg_rx_id_en</name>
+              <description>TZC ROM TrustZone Security Region RX ID Enable</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>tzc_rom_tzsrg_r0_en</name>
+              <description>TZC ROM TrustZone Security Region 0 Enable</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_rom_tzsrg_r1_en</name>
+              <description>TZC ROM TrustZone Security Region 1 Enable</description>
+              <bitOffset>17</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_rom_tzsrg_r2_en</name>
+              <description>TZC ROM TrustZone Security Region 2 Enable</description>
+              <bitOffset>18</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_rom_tzsrg_rx_en</name>
+              <description>TZC ROM TrustZone Security Region RX Enable</description>
+              <bitOffset>19</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bus_rmp_en</name>
+              <description>TZC Bus Region Mapping Enable</description>
+              <bitOffset>22</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bus_rmp_en_lock</name>
+              <description>TZC Bus Region Mapping Enable Lock</description>
+              <bitOffset>23</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_rom_tzsrg_r0_lock</name>
+              <description>TZC ROM TrustZone Security Region 0 Lock</description>
+              <bitOffset>24</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_rom_tzsrg_r1_lock</name>
+              <description>TZC ROM TrustZone Security Region 1 Lock</description>
+              <bitOffset>25</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_rom_tzsrg_r2_lock</name>
+              <description>TZC ROM TrustZone Security Region 2 Lock</description>
+              <bitOffset>26</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_rom_tzsrg_rx_lock</name>
+              <description>TZC ROM TrustZone Security Region RX Lock</description>
+              <bitOffset>27</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sboot_done</name>
+              <description>TZC Secure Boot Done</description>
+              <bitOffset>28</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_rom_tzsrg_adr_mask</name>
+          <description>TZC ROM TrustZone Security Region Address Mask</description>
+          <addressOffset>0x44</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_rom_tzsrg_adr_mask</name>
+              <description>TZC ROM TrustZone Security Region Address Mask</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>10</bitWidth>
+            </field>
+            <field>
+              <name>tzc_rom_tzsrg_adr_mask_lock</name>
+              <description>TZC ROM TrustZone Security Region Address Mask Lock</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_rom_tzsrg_r0</name>
+          <description>TZC ROM TrustZone Security Region 0 Range</description>
+          <addressOffset>0x48</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_rom_tzsrg_r0_end</name>
+              <description>TZC ROM TrustZone Security Region 0 End Address</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>10</bitWidth>
+            </field>
+            <field>
+              <name>tzc_rom_tzsrg_r0_start</name>
+              <description>TZC ROM TrustZone Security Region 0 Start Address</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>10</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_rom_tzsrg_r1</name>
+          <description>TZC ROM TrustZone Security Region 1 Range</description>
+          <addressOffset>0x4C</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_rom_tzsrg_r1_end</name>
+              <description>TZC ROM TrustZone Security Region 1 End Address</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>10</bitWidth>
+            </field>
+            <field>
+              <name>tzc_rom_tzsrg_r1_start</name>
+              <description>TZC ROM TrustZone Security Region 1 Start Address</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>10</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_rom_tzsrg_r2</name>
+          <description>TZC ROM TrustZone Security Region 2 Range</description>
+          <addressOffset>0x50</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_rom_tzsrg_r2_end</name>
+              <description>TZC ROM TrustZone Security Region 2 End Address</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>10</bitWidth>
+            </field>
+            <field>
+              <name>tzc_rom_tzsrg_r2_start</name>
+              <description>TZC ROM TrustZone Security Region 2 Start Address</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>10</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_bmx_tzmid</name>
+          <description>TZC Bus Matrix TrustZone Master IDs</description>
+          <addressOffset>0x100</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_usb_tzmid</name>
+              <description>TZC USB TrustZone Master ID</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_wifi_tzmid</name>
+              <description>TZC WiFi TrustZone Master ID</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_cci_tzmid</name>
+              <description>TZC CCI TrustZone Master ID</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sdhm_tzmid</name>
+              <description>TZC SDHM TrustZone Master ID</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_emacA_tzmid</name>
+              <description>TZC EMAC-A TrustZone Master ID</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_cpu_tzmid</name>
+              <description>TZC CPU TrustZone Master ID</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_dma_tzmid</name>
+              <description>TZC DMA TrustZone Master ID</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sdum_tzmid</name>
+              <description>TZC SDUM TrustZone Master ID</description>
+              <bitOffset>11</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_usb_tzmid_sel</name>
+              <description>TZC USB TrustZone Master ID Selection</description>
+              <bitOffset>18</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_wifi_tzmid_sel</name>
+              <description>TZC WiFi TrustZone Master ID Selection</description>
+              <bitOffset>19</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_cci_tzmid_sel</name>
+              <description>TZC CCI TrustZone Master ID Selection</description>
+              <bitOffset>20</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sdhm_tzmid_sel</name>
+              <description>TZC SDHM TrustZone Master ID Selection</description>
+              <bitOffset>21</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_emacA_tzmid_sel</name>
+              <description>TZC EMAC-A TrustZone Master ID Selection</description>
+              <bitOffset>22</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_cpu_tzmid_sel</name>
+              <description>TZC CPU TrustZone Master ID Selection</description>
+              <bitOffset>23</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_dma_tzmid_sel</name>
+              <description>TZC DMA TrustZone Master ID Selection</description>
+              <bitOffset>24</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sdum_tzmid_sel</name>
+              <description>TZC SDUM TrustZone Master ID Selection</description>
+              <bitOffset>27</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_bmx_tzmid_lock</name>
+          <description>TZC Bus Matrix TrustZone Master ID Lock</description>
+          <addressOffset>0x104</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_usb_tzmid_lock</name>
+              <description>TZC USB TrustZone Master ID Lock</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_wifi_tzmid_lock</name>
+              <description>TZC WiFi TrustZone Master ID Lock</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_cci_tzmid_lock</name>
+              <description>TZC CCI TrustZone Master ID Lock</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sdhm_tzmid_lock</name>
+              <description>TZC SDHM TrustZone Master ID Lock</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_emacA_tzmid_lock</name>
+              <description>TZC EMAC-A TrustZone Master ID Lock</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_cpu_tzmid_lock</name>
+              <description>TZC CPU TrustZone Master ID Lock</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_dma_tzmid_lock</name>
+              <description>TZC DMA TrustZone Master ID Lock</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sdum_tzmid_lock</name>
+              <description>TZC SDUM TrustZone Master ID Lock</description>
+              <bitOffset>11</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_bmx_s0</name>
+          <description>TrustZone Controller BMX Security Register 0.</description>
+          <addressOffset>0x108</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_bmx_dma_tzsid_en</name>
+              <description>Enable DMA TrustZone Security ID.</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_pwr_tzsid_en</name>
+              <description>Enable Power TrustZone Security ID.</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_sdh_tzsid_en</name>
+              <description>Enable SDH TrustZone Security ID.</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_emac_tzsid_en</name>
+              <description>Enable EMAC TrustZone Security ID.</description>
+              <bitOffset>10</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_sdu_tzsid_en</name>
+              <description>Enable SDU TrustZone Security ID.</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_dma_tzsid_lock</name>
+              <description>Lock DMA TrustZone Security ID.</description>
+              <bitOffset>17</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_pwr_tzsid_lock</name>
+              <description>Lock Power TrustZone Security ID.</description>
+              <bitOffset>19</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_sdh_tzsid_lock</name>
+              <description>Lock SDH TrustZone Security ID.</description>
+              <bitOffset>20</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_emac_tzsid_lock</name>
+              <description>Lock EMAC TrustZone Security ID.</description>
+              <bitOffset>21</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_sdu_tzsid_lock</name>
+              <description>Lock SDU TrustZone Security ID.</description>
+              <bitOffset>22</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_bmx_s1</name>
+          <description>TrustZone Controller BMX Security Register 1.</description>
+          <addressOffset>0x10C</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_bmx_s10_tzsid_en</name>
+              <description>Enable TrustZone Security ID 10.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s11_tzsid_en</name>
+              <description>Enable TrustZone Security ID 11.</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s12_tzsid_en</name>
+              <description>Enable TrustZone Security ID 12.</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s13_tzsid_en</name>
+              <description>Enable TrustZone Security ID 13.</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s14_tzsid_en</name>
+              <description>Enable TrustZone Security ID 14.</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s15_tzsid_en</name>
+              <description>Enable TrustZone Security ID 15.</description>
+              <bitOffset>10</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s16_tzsid_en</name>
+              <description>Enable TrustZone Security ID 16.</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s17_tzsid_en</name>
+              <description>Enable TrustZone Security ID 17.</description>
+              <bitOffset>14</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s18_tzsid_en</name>
+              <description>Enable TrustZone Security ID 18.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s19_tzsid_en</name>
+              <description>Enable TrustZone Security ID 19.</description>
+              <bitOffset>18</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1a_tzsid_en</name>
+              <description>Enable TrustZone Security ID 1A.</description>
+              <bitOffset>20</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1b_tzsid_en</name>
+              <description>Enable TrustZone Security ID 1B.</description>
+              <bitOffset>22</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1c_tzsid_en</name>
+              <description>Enable TrustZone Security ID 1C.</description>
+              <bitOffset>24</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1d_tzsid_en</name>
+              <description>Enable TrustZone Security ID 1D.</description>
+              <bitOffset>26</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1e_tzsid_en</name>
+              <description>Enable TrustZone Security ID 1E.</description>
+              <bitOffset>28</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1f_tzsid_en</name>
+              <description>Enable TrustZone Security ID 1F.</description>
+              <bitOffset>30</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_bmx_s2</name>
+          <description>TrustZone Controller BMX Security Register 2.</description>
+          <addressOffset>0x110</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_bmx_s20_tzsid_en</name>
+              <description>Enable TrustZone Security ID 20.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s21_tzsid_en</name>
+              <description>Enable TrustZone Security ID 21.</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s22_tzsid_en</name>
+              <description>Enable TrustZone Security ID 22.</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s23_tzsid_en</name>
+              <description>Enable TrustZone Security ID 23.</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s24_tzsid_en</name>
+              <description>Enable TrustZone Security ID 24.</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s25_tzsid_en</name>
+              <description>Enable TrustZone Security ID 25.</description>
+              <bitOffset>10</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s26_tzsid_en</name>
+              <description>Enable TrustZone Security ID 26.</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s27_tzsid_en</name>
+              <description>Enable TrustZone Security ID 27.</description>
+              <bitOffset>14</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s28_tzsid_en</name>
+              <description>Enable TrustZone Security ID 28.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s29_tzsid_en</name>
+              <description>Enable TrustZone Security ID 29.</description>
+              <bitOffset>18</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s2a_tzsid_en</name>
+              <description>Enable TrustZone Security ID 2A.</description>
+              <bitOffset>20</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s2b_tzsid_en</name>
+              <description>Enable TrustZone Security ID 2B.</description>
+              <bitOffset>22</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s2c_tzsid_en</name>
+              <description>Enable TrustZone Security ID 2C.</description>
+              <bitOffset>24</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s2d_tzsid_en</name>
+              <description>Enable TrustZone Security ID 2D.</description>
+              <bitOffset>26</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s2e_tzsid_en</name>
+              <description>Enable TrustZone Security ID 2E.</description>
+              <bitOffset>28</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s2f_tzsid_en</name>
+              <description>Enable TrustZone Security ID 2F.</description>
+              <bitOffset>30</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_bmx_s_lock</name>
+          <description>TrustZone Controller BMX Security Lock Register.</description>
+          <addressOffset>0x114</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_bmx_s10_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 10.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s11_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 11.</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s12_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 12.</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s13_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 13.</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s14_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 14.</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s15_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 15.</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s16_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 16.</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s17_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 17.</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s18_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 18.</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s19_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 19.</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1a_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 1A.</description>
+              <bitOffset>10</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1b_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 1B.</description>
+              <bitOffset>11</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1c_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 1C.</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1d_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 1D.</description>
+              <bitOffset>13</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1e_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 1E.</description>
+              <bitOffset>14</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1f_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 1F.</description>
+              <bitOffset>15</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s20_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 20.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s21_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 21.</description>
+              <bitOffset>17</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s22_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 22.</description>
+              <bitOffset>18</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s23_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 23.</description>
+              <bitOffset>19</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s24_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 24.</description>
+              <bitOffset>20</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s25_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 25.</description>
+              <bitOffset>21</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s26_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 26.</description>
+              <bitOffset>22</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s27_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 27.</description>
+              <bitOffset>23</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s28_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 28.</description>
+              <bitOffset>24</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s29_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 29.</description>
+              <bitOffset>25</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s2a_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 2A.</description>
+              <bitOffset>26</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s2b_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 2B.</description>
+              <bitOffset>27</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s2c_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 2C.</description>
+              <bitOffset>28</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s2d_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 2D.</description>
+              <bitOffset>29</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s2e_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 2E.</description>
+              <bitOffset>30</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s2f_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 2F.</description>
+              <bitOffset>31</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_bmx_s1a</name>
+          <description>TrustZone Controller BMX Security Register 1A.</description>
+          <addressOffset>0x118</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_bmx_s1a0_tzsid_en</name>
+              <description>Enable TrustZone Security ID 1A0.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1a1_tzsid_en</name>
+              <description>Enable TrustZone Security ID 1A1.</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1a2_tzsid_en</name>
+              <description>Enable TrustZone Security ID 1A2.</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1a3_tzsid_en</name>
+              <description>Enable TrustZone Security ID 1A3.</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1a4_tzsid_en</name>
+              <description>Enable TrustZone Security ID 1A4.</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1a5_tzsid_en</name>
+              <description>Enable TrustZone Security ID 1A5.</description>
+              <bitOffset>10</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1a6_tzsid_en</name>
+              <description>Enable TrustZone Security ID 1A6.</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1a7_tzsid_en</name>
+              <description>Enable TrustZone Security ID 1A7.</description>
+              <bitOffset>14</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1a8_tzsid_en</name>
+              <description>Enable TrustZone Security ID 1A8.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1a9_tzsid_en</name>
+              <description>Enable TrustZone Security ID 1A9.</description>
+              <bitOffset>18</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1aa_tzsid_en</name>
+              <description>Enable TrustZone Security ID 1AA.</description>
+              <bitOffset>20</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1ab_tzsid_en</name>
+              <description>Enable TrustZone Security ID 1AB.</description>
+              <bitOffset>22</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1ac_tzsid_en</name>
+              <description>Enable TrustZone Security ID 1AC.</description>
+              <bitOffset>24</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1ad_tzsid_en</name>
+              <description>Enable TrustZone Security ID 1AD.</description>
+              <bitOffset>26</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1ae_tzsid_en</name>
+              <description>Enable TrustZone Security ID 1AE.</description>
+              <bitOffset>28</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1af_tzsid_en</name>
+              <description>Enable TrustZone Security ID 1AF.</description>
+              <bitOffset>30</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_bmx_s1a_lock</name>
+          <description>TrustZone Controller BMX Security Lock Register 1A.</description>
+          <addressOffset>0x11C</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_bmx_s1a0_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 1A0.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1a1_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 1A1.</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1a2_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 1A2.</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1a3_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 1A3.</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1a4_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 1A4.</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1a5_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 1A5.</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1a6_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 1A6.</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1a7_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 1A7.</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1a8_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 1A8.</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1a9_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 1A9.</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1aa_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 1AA.</description>
+              <bitOffset>10</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1ab_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 1AB.</description>
+              <bitOffset>11</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1ac_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 1AC.</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1ad_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 1AD.</description>
+              <bitOffset>13</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1ae_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 1AE.</description>
+              <bitOffset>14</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_bmx_s1af_tzsid_lock</name>
+              <description>Lock TrustZone Security ID 1AF.</description>
+              <bitOffset>15</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_ocram_tzsrg_ctrl</name>
+          <description>TrustZone Controller OCram TrustZone Security Register Group Control.</description>
+          <addressOffset>0x140</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_ocram_tzsrg_r0_id_en</name>
+              <description>Enable TrustZone Security ID for Range 0.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>tzc_ocram_tzsrg_r1_id_en</name>
+              <description>Enable TrustZone Security ID for Range 1.</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>tzc_ocram_tzsrg_r2_id_en</name>
+              <description>Enable TrustZone Security ID for Range 2.</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>tzc_ocram_tzsrg_rx_id_en</name>
+              <description>Enable TrustZone Security ID for Range X.</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>tzc_ocram_tzsrg_r0_en</name>
+              <description>Enable TrustZone Range 0.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_ocram_tzsrg_r1_en</name>
+              <description>Enable TrustZone Range 1.</description>
+              <bitOffset>17</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_ocram_tzsrg_r2_en</name>
+              <description>Enable TrustZone Range 2.</description>
+              <bitOffset>18</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_ocram_tzsrg_rx_en</name>
+              <description>Enable TrustZone Range X.</description>
+              <bitOffset>19</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_ocram_tzsrg_r0_lock</name>
+              <description>Lock TrustZone Range 0.</description>
+              <bitOffset>20</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_ocram_tzsrg_r1_lock</name>
+              <description>Lock TrustZone Range 1.</description>
+              <bitOffset>21</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_ocram_tzsrg_r2_lock</name>
+              <description>Lock TrustZone Range 2.</description>
+              <bitOffset>22</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_ocram_tzsrg_rx_lock</name>
+              <description>Lock TrustZone Range X.</description>
+              <bitOffset>23</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_ocram_tzsrg_adr_mask</name>
+          <description>TrustZone Controller OCram TrustZone Security Register Group Address Mask.</description>
+          <addressOffset>0x144</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_ocram_tzsrg_adr_mask</name>
+              <description>Address Mask for OCram TrustZone Security Register Group.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>10</bitWidth>
+            </field>
+            <field>
+              <name>tzc_ocram_tzsrg_adr_mask_lock</name>
+              <description>Lock Address Mask for OCram TrustZone Security Register Group.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_ocram_tzsrg_r0</name>
+          <description>TrustZone Controller OCram TrustZone Security Register Group Range 0.</description>
+          <addressOffset>0x148</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_ocram_tzsrg_r0_end</name>
+              <description>End address for TrustZone Range 0.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>10</bitWidth>
+            </field>
+            <field>
+              <name>tzc_ocram_tzsrg_r0_start</name>
+              <description>Start address for TrustZone Range 0.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>10</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_ocram_tzsrg_r1</name>
+          <description>TrustZone Controller OCram TrustZone Security Register Group Range 1.</description>
+          <addressOffset>0x14C</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_ocram_tzsrg_r1_end</name>
+              <description>End address for TrustZone Range 1.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>10</bitWidth>
+            </field>
+            <field>
+              <name>tzc_ocram_tzsrg_r1_start</name>
+              <description>Start address for TrustZone Range 1.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>10</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_ocram_tzsrg_r2</name>
+          <description>TrustZone Controller OCram TrustZone Security Register Group Range 2.</description>
+          <addressOffset>0x150</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_ocram_tzsrg_r2_end</name>
+              <description>End address for TrustZone Range 2.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>10</bitWidth>
+            </field>
+            <field>
+              <name>tzc_ocram_tzsrg_r2_start</name>
+              <description>Start address for TrustZone Range 2.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>10</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_wram_tzsrg_ctrl</name>
+          <description>TrustZone Controller WRam TrustZone Security Register Group Control.</description>
+          <addressOffset>0x180</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_wram_tzsrg_r0_id_en</name>
+              <description>Enable TrustZone Security ID for Range 0.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>tzc_wram_tzsrg_r1_id_en</name>
+              <description>Enable TrustZone Security ID for Range 1.</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>tzc_wram_tzsrg_r2_id_en</name>
+              <description>Enable TrustZone Security ID for Range 2.</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>tzc_wram_tzsrg_rx_id_en</name>
+              <description>Enable TrustZone Security ID for Range X.</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>tzc_wram_tzsrg_r0_en</name>
+              <description>Enable TrustZone Range 0.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_wram_tzsrg_r1_en</name>
+              <description>Enable TrustZone Range 1.</description>
+              <bitOffset>17</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_wram_tzsrg_r2_en</name>
+              <description>Enable TrustZone Range 2.</description>
+              <bitOffset>18</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_wram_tzsrg_rx_en</name>
+              <description>Enable TrustZone Range X.</description>
+              <bitOffset>19</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_wram_tzsrg_r0_lock</name>
+              <description>Lock TrustZone Range 0.</description>
+              <bitOffset>20</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_wram_tzsrg_r1_lock</name>
+              <description>Lock TrustZone Range 1.</description>
+              <bitOffset>21</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_wram_tzsrg_r2_lock</name>
+              <description>Lock TrustZone Range 2.</description>
+              <bitOffset>22</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_wram_tzsrg_rx_lock</name>
+              <description>Lock TrustZone Range X.</description>
+              <bitOffset>23</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_wram_tzsrg_adr_mask</name>
+          <description>TrustZone Controller WRam TrustZone Security Register Group Address Mask.</description>
+          <addressOffset>0x184</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_wram_tzsrg_adr_mask</name>
+              <description>Address Mask for WRam TrustZone Security Register Group.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>10</bitWidth>
+            </field>
+            <field>
+              <name>tzc_wram_tzsrg_adr_mask_lock</name>
+              <description>Lock Address Mask for WRam TrustZone Security Register Group.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_wram_tzsrg_r0</name>
+          <description>TrustZone Controller WRam TrustZone Security Register Group Range 0.</description>
+          <addressOffset>0x188</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_wram_tzsrg_r0_end</name>
+              <description>End address for TrustZone Range 0 in WRam.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>10</bitWidth>
+            </field>
+            <field>
+              <name>tzc_wram_tzsrg_r0_start</name>
+              <description>Start address for TrustZone Range 0 in WRam.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>10</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_wram_tzsrg_r1</name>
+          <description>TrustZone Controller WRam TrustZone Security Register Group Range 1.</description>
+          <addressOffset>0x18C</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_wram_tzsrg_r1_end</name>
+              <description>End address for TrustZone Range 1 in WRam.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>10</bitWidth>
+            </field>
+            <field>
+              <name>tzc_wram_tzsrg_r1_start</name>
+              <description>Start address for TrustZone Range 1 in WRam.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>10</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_wram_tzsrg_r2</name>
+          <description>TrustZone Controller WRam TrustZone Security Register Group Range 2.</description>
+          <addressOffset>0x190</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_wram_tzsrg_r2_end</name>
+              <description>End address for TrustZone Range 2 in WRam.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>10</bitWidth>
+            </field>
+            <field>
+              <name>tzc_wram_tzsrg_r2_start</name>
+              <description>Start address for TrustZone Range 2 in WRam.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>10</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_wifi_dbg</name>
+          <description>TrustZone Controller WiFi Debug.</description>
+          <addressOffset>0x198</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_mac_dbg_dis</name>
+              <description>Disable WiFi MAC Debug.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_sf_tzsrg_ctrl</name>
+          <description>TrustZone Controller SF TrustZone Security Register Group Control.</description>
+          <addressOffset>0x280</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_sf_tzsrg_r0_id_en</name>
+              <description>Enable TrustZone Security ID for Range 0.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sf_tzsrg_r1_id_en</name>
+              <description>Enable TrustZone Security ID for Range 1.</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sf_tzsrg_r2_id_en</name>
+              <description>Enable TrustZone Security ID for Range 2.</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sf_tzsrg_r3_id_en</name>
+              <description>Enable TrustZone Security ID for Range 3.</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sf_tzsrg_rx_id_en</name>
+              <description>Enable TrustZone Security ID for Range X.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sf_tzsrg_r0_en</name>
+              <description>Enable TrustZone Range 0.</description>
+              <bitOffset>20</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sf_tzsrg_r1_en</name>
+              <description>Enable TrustZone Range 1.</description>
+              <bitOffset>21</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sf_tzsrg_r2_en</name>
+              <description>Enable TrustZone Range 2.</description>
+              <bitOffset>22</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sf_tzsrg_r3_en</name>
+              <description>Enable TrustZone Range 3.</description>
+              <bitOffset>23</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sf_tzsrg_rx_en</name>
+              <description>Enable TrustZone Range X.</description>
+              <bitOffset>24</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sf_tzsrg_r0_lock</name>
+              <description>Lock TrustZone Range 0.</description>
+              <bitOffset>25</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sf_tzsrg_r1_lock</name>
+              <description>Lock TrustZone Range 1.</description>
+              <bitOffset>26</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sf_tzsrg_r2_lock</name>
+              <description>Lock TrustZone Range 2.</description>
+              <bitOffset>27</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sf_tzsrg_r3_lock</name>
+              <description>Lock TrustZone Range 3.</description>
+              <bitOffset>28</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sf_tzsrg_rx_lock</name>
+              <description>Lock TrustZone Range X.</description>
+              <bitOffset>29</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_sf_tzsrg_adr_mask</name>
+          <description>TrustZone Controller SF TrustZone Security Register Group Address Mask.</description>
+          <addressOffset>0x284</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_sf_tzsrg_adr_mask</name>
+              <description>Address Mask for SF TrustZone Security Register Group.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>19</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sf_tzsrg_adr_mask_lock</name>
+              <description>Lock Address Mask for SF TrustZone Security Register Group.</description>
+              <bitOffset>31</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_sf_tzsrg_r0</name>
+          <description>TrustZone Controller SF TrustZone Security Register Group Range 0.</description>
+          <addressOffset>0x288</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_sf_tzsrg_r0_end</name>
+              <description>End address for TrustZone Range 0 in SF.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>16</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sf_tzsrg_r0_start</name>
+              <description>Start address for TrustZone Range 0 in SF.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>16</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_sf_tzsrg_r1</name>
+          <description>TrustZone Controller SF TrustZone Security Register Group Range 1.</description>
+          <addressOffset>0x28C</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_sf_tzsrg_r1_end</name>
+              <description>End address for TrustZone Range 1 in SF.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>16</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sf_tzsrg_r1_start</name>
+              <description>Start address for TrustZone Range 1 in SF.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>16</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_sf_tzsrg_r2</name>
+          <description>TrustZone Controller SF TrustZone Security Register Group Range 2.</description>
+          <addressOffset>0x290</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_sf_tzsrg_r2_end</name>
+              <description>End address for TrustZone Range 2 in SF.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>16</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sf_tzsrg_r2_start</name>
+              <description>Start address for TrustZone Range 2 in SF.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>16</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_sf_tzsrg_r3</name>
+          <description>TrustZone Controller SF TrustZone Security Register Group Range 3.</description>
+          <addressOffset>0x294</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_sf_tzsrg_r3_end</name>
+              <description>End address for TrustZone Range 3 in SF.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>16</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sf_tzsrg_r3_start</name>
+              <description>Start address for TrustZone Range 3 in SF.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>16</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_sf_tzsrg_msb</name>
+          <description>TrustZone Controller SF TrustZone Security Register Group MSB.</description>
+          <addressOffset>0x298</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_sf_tzsrg_r0_end_msb</name>
+              <description>MSB of the End address for TrustZone Range 0 in SF.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>3</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sf_tzsrg_r0_start_msb</name>
+              <description>MSB of the Start address for TrustZone Range 0 in SF.</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>3</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sf_tzsrg_r1_end_msb</name>
+              <description>MSB of the End address for TrustZone Range 1 in SF.</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>3</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sf_tzsrg_r1_start_msb</name>
+              <description>MSB of the Start address for TrustZone Range 1 in SF.</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>3</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sf_tzsrg_r2_end_msb</name>
+              <description>MSB of the End address for TrustZone Range 2 in SF.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>3</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sf_tzsrg_r2_start_msb</name>
+              <description>MSB of the Start address for TrustZone Range 2 in SF.</description>
+              <bitOffset>20</bitOffset>
+              <bitWidth>3</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sf_tzsrg_r3_end_msb</name>
+              <description>MSB of the End address for TrustZone Range 3 in SF.</description>
+              <bitOffset>24</bitOffset>
+              <bitWidth>3</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sf_tzsrg_r3_start_msb</name>
+              <description>MSB of the Start address for TrustZone Range 3 in SF.</description>
+              <bitOffset>28</bitOffset>
+              <bitWidth>3</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_mm_bmx_tzmid</name>
+          <description>TrustZone Controller Memory-Mapped Bus Matrix TrustZone Master ID.</description>
+          <addressOffset>0x300</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_codec_tzmid</name>
+              <description>TrustZone Master ID for the Codec.</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_codec_tzmid_sel</name>
+              <description>TrustZone Master ID Select for the Codec.</description>
+              <bitOffset>18</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_mm_bmx_tzmid_lock</name>
+          <description>TrustZone Controller Memory-Mapped Bus Matrix TrustZone Master ID Lock.</description>
+          <addressOffset>0x304</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_codec_tzmid_lock</name>
+              <description>Lock TrustZone Master ID for the Codec.</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_psramb_tzsrg_ctrl</name>
+          <description>TrustZone Controller PsramB TrustZone Security Register Group Control.</description>
+          <addressOffset>0x3A0</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_psramb_tzsrg_r0_id_en</name>
+              <description>Enable TrustZone Security ID for Range 0.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>tzc_psramb_tzsrg_r1_id_en</name>
+              <description>Enable TrustZone Security ID for Range 1.</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>tzc_psramb_tzsrg_r2_id_en</name>
+              <description>Enable TrustZone Security ID for Range 2.</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>tzc_psramb_tzsrg_rx_id_en</name>
+              <description>Enable TrustZone Security ID for Range X.</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>4</bitWidth>
+            </field>
+            <field>
+              <name>tzc_psramb_tzsrg_r0_en</name>
+              <description>Enable TrustZone Range 0.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_psramb_tzsrg_r1_en</name>
+              <description>Enable TrustZone Range 1.</description>
+              <bitOffset>17</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_psramb_tzsrg_r2_en</name>
+              <description>Enable TrustZone Range 2.</description>
+              <bitOffset>18</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_psramb_tzsrg_rx_en</name>
+              <description>Enable TrustZone Range X.</description>
+              <bitOffset>19</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_psramb_tzsrg_r0_lock</name>
+              <description>Lock TrustZone Range 0.</description>
+              <bitOffset>24</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_psramb_tzsrg_r1_lock</name>
+              <description>Lock TrustZone Range 1.</description>
+              <bitOffset>25</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_psramb_tzsrg_r2_lock</name>
+              <description>Lock TrustZone Range 2.</description>
+              <bitOffset>26</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_psramb_tzsrg_rx_lock</name>
+              <description>Lock TrustZone Range X.</description>
+              <bitOffset>27</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_psramb_tzsrg_adr_mask</name>
+          <description>TrustZone Controller PsramB TrustZone Security Register Group Address Mask.</description>
+          <addressOffset>0x3A4</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_psramb_tzsrg_adr_mask</name>
+              <description>Address Mask for PsramB TrustZone Security Register Group.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>16</bitWidth>
+            </field>
+            <field>
+              <name>tzc_psramb_tzsrg_adr_mask_lock</name>
+              <description>Lock Address Mask for PsramB TrustZone Security Register Group.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_psramb_tzsrg_r0</name>
+          <description>TrustZone Controller PsramB TrustZone Security Register Group Range 0.</description>
+          <addressOffset>0x3A8</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_psramb_tzsrg_r0_end</name>
+              <description>End address for TrustZone Range 0 in PsramB.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>16</bitWidth>
+            </field>
+            <field>
+              <name>tzc_psramb_tzsrg_r0_start</name>
+              <description>Start address for TrustZone Range 0 in PsramB.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>16</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_psramb_tzsrg_r1</name>
+          <description>TrustZone Controller PsramB TrustZone Security Register Group Range 1.</description>
+          <addressOffset>0x3AC</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_psramb_tzsrg_r1_end</name>
+              <description>End address for TrustZone Range 1 in PsramB.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>16</bitWidth>
+            </field>
+            <field>
+              <name>tzc_psramb_tzsrg_r1_start</name>
+              <description>Start address for TrustZone Range 1 in PsramB.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>16</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_psramb_tzsrg_r2</name>
+          <description>TrustZone Controller PsramB TrustZone Security Register Group Range 2.</description>
+          <addressOffset>0x3B0</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_psramb_tzsrg_r2_end</name>
+              <description>End address for TrustZone Range 2 in PsramB.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>16</bitWidth>
+            </field>
+            <field>
+              <name>tzc_psramb_tzsrg_r2_start</name>
+              <description>Start address for TrustZone Range 2 in PsramB.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>16</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_glb_ctrl_0</name>
+          <description>TrustZone Controller Global Control 0.</description>
+          <addressOffset>0xF00</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_glb_pwron_rst_tzsid_en</name>
+              <description>TZSID enable for power-on reset.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_glb_cpu_reset_tzsid_en</name>
+              <description>TZSID enable for CPU reset.</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_glb_sys_reset_tzsid_en</name>
+              <description>TZSID enable for system reset.</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_glb_cpu2_reset_tzsid_en</name>
+              <description>TZSID enable for CPU2 reset.</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_glb_misc_tzsid_en</name>
+              <description>TZSID enable for miscellaneous reset.</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_glb_sram_tzsid_en</name>
+              <description>TZSID enable for SRAM reset.</description>
+              <bitOffset>10</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_glb_swrst_tzsid_en</name>
+              <description>TZSID enable for software reset.</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_glb_bmx_tzsid_en</name>
+              <description>TZSID enable for bus matrix reset.</description>
+              <bitOffset>14</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_glb_dbg_tzsid_en</name>
+              <description>TZSID enable for debug reset.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_glb_mbist_tzsid_en</name>
+              <description>TZSID enable for memory bist reset.</description>
+              <bitOffset>18</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_glb_clk_tzsid_en</name>
+              <description>TZSID enable for clock reset.</description>
+              <bitOffset>20</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_glb_int_tzsid_en</name>
+              <description>TZSID enable for interrupt reset.</description>
+              <bitOffset>22</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_glb_pwr_tzsid_en</name>
+              <description>TZSID enable for power reset.</description>
+              <bitOffset>24</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_glb_ctrl_2</name>
+          <description>TrustZone Controller Global Control 2.</description>
+          <addressOffset>0xF08</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_glb_pwron_rst_tzsid_lock</name>
+              <description>Lock for TZSID enable in power-on reset.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_glb_cpu_reset_tzsid_lock</name>
+              <description>Lock for TZSID enable in CPU reset.</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_glb_sys_reset_tzsid_lock</name>
+              <description>Lock for TZSID enable in system reset.</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_glb_cpu2_reset_tzsid_lock</name>
+              <description>Lock for TZSID enable in CPU2 reset.</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_glb_misc_tzsid_lock</name>
+              <description>Lock for TZSID enable in miscellaneous reset.</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_glb_sram_tzsid_lock</name>
+              <description>Lock for TZSID enable in SRAM reset.</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_glb_swrst_tzsid_lock</name>
+              <description>Lock for TZSID enable in software reset.</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_glb_bmx_tzsid_lock</name>
+              <description>Lock for TZSID enable in bus matrix reset.</description>
+              <bitOffset>7</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_glb_dbg_tzsid_lock</name>
+              <description>Lock for TZSID enable in debug reset.</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_glb_mbist_tzsid_lock</name>
+              <description>Lock for TZSID enable in memory bist reset.</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_glb_clk_tzsid_lock</name>
+              <description>Lock for TZSID enable in clock reset.</description>
+              <bitOffset>10</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_glb_int_tzsid_lock</name>
+              <description>Lock for TZSID enable in interrupt reset.</description>
+              <bitOffset>11</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_glb_pwr_tzsid_lock</name>
+              <description>Lock for TZSID enable in power reset.</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_se_ctrl_0</name>
+          <description>TrustZone Controller Secure Engine Control 0.</description>
+          <addressOffset>0xF40</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_se_sha_tzsid_en</name>
+              <description>TZSID enable for SHA in Secure Engine.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_se_aes_tzsid_en</name>
+              <description>TZSID enable for AES in Secure Engine.</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_se_trng_tzsid_en</name>
+              <description>TZSID enable for TRNG in Secure Engine.</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_se_pka_tzsid_en</name>
+              <description>TZSID enable for PKA in Secure Engine.</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_se_cdet_tzsid_en</name>
+              <description>TZSID enable for code detection in Secure Engine.</description>
+              <bitOffset>8</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_se_gmac_tzsid_en</name>
+              <description>TZSID enable for GMAC in Secure Engine.</description>
+              <bitOffset>10</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_se_tzsid_crmd</name>
+              <description>TZSID control for CRMD in Secure Engine.</description>
+              <bitOffset>12</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_se_wdt_dly</name>
+              <description>Watchdog timer delay in Secure Engine.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>16</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_se_ctrl_1</name>
+          <description>TrustZone Controller Secure Engine Control 1.</description>
+          <addressOffset>0xF44</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_sf_cr_tzsid_en</name>
+              <description>TZSID enable for CR in Secure Engine.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sf_sec_tzsid_en</name>
+              <description>TZSID enable for security in Secure Engine.</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>2</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sf_tzsid_crmd</name>
+              <description>TZSID control for CRMD in Secure Engine.</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tzc_se_ctrl_2</name>
+          <description>TrustZone Controller Secure Engine Control 2.</description>
+          <addressOffset>0xF48</addressOffset>
+          <fields>
+            <field>
+              <name>tzc_se_sha_tzsid_lock</name>
+              <description>Lock for TZSID enable in SHA of Secure Engine.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_se_aes_tzsid_lock</name>
+              <description>Lock for TZSID enable in AES of Secure Engine.</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_se_trng_tzsid_lock</name>
+              <description>Lock for TZSID enable in TRNG of Secure Engine.</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_se_pka_tzsid_lock</name>
+              <description>Lock for TZSID enable in PKA of Secure Engine.</description>
+              <bitOffset>3</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_se_cdet_tzsid_lock</name>
+              <description>Lock for TZSID enable in code detection of Secure Engine.</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_se_gmac_tzsid_lock</name>
+              <description>Lock for TZSID enable in GMAC of Secure Engine.</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_se_tzsid_crmd_lock</name>
+              <description>Lock for TZSID control in CRMD of Secure Engine.</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sf_cr_tzsid_lock</name>
+              <description>Lock for TZSID enable in CR of Secure Engine.</description>
+              <bitOffset>16</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sf_sec_tzsid_lock</name>
+              <description>Lock for TZSID enable in security of Secure Engine.</description>
+              <bitOffset>17</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>tzc_sf_tzsid_crmd_lock</name>
+              <description>Lock for TZSID control in CRMD of Secure Engine.</description>
+              <bitOffset>18</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+      </registers>
+    </peripheral>
   </peripherals>
 </device>
