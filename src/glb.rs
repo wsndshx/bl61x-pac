@@ -86,19 +86,17 @@ pub struct RegisterBlock {
     debug_cfg1: DEBUG_CFG1,
     _reserved55: [u8; 0x08],
     reset_sts0: RESET_STS0,
-    _reserved56: [u8; 0x10],
+    _reserved56: [u8; 0x0c],
+    swrst_cfg0: SWRST_CFG0,
     swrst_s1: SWRST_S1,
     swrst_cfg2: SWRST_CFG2,
-    _reserved58: [u8; 0x34],
-    cgen_m: CGEN_M,
-    _reserved59: [u8; 0x08],
-    cgen_cfg3: CGEN_CFG3,
+    swrst_cfg3: SWRST_CFG3,
     _reserved60: [u8; 0x30],
-    hw_rsv0: HW_RSV0,
-    hw_rsv1: HW_RSV1,
-    hw_rsv2: HW_RSV2,
-    hw_rsv3: HW_RSV3,
-    _reserved64: [u8; 0x30],
+    cgen_m: CGEN_M,
+    cgen_cfg1: CGEN_CFG1,
+    cgen_cfg2: CGEN_CFG2,
+    cgen_cfg3: CGEN_CFG3,
+    _reserved64: [u8; 0x70],
     reg_sram_ret: REG_SRAM_RET,
     reg_sram_slp: REG_SRAM_SLP,
     reg_sram_parm: REG_SRAM_PARM,
@@ -470,6 +468,11 @@ impl RegisterBlock {
     pub const fn reset_sts0(&self) -> &RESET_STS0 {
         &self.reset_sts0
     }
+    #[doc = "0x540 - swrst_s1_ext + swrst_s3 + swrst_s2"]
+    #[inline(always)]
+    pub const fn swrst_cfg0(&self) -> &SWRST_CFG0 {
+        &self.swrst_cfg0
+    }
     #[doc = "0x544 - swrst_s1."]
     #[inline(always)]
     pub const fn swrst_s1(&self) -> &SWRST_S1 {
@@ -480,35 +483,30 @@ impl RegisterBlock {
     pub const fn swrst_cfg2(&self) -> &SWRST_CFG2 {
         &self.swrst_cfg2
     }
+    #[doc = "0x54c - Disable hreset"]
+    #[inline(always)]
+    pub const fn swrst_cfg3(&self) -> &SWRST_CFG3 {
+        &self.swrst_cfg3
+    }
     #[doc = "0x580 - cgen_m."]
     #[inline(always)]
     pub const fn cgen_m(&self) -> &CGEN_M {
         &self.cgen_m
     }
+    #[doc = "0x584 - cgen_s1a + cgen_s1"]
+    #[inline(always)]
+    pub const fn cgen_cfg1(&self) -> &CGEN_CFG1 {
+        &self.cgen_cfg1
+    }
+    #[doc = "0x588 - cgen_s1_ext + cgen_s3"]
+    #[inline(always)]
+    pub const fn cgen_cfg2(&self) -> &CGEN_CFG2 {
+        &self.cgen_cfg2
+    }
     #[doc = "0x58c - cgen_cfg3."]
     #[inline(always)]
     pub const fn cgen_cfg3(&self) -> &CGEN_CFG3 {
         &self.cgen_cfg3
-    }
-    #[doc = "0x5c0 - hw_rsv0."]
-    #[inline(always)]
-    pub const fn hw_rsv0(&self) -> &HW_RSV0 {
-        &self.hw_rsv0
-    }
-    #[doc = "0x5c4 - hw_rsv1."]
-    #[inline(always)]
-    pub const fn hw_rsv1(&self) -> &HW_RSV1 {
-        &self.hw_rsv1
-    }
-    #[doc = "0x5c8 - hw_rsv2."]
-    #[inline(always)]
-    pub const fn hw_rsv2(&self) -> &HW_RSV2 {
-        &self.hw_rsv2
-    }
-    #[doc = "0x5cc - hw_rsv3."]
-    #[inline(always)]
-    pub const fn hw_rsv3(&self) -> &HW_RSV3 {
-        &self.hw_rsv3
     }
     #[doc = "0x600 - reg_sram_ret."]
     #[inline(always)]
@@ -1101,6 +1099,11 @@ module"]
 pub type RESET_STS0 = crate::Reg<reset_sts0::RESET_STS0_SPEC>;
 #[doc = "reset_sts0."]
 pub mod reset_sts0;
+#[doc = "swrst_cfg0 (rw) register accessor: swrst_s1_ext + swrst_s3 + swrst_s2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`swrst_cfg0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`swrst_cfg0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@swrst_cfg0`]
+module"]
+pub type SWRST_CFG0 = crate::Reg<swrst_cfg0::SWRST_CFG0_SPEC>;
+#[doc = "swrst_s1_ext + swrst_s3 + swrst_s2"]
+pub mod swrst_cfg0;
 #[doc = "swrst_s1 (rw) register accessor: swrst_s1.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`swrst_s1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`swrst_s1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@swrst_s1`]
 module"]
 pub type SWRST_S1 = crate::Reg<swrst_s1::SWRST_S1_SPEC>;
@@ -1111,36 +1114,31 @@ module"]
 pub type SWRST_CFG2 = crate::Reg<swrst_cfg2::SWRST_CFG2_SPEC>;
 #[doc = "swrst_cfg2."]
 pub mod swrst_cfg2;
+#[doc = "swrst_cfg3 (rw) register accessor: Disable hreset\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`swrst_cfg3::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`swrst_cfg3::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@swrst_cfg3`]
+module"]
+pub type SWRST_CFG3 = crate::Reg<swrst_cfg3::SWRST_CFG3_SPEC>;
+#[doc = "Disable hreset"]
+pub mod swrst_cfg3;
 #[doc = "cgen_m (rw) register accessor: cgen_m.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cgen_m::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cgen_m::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cgen_m`]
 module"]
 pub type CGEN_M = crate::Reg<cgen_m::CGEN_M_SPEC>;
 #[doc = "cgen_m."]
 pub mod cgen_m;
+#[doc = "cgen_cfg1 (rw) register accessor: cgen_s1a + cgen_s1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cgen_cfg1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cgen_cfg1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cgen_cfg1`]
+module"]
+pub type CGEN_CFG1 = crate::Reg<cgen_cfg1::CGEN_CFG1_SPEC>;
+#[doc = "cgen_s1a + cgen_s1"]
+pub mod cgen_cfg1;
+#[doc = "cgen_cfg2 (rw) register accessor: cgen_s1_ext + cgen_s3\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cgen_cfg2::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cgen_cfg2::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cgen_cfg2`]
+module"]
+pub type CGEN_CFG2 = crate::Reg<cgen_cfg2::CGEN_CFG2_SPEC>;
+#[doc = "cgen_s1_ext + cgen_s3"]
+pub mod cgen_cfg2;
 #[doc = "cgen_cfg3 (rw) register accessor: cgen_cfg3.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cgen_cfg3::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cgen_cfg3::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cgen_cfg3`]
 module"]
 pub type CGEN_CFG3 = crate::Reg<cgen_cfg3::CGEN_CFG3_SPEC>;
 #[doc = "cgen_cfg3."]
 pub mod cgen_cfg3;
-#[doc = "hw_rsv0 (rw) register accessor: hw_rsv0.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hw_rsv0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hw_rsv0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@hw_rsv0`]
-module"]
-pub type HW_RSV0 = crate::Reg<hw_rsv0::HW_RSV0_SPEC>;
-#[doc = "hw_rsv0."]
-pub mod hw_rsv0;
-#[doc = "hw_rsv1 (rw) register accessor: hw_rsv1.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hw_rsv1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hw_rsv1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@hw_rsv1`]
-module"]
-pub type HW_RSV1 = crate::Reg<hw_rsv1::HW_RSV1_SPEC>;
-#[doc = "hw_rsv1."]
-pub mod hw_rsv1;
-#[doc = "hw_rsv2 (rw) register accessor: hw_rsv2.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hw_rsv2::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hw_rsv2::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@hw_rsv2`]
-module"]
-pub type HW_RSV2 = crate::Reg<hw_rsv2::HW_RSV2_SPEC>;
-#[doc = "hw_rsv2."]
-pub mod hw_rsv2;
-#[doc = "hw_rsv3 (rw) register accessor: hw_rsv3.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hw_rsv3::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hw_rsv3::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@hw_rsv3`]
-module"]
-pub type HW_RSV3 = crate::Reg<hw_rsv3::HW_RSV3_SPEC>;
-#[doc = "hw_rsv3."]
-pub mod hw_rsv3;
 #[doc = "reg_sram_ret (rw) register accessor: reg_sram_ret.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`reg_sram_ret::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`reg_sram_ret::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@reg_sram_ret`]
 module"]
 pub type REG_SRAM_RET = crate::Reg<reg_sram_ret::REG_SRAM_RET_SPEC>;

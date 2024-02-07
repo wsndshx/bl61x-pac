@@ -1141,6 +1141,10 @@ GLB:
         clr_top_reset_recorder:
           bitOffset: 7
           bitWidth: 1
+    swrst_cfg0:
+      description: swrst_s1_ext + swrst_s3 + swrst_s2
+      addressOffset: 0x540
+      fields:
         swrst_s00:
           bitOffset: 0
           bitWidth: 1
@@ -1329,6 +1333,10 @@ GLB:
         reg_ctrl_reset_dummy:
           bitOffset: 28
           bitWidth: 4
+    swrst_cfg3:
+      description: Disable hreset
+      addressOffset: 0x54C
+      fields:
         disrst_s12:
           bitOffset: 2
           bitWidth: 1
@@ -1393,9 +1401,10 @@ GLB:
         cgen_m_cci:
           bitOffset: 4
           bitWidth: 1
-        cgen_s1_rsvd0:
-          bitOffset: 0
-          bitWidth: 1
+    cgen_cfg1:
+      description: cgen_s1a + cgen_s1
+      addressOffset: 0x584
+      fields:
         cgen_s1_gpip:
           bitOffset: 2
           bitWidth: 1
@@ -1408,20 +1417,8 @@ GLB:
         cgen_s1_tz:
           bitOffset: 5
           bitWidth: 1
-        cgen_s1_rsvd6:
-          bitOffset: 6
-          bitWidth: 1
         cgen_s1_ef_ctrl:
           bitOffset: 7
-          bitWidth: 1
-        cgen_s1_rsvd8:
-          bitOffset: 8
-          bitWidth: 1
-        cgen_s1_rsvd9:
-          bitOffset: 9
-          bitWidth: 1
-        cgen_s1_rsvd10:
-          bitOffset: 10
           bitWidth: 1
         cgen_s1_sf_ctrl:
           bitOffset: 11
@@ -1429,14 +1426,8 @@ GLB:
         cgen_s1_dma:
           bitOffset: 12
           bitWidth: 1
-        cgen_s1_rsvd13:
+        cgen_s1_usb:
           bitOffset: 13
-          bitWidth: 1
-        cgen_s1_rsvd14:
-          bitOffset: 14
-          bitWidth: 1
-        cgen_s1_rsvd15:
-          bitOffset: 15
           bitWidth: 1
         cgen_s1a_uart0:
           bitOffset: 16
@@ -1471,21 +1462,13 @@ GLB:
         cgen_s1a_uart2:
           bitOffset: 26
           bitWidth: 1
-        cgen_s1a_rsvd11:
+        cgen_s1a_i2s:
           bitOffset: 27
           bitWidth: 1
-        cgen_s1a_rsvd12:
-          bitOffset: 28
-          bitWidth: 1
-        cgen_s1a_rsvd13:
-          bitOffset: 29
-          bitWidth: 1
-        cgen_s1a_rsvd14:
-          bitOffset: 30
-          bitWidth: 1
-        cgen_s1a_rsvd15:
-          bitOffset: 31
-          bitWidth: 1
+    cgen_cfg2:
+      description: cgen_s1_ext + cgen_s3
+      addressOffset: 0x588
+      fields:
         cgen_s0:
           bitOffset: 0
           bitWidth: 1
@@ -1528,12 +1511,6 @@ GLB:
         cgen_s1_ext_pio:
           bitOffset: 25
           bitWidth: 1
-        cgen_s1_ext_rsvd10:
-          bitOffset: 26
-          bitWidth: 1
-        cgen_s1_ext_rsvd11:
-          bitOffset: 27
-          bitWidth: 1
     cgen_cfg3:
       description: cgen_cfg3.
       addressOffset: 0x58C
@@ -1571,34 +1548,6 @@ GLB:
         cgen_top_aupll_div1:
           bitOffset: 16
           bitWidth: 1
-    hw_rsv0:
-      description: hw_rsv0.
-      addressOffset: 0x5C0
-      fields:
-        rsvd_31_0:
-          bitOffset: 0
-          bitWidth: 32
-    hw_rsv1:
-      description: hw_rsv1.
-      addressOffset: 0x5C4
-      fields:
-        rsvd_31_0:
-          bitOffset: 0
-          bitWidth: 32
-    hw_rsv2:
-      description: hw_rsv2.
-      addressOffset: 0x5C8
-      fields:
-        rsvd_31_0:
-          bitOffset: 0
-          bitWidth: 32
-    hw_rsv3:
-      description: hw_rsv3.
-      addressOffset: 0x5CC
-      fields:
-        rsvd_31_0:
-          bitOffset: 0
-          bitWidth: 32
     reg_sram_ret:
       description: reg_sram_ret.
       addressOffset: 0x600

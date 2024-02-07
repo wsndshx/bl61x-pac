@@ -2737,6 +2737,13 @@ When sets and clears at the same, only set will take effect.</description>
               <bitOffset>7</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
+          </fields>
+        </register>
+        <register>
+          <name>swrst_cfg0</name>
+          <description>swrst_s1_ext + swrst_s3 + swrst_s2</description>
+          <addressOffset>0x540</addressOffset>
+          <fields>
             <field>
               <name>swrst_s00</name>
               <bitOffset>0</bitOffset>
@@ -3051,6 +3058,13 @@ When sets and clears at the same, only set will take effect.</description>
               <bitOffset>28</bitOffset>
               <bitWidth>4</bitWidth>
             </field>
+          </fields>
+        </register>
+        <register>
+          <name>swrst_cfg3</name>
+          <description>Disable hreset</description>
+          <addressOffset>0x54C</addressOffset>
+          <fields>
             <field>
               <name>disrst_s12</name>
               <bitOffset>2</bitOffset>
@@ -3158,11 +3172,13 @@ When sets and clears at the same, only set will take effect.</description>
               <bitOffset>4</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-            <field>
-              <name>cgen_s1_rsvd0</name>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
+          </fields>
+        </register>
+        <register>
+          <name>cgen_cfg1</name>
+          <description>cgen_s1a + cgen_s1</description>
+          <addressOffset>0x584</addressOffset>
+          <fields>
             <field>
               <name>cgen_s1_gpip</name>
               <bitOffset>2</bitOffset>
@@ -3184,28 +3200,8 @@ When sets and clears at the same, only set will take effect.</description>
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>cgen_s1_rsvd6</name>
-              <bitOffset>6</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
               <name>cgen_s1_ef_ctrl</name>
               <bitOffset>7</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>cgen_s1_rsvd8</name>
-              <bitOffset>8</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>cgen_s1_rsvd9</name>
-              <bitOffset>9</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>cgen_s1_rsvd10</name>
-              <bitOffset>10</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
@@ -3219,18 +3215,8 @@ When sets and clears at the same, only set will take effect.</description>
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>cgen_s1_rsvd13</name>
+              <name>cgen_s1_usb</name>
               <bitOffset>13</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>cgen_s1_rsvd14</name>
-              <bitOffset>14</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>cgen_s1_rsvd15</name>
-              <bitOffset>15</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
             <field>
@@ -3289,30 +3275,17 @@ When sets and clears at the same, only set will take effect.</description>
               <bitWidth>1</bitWidth>
             </field>
             <field>
-              <name>cgen_s1a_rsvd11</name>
+              <name>cgen_s1a_i2s</name>
               <bitOffset>27</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-            <field>
-              <name>cgen_s1a_rsvd12</name>
-              <bitOffset>28</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>cgen_s1a_rsvd13</name>
-              <bitOffset>29</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>cgen_s1a_rsvd14</name>
-              <bitOffset>30</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>cgen_s1a_rsvd15</name>
-              <bitOffset>31</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
+          </fields>
+        </register>
+        <register>
+          <name>cgen_cfg2</name>
+          <description>cgen_s1_ext + cgen_s3</description>
+          <addressOffset>0x588</addressOffset>
+          <fields>
             <field>
               <name>cgen_s0</name>
               <bitOffset>0</bitOffset>
@@ -3383,16 +3356,6 @@ When sets and clears at the same, only set will take effect.</description>
               <bitOffset>25</bitOffset>
               <bitWidth>1</bitWidth>
             </field>
-            <field>
-              <name>cgen_s1_ext_rsvd10</name>
-              <bitOffset>26</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
-            <field>
-              <name>cgen_s1_ext_rsvd11</name>
-              <bitOffset>27</bitOffset>
-              <bitWidth>1</bitWidth>
-            </field>
           </fields>
         </register>
         <register>
@@ -3454,54 +3417,6 @@ When sets and clears at the same, only set will take effect.</description>
               <name>cgen_top_aupll_div1</name>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>hw_rsv0</name>
-          <description>hw_rsv0.</description>
-          <addressOffset>0x5C0</addressOffset>
-          <fields>
-            <field>
-              <name>rsvd_31_0</name>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>hw_rsv1</name>
-          <description>hw_rsv1.</description>
-          <addressOffset>0x5C4</addressOffset>
-          <fields>
-            <field>
-              <name>rsvd_31_0</name>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>hw_rsv2</name>
-          <description>hw_rsv2.</description>
-          <addressOffset>0x5C8</addressOffset>
-          <fields>
-            <field>
-              <name>rsvd_31_0</name>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>hw_rsv3</name>
-          <description>hw_rsv3.</description>
-          <addressOffset>0x5CC</addressOffset>
-          <fields>
-            <field>
-              <name>rsvd_31_0</name>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
             </field>
           </fields>
         </register>
