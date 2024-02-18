@@ -850,6 +850,12 @@ GLB:
       ldo18io_vout_trim:
         bitOffset: 28
         bitWidth: 4
+  _delete:
+    _registers:
+      - "gpio_set*"
+      - "gpio_clear*"
+      - "gpio_input*"
+      - "gpio_output*"
   _add:
     core_cfg16:
       description: core_cfg16.
@@ -1688,4 +1694,456 @@ GLB:
           bitWidth: 16
         ring_freq_rdy:
           bitOffset: 28
+          bitWidth: 1
+    gpio_input_0:
+      description: Read value from Generic Purpose Input/Output pins (GPIO0 ~ GPIO31)
+      addressOffset: 0xAC4
+      fields:
+        gpio_0_i:
+          bitOffset: 0
+          bitWidth: 1
+        gpio_1_i:
+          bitOffset: 1
+          bitWidth: 1
+        gpio_2_i:
+          bitOffset: 2
+          bitWidth: 1
+        gpio_3_i:
+          bitOffset: 3
+          bitWidth: 1
+        gpio_4_i:
+          bitOffset: 4
+          bitWidth: 1
+        gpio_5_i:
+          bitOffset: 5
+          bitWidth: 1
+        gpio_6_i:
+          bitOffset: 6
+          bitWidth: 1
+        gpio_7_i:
+          bitOffset: 7
+          bitWidth: 1
+        gpio_8_i:
+          bitOffset: 8
+          bitWidth: 1
+        gpio_9_i:
+          bitOffset: 9
+          bitWidth: 1
+        gpio_10_i:
+          bitOffset: 10
+          bitWidth: 1
+        gpio_11_i:
+          bitOffset: 11
+          bitWidth: 1
+        gpio_12_i:
+          bitOffset: 12
+          bitWidth: 1
+        gpio_13_i:
+          bitOffset: 13
+          bitWidth: 1
+        gpio_14_i:
+          bitOffset: 14
+          bitWidth: 1
+        gpio_15_i:
+          bitOffset: 15
+          bitWidth: 1
+        gpio_16_i:
+          bitOffset: 16
+          bitWidth: 1
+        gpio_17_i:
+          bitOffset: 17
+          bitWidth: 1
+        gpio_18_i:
+          bitOffset: 18
+          bitWidth: 1
+        gpio_19_i:
+          bitOffset: 19
+          bitWidth: 1
+        gpio_20_i:
+          bitOffset: 20
+          bitWidth: 1
+        gpio_21_i:
+          bitOffset: 21
+          bitWidth: 1
+        gpio_22_i:
+          bitOffset: 22
+          bitWidth: 1
+        gpio_23_i:
+          bitOffset: 23
+          bitWidth: 1
+        gpio_24_i:
+          bitOffset: 24
+          bitWidth: 1
+        gpio_25_i:
+          bitOffset: 25
+          bitWidth: 1
+        gpio_26_i:
+          bitOffset: 26
+          bitWidth: 1
+        gpio_27_i:
+          bitOffset: 27
+          bitWidth: 1
+        gpio_28_i:
+          bitOffset: 28
+          bitWidth: 1
+        gpio_29_i:
+          bitOffset: 29
+          bitWidth: 1
+        gpio_30_i:
+          bitOffset: 30
+          bitWidth: 1
+        gpio_31_i:
+          bitOffset: 31
+          bitWidth: 1
+    gpio_input_1:
+      description: Read value from Generic Purpose Input/Output pins (GPIO32 ~ GPIO34)
+      addressOffset: 0xAC8
+      fields:
+        gpio_32_i:
+          bitOffset: 0
+          bitWidth: 1
+        gpio_33_i:
+          bitOffset: 1
+          bitWidth: 1
+        gpio_34_i:
+          bitOffset: 2
+          bitWidth: 1
+    gpio_output_0:
+      description: Write value to Generic Purpose Input/Output pins (GPIO0 ~ GPIO31)
+      addressOffset: 0xAE4
+      fields:
+        gpio_0_o:
+          bitOffset: 0
+          bitWidth: 1
+        gpio_1_o:
+          bitOffset: 1
+          bitWidth: 1
+        gpio_2_o:
+          bitOffset: 2
+          bitWidth: 1
+        gpio_3_o:
+          bitOffset: 3
+          bitWidth: 1
+        gpio_4_o:
+          bitOffset: 4
+          bitWidth: 1
+        gpio_5_o:
+          bitOffset: 5
+          bitWidth: 1
+        gpio_6_o:
+          bitOffset: 6
+          bitWidth: 1
+        gpio_7_o:
+          bitOffset: 7
+          bitWidth: 1
+        gpio_8_o:
+          bitOffset: 8
+          bitWidth: 1
+        gpio_9_o:
+          bitOffset: 9
+          bitWidth: 1
+        gpio_10_o:
+          bitOffset: 10
+          bitWidth: 1
+        gpio_11_o:
+          bitOffset: 11
+          bitWidth: 1
+        gpio_12_o:
+          bitOffset: 12
+          bitWidth: 1
+        gpio_13_o:
+          bitOffset: 13
+          bitWidth: 1
+        gpio_14_o:
+          bitOffset: 14
+          bitWidth: 1
+        gpio_15_o:
+          bitOffset: 15
+          bitWidth: 1
+        gpio_16_o:
+          bitOffset: 16
+          bitWidth: 1
+        gpio_17_o:
+          bitOffset: 17
+          bitWidth: 1
+        gpio_18_o:
+          bitOffset: 18
+          bitWidth: 1
+        gpio_19_o:
+          bitOffset: 19
+          bitWidth: 1
+        gpio_20_o:
+          bitOffset: 20
+          bitWidth: 1
+        gpio_21_o:
+          bitOffset: 21
+          bitWidth: 1
+        gpio_22_o:
+          bitOffset: 22
+          bitWidth: 1
+        gpio_23_o:
+          bitOffset: 23
+          bitWidth: 1
+        gpio_24_o:
+          bitOffset: 24
+          bitWidth: 1
+        gpio_25_o:
+          bitOffset: 25
+          bitWidth: 1
+        gpio_26_o:
+          bitOffset: 26
+          bitWidth: 1
+        gpio_27_o:
+          bitOffset: 27
+          bitWidth: 1
+        gpio_28_o:
+          bitOffset: 28
+          bitWidth: 1
+        gpio_29_o:
+          bitOffset: 29
+          bitWidth: 1
+        gpio_30_o:
+          bitOffset: 30
+          bitWidth: 1
+        gpio_31_o:
+          bitOffset: 31
+          bitWidth: 1
+    gpio_output_1:
+      description: Write value to Generic Purpose Input/Output pins (GPIO32 ~ GPIO34)
+      addressOffset: 0xAE8
+      fields:
+        gpio_32_o:
+          bitOffset: 0
+          bitWidth: 1
+        gpio_33_o:
+          bitOffset: 1
+          bitWidth: 1
+        gpio_34_o:
+          bitOffset: 2
+          bitWidth: 1
+    gpio_set_0:
+      description: Set pin output value to high (GPIO0 ~ GPIO31)
+      addressOffset: 0xAEC
+      fields:
+        gpio_0_set:
+          bitOffset: 0
+          bitWidth: 1
+        gpio_1_set:
+          bitOffset: 1
+          bitWidth: 1
+        gpio_2_set:
+          bitOffset: 2
+          bitWidth: 1
+        gpio_3_set:
+          bitOffset: 3
+          bitWidth: 1
+        gpio_4_set:
+          bitOffset: 4
+          bitWidth: 1
+        gpio_5_set:
+          bitOffset: 5
+          bitWidth: 1
+        gpio_6_set:
+          bitOffset: 6
+          bitWidth: 1
+        gpio_7_set:
+          bitOffset: 7
+          bitWidth: 1
+        gpio_8_set:
+          bitOffset: 8
+          bitWidth: 1
+        gpio_9_set:
+          bitOffset: 9
+          bitWidth: 1
+        gpio_10_set:
+          bitOffset: 10
+          bitWidth: 1
+        gpio_11_set:
+          bitOffset: 11
+          bitWidth: 1
+        gpio_12_set:
+          bitOffset: 12
+          bitWidth: 1
+        gpio_13_set:
+          bitOffset: 13
+          bitWidth: 1
+        gpio_14_set:
+          bitOffset: 14
+          bitWidth: 1
+        gpio_15_set:
+          bitOffset: 15
+          bitWidth: 1
+        gpio_16_set:
+          bitOffset: 16
+          bitWidth: 1
+        gpio_17_set:
+          bitOffset: 17
+          bitWidth: 1
+        gpio_18_set:
+          bitOffset: 18
+          bitWidth: 1
+        gpio_19_set:
+          bitOffset: 19
+          bitWidth: 1
+        gpio_20_set:
+          bitOffset: 20
+          bitWidth: 1
+        gpio_21_set:
+          bitOffset: 21
+          bitWidth: 1
+        gpio_22_set:
+          bitOffset: 22
+          bitWidth: 1
+        gpio_23_set:
+          bitOffset: 23
+          bitWidth: 1
+        gpio_24_set:
+          bitOffset: 24
+          bitWidth: 1
+        gpio_25_set:
+          bitOffset: 25
+          bitWidth: 1
+        gpio_26_set:
+          bitOffset: 26
+          bitWidth: 1
+        gpio_27_set:
+          bitOffset: 27
+          bitWidth: 1
+        gpio_28_set:
+          bitOffset: 28
+          bitWidth: 1
+        gpio_29_set:
+          bitOffset: 29
+          bitWidth: 1
+        gpio_30_set:
+          bitOffset: 30
+          bitWidth: 1
+        gpio_31_set:
+          bitOffset: 31
+          bitWidth: 1
+    gpio_set_1:
+      description: Set pin output value to high (GPIO32 ~ GPIO34)
+      addressOffset: 0xAF0
+      fields:
+        gpio_32_set:
+          bitOffset: 0
+          bitWidth: 1
+        gpio_33_set:
+          bitOffset: 1
+          bitWidth: 1
+        gpio_34_set:
+          bitOffset: 2
+          bitWidth: 1
+    gpio_clear_0:
+      description: Set pin output value to low (GPIO0 ~ GPIO31)
+      addressOffset: 0xAF4
+      fields:
+        gpio_0_clr:
+          bitOffset: 0
+          bitWidth: 1
+        gpio_1_clr:
+          bitOffset: 1
+          bitWidth: 1
+        gpio_2_clr:
+          bitOffset: 2
+          bitWidth: 1
+        gpio_3_clr:
+          bitOffset: 3
+          bitWidth: 1
+        gpio_4_clr:
+          bitOffset: 4
+          bitWidth: 1
+        gpio_5_clr:
+          bitOffset: 5
+          bitWidth: 1
+        gpio_6_clr:
+          bitOffset: 6
+          bitWidth: 1
+        gpio_7_clr:
+          bitOffset: 7
+          bitWidth: 1
+        gpio_8_clr:
+          bitOffset: 8
+          bitWidth: 1
+        gpio_9_clr:
+          bitOffset: 9
+          bitWidth: 1
+        gpio_10_clr:
+          bitOffset: 10
+          bitWidth: 1
+        gpio_11_clr:
+          bitOffset: 11
+          bitWidth: 1
+        gpio_12_clr:
+          bitOffset: 12
+          bitWidth: 1
+        gpio_13_clr:
+          bitOffset: 13
+          bitWidth: 1
+        gpio_14_clr:
+          bitOffset: 14
+          bitWidth: 1
+        gpio_15_clr:
+          bitOffset: 15
+          bitWidth: 1
+        gpio_16_clr:
+          bitOffset: 16
+          bitWidth: 1
+        gpio_17_clr:
+          bitOffset: 17
+          bitWidth: 1
+        gpio_18_clr:
+          bitOffset: 18
+          bitWidth: 1
+        gpio_19_clr:
+          bitOffset: 19
+          bitWidth: 1
+        gpio_20_clr:
+          bitOffset: 20
+          bitWidth: 1
+        gpio_21_clr:
+          bitOffset: 21
+          bitWidth: 1
+        gpio_22_clr:
+          bitOffset: 22
+          bitWidth: 1
+        gpio_23_clr:
+          bitOffset: 23
+          bitWidth: 1
+        gpio_24_clr:
+          bitOffset: 24
+          bitWidth: 1
+        gpio_25_clr:
+          bitOffset: 25
+          bitWidth: 1
+        gpio_26_clr:
+          bitOffset: 26
+          bitWidth: 1
+        gpio_27_clr:
+          bitOffset: 27
+          bitWidth: 1
+        gpio_28_clr:
+          bitOffset: 28
+          bitWidth: 1
+        gpio_29_clr:
+          bitOffset: 29
+          bitWidth: 1
+        gpio_30_clr:
+          bitOffset: 30
+          bitWidth: 1
+        gpio_31_clr:
+          bitOffset: 31
+          bitWidth: 1
+    gpio_clear_1:
+      description: Set pin output value to low (GPIO32 ~ GPIO34)
+      addressOffset: 0xAF8
+      fields:
+        gpio_32_clr:
+          bitOffset: 0
+          bitWidth: 1
+        gpio_33_clr:
+          bitOffset: 1
+          bitWidth: 1
+        gpio_34_clr:
+          bitOffset: 2
           bitWidth: 1

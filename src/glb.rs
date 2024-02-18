@@ -127,11 +127,15 @@ pub struct RegisterBlock {
     _reserved87: [u8; 0x3c],
     gpio_config: [GPIO_CONFIG; 35],
     _reserved88: [u8; 0x0174],
-    gpio_input: [GPIO_INPUT; 2],
-    _reserved89: [u8; 0x18],
-    gpio_output: [GPIO_OUTPUT; 2],
-    gpio_set: [GPIO_SET; 2],
-    gpio_clear: [GPIO_CLEAR; 2],
+    gpio_input_0: GPIO_INPUT_0,
+    gpio_input_1: GPIO_INPUT_1,
+    _reserved90: [u8; 0x18],
+    gpio_output_0: GPIO_OUTPUT_0,
+    gpio_output_1: GPIO_OUTPUT_1,
+    gpio_set_0: GPIO_SET_0,
+    gpio_set_1: GPIO_SET_1,
+    gpio_clear_0: GPIO_CLEAR_0,
+    gpio_clear_1: GPIO_CLEAR_1,
 }
 impl RegisterBlock {
     #[doc = "0x00 - Chip information register"]
@@ -634,49 +638,45 @@ impl RegisterBlock {
     pub fn gpio_config_iter(&self) -> impl Iterator<Item = &GPIO_CONFIG> {
         self.gpio_config.iter()
     }
-    #[doc = "0xac4..0xacc - Read value from Generic Purpose Input/Output pins"]
+    #[doc = "0xac4 - Read value from Generic Purpose Input/Output pins (GPIO0 ~ GPIO31)"]
     #[inline(always)]
-    pub const fn gpio_input(&self, n: usize) -> &GPIO_INPUT {
-        &self.gpio_input[n]
+    pub const fn gpio_input_0(&self) -> &GPIO_INPUT_0 {
+        &self.gpio_input_0
     }
-    #[doc = "Iterator for array of:"]
-    #[doc = "0xac4..0xacc - Read value from Generic Purpose Input/Output pins"]
+    #[doc = "0xac8 - Read value from Generic Purpose Input/Output pins (GPIO32 ~ GPIO34)"]
     #[inline(always)]
-    pub fn gpio_input_iter(&self) -> impl Iterator<Item = &GPIO_INPUT> {
-        self.gpio_input.iter()
+    pub const fn gpio_input_1(&self) -> &GPIO_INPUT_1 {
+        &self.gpio_input_1
     }
-    #[doc = "0xae4..0xaec - Write value to Generic Purpose Input/Output pins"]
+    #[doc = "0xae4 - Write value to Generic Purpose Input/Output pins (GPIO0 ~ GPIO31)"]
     #[inline(always)]
-    pub const fn gpio_output(&self, n: usize) -> &GPIO_OUTPUT {
-        &self.gpio_output[n]
+    pub const fn gpio_output_0(&self) -> &GPIO_OUTPUT_0 {
+        &self.gpio_output_0
     }
-    #[doc = "Iterator for array of:"]
-    #[doc = "0xae4..0xaec - Write value to Generic Purpose Input/Output pins"]
+    #[doc = "0xae8 - Write value to Generic Purpose Input/Output pins (GPIO32 ~ GPIO34)"]
     #[inline(always)]
-    pub fn gpio_output_iter(&self) -> impl Iterator<Item = &GPIO_OUTPUT> {
-        self.gpio_output.iter()
+    pub const fn gpio_output_1(&self) -> &GPIO_OUTPUT_1 {
+        &self.gpio_output_1
     }
-    #[doc = "0xaec..0xaf4 - Set pin output value to high"]
+    #[doc = "0xaec - Set pin output value to high (GPIO0 ~ GPIO31)"]
     #[inline(always)]
-    pub const fn gpio_set(&self, n: usize) -> &GPIO_SET {
-        &self.gpio_set[n]
+    pub const fn gpio_set_0(&self) -> &GPIO_SET_0 {
+        &self.gpio_set_0
     }
-    #[doc = "Iterator for array of:"]
-    #[doc = "0xaec..0xaf4 - Set pin output value to high"]
+    #[doc = "0xaf0 - Set pin output value to high (GPIO32 ~ GPIO34)"]
     #[inline(always)]
-    pub fn gpio_set_iter(&self) -> impl Iterator<Item = &GPIO_SET> {
-        self.gpio_set.iter()
+    pub const fn gpio_set_1(&self) -> &GPIO_SET_1 {
+        &self.gpio_set_1
     }
-    #[doc = "0xaf4..0xafc - Set pin output value to low"]
+    #[doc = "0xaf4 - Set pin output value to low (GPIO0 ~ GPIO31)"]
     #[inline(always)]
-    pub const fn gpio_clear(&self, n: usize) -> &GPIO_CLEAR {
-        &self.gpio_clear[n]
+    pub const fn gpio_clear_0(&self) -> &GPIO_CLEAR_0 {
+        &self.gpio_clear_0
     }
-    #[doc = "Iterator for array of:"]
-    #[doc = "0xaf4..0xafc - Set pin output value to low"]
+    #[doc = "0xaf8 - Set pin output value to low (GPIO32 ~ GPIO34)"]
     #[inline(always)]
-    pub fn gpio_clear_iter(&self) -> impl Iterator<Item = &GPIO_CLEAR> {
-        self.gpio_clear.iter()
+    pub const fn gpio_clear_1(&self) -> &GPIO_CLEAR_1 {
+        &self.gpio_clear_1
     }
 }
 #[doc = "chip_inform (rw) register accessor: Chip information register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`chip_inform::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`chip_inform::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@chip_inform`]
@@ -979,26 +979,6 @@ module"]
 pub type GPIO_CONFIG = crate::Reg<gpio_config::GPIO_CONFIG_SPEC>;
 #[doc = "Generic Purpose Input/Output config"]
 pub mod gpio_config;
-#[doc = "gpio_input (rw) register accessor: Read value from Generic Purpose Input/Output pins\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpio_input::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpio_input::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpio_input`]
-module"]
-pub type GPIO_INPUT = crate::Reg<gpio_input::GPIO_INPUT_SPEC>;
-#[doc = "Read value from Generic Purpose Input/Output pins"]
-pub mod gpio_input;
-#[doc = "gpio_output (rw) register accessor: Write value to Generic Purpose Input/Output pins\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpio_output::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpio_output::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpio_output`]
-module"]
-pub type GPIO_OUTPUT = crate::Reg<gpio_output::GPIO_OUTPUT_SPEC>;
-#[doc = "Write value to Generic Purpose Input/Output pins"]
-pub mod gpio_output;
-#[doc = "gpio_set (rw) register accessor: Set pin output value to high\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpio_set::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpio_set::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpio_set`]
-module"]
-pub type GPIO_SET = crate::Reg<gpio_set::GPIO_SET_SPEC>;
-#[doc = "Set pin output value to high"]
-pub mod gpio_set;
-#[doc = "gpio_clear (rw) register accessor: Set pin output value to low\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpio_clear::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpio_clear::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpio_clear`]
-module"]
-pub type GPIO_CLEAR = crate::Reg<gpio_clear::GPIO_CLEAR_SPEC>;
-#[doc = "Set pin output value to low"]
-pub mod gpio_clear;
 #[doc = "core_cfg16 (rw) register accessor: core_cfg16.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`core_cfg16::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`core_cfg16::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@core_cfg16`]
 module"]
 pub type CORE_CFG16 = crate::Reg<core_cfg16::CORE_CFG16_SPEC>;
@@ -1169,3 +1149,43 @@ module"]
 pub type PROC_MON = crate::Reg<proc_mon::PROC_MON_SPEC>;
 #[doc = "proc_mon."]
 pub mod proc_mon;
+#[doc = "gpio_input_0 (rw) register accessor: Read value from Generic Purpose Input/Output pins (GPIO0 ~ GPIO31)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpio_input_0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpio_input_0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpio_input_0`]
+module"]
+pub type GPIO_INPUT_0 = crate::Reg<gpio_input_0::GPIO_INPUT_0_SPEC>;
+#[doc = "Read value from Generic Purpose Input/Output pins (GPIO0 ~ GPIO31)"]
+pub mod gpio_input_0;
+#[doc = "gpio_input_1 (rw) register accessor: Read value from Generic Purpose Input/Output pins (GPIO32 ~ GPIO34)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpio_input_1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpio_input_1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpio_input_1`]
+module"]
+pub type GPIO_INPUT_1 = crate::Reg<gpio_input_1::GPIO_INPUT_1_SPEC>;
+#[doc = "Read value from Generic Purpose Input/Output pins (GPIO32 ~ GPIO34)"]
+pub mod gpio_input_1;
+#[doc = "gpio_output_0 (rw) register accessor: Write value to Generic Purpose Input/Output pins (GPIO0 ~ GPIO31)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpio_output_0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpio_output_0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpio_output_0`]
+module"]
+pub type GPIO_OUTPUT_0 = crate::Reg<gpio_output_0::GPIO_OUTPUT_0_SPEC>;
+#[doc = "Write value to Generic Purpose Input/Output pins (GPIO0 ~ GPIO31)"]
+pub mod gpio_output_0;
+#[doc = "gpio_output_1 (rw) register accessor: Write value to Generic Purpose Input/Output pins (GPIO32 ~ GPIO34)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpio_output_1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpio_output_1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpio_output_1`]
+module"]
+pub type GPIO_OUTPUT_1 = crate::Reg<gpio_output_1::GPIO_OUTPUT_1_SPEC>;
+#[doc = "Write value to Generic Purpose Input/Output pins (GPIO32 ~ GPIO34)"]
+pub mod gpio_output_1;
+#[doc = "gpio_set_0 (rw) register accessor: Set pin output value to high (GPIO0 ~ GPIO31)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpio_set_0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpio_set_0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpio_set_0`]
+module"]
+pub type GPIO_SET_0 = crate::Reg<gpio_set_0::GPIO_SET_0_SPEC>;
+#[doc = "Set pin output value to high (GPIO0 ~ GPIO31)"]
+pub mod gpio_set_0;
+#[doc = "gpio_set_1 (rw) register accessor: Set pin output value to high (GPIO32 ~ GPIO34)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpio_set_1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpio_set_1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpio_set_1`]
+module"]
+pub type GPIO_SET_1 = crate::Reg<gpio_set_1::GPIO_SET_1_SPEC>;
+#[doc = "Set pin output value to high (GPIO32 ~ GPIO34)"]
+pub mod gpio_set_1;
+#[doc = "gpio_clear_0 (rw) register accessor: Set pin output value to low (GPIO0 ~ GPIO31)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpio_clear_0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpio_clear_0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpio_clear_0`]
+module"]
+pub type GPIO_CLEAR_0 = crate::Reg<gpio_clear_0::GPIO_CLEAR_0_SPEC>;
+#[doc = "Set pin output value to low (GPIO0 ~ GPIO31)"]
+pub mod gpio_clear_0;
+#[doc = "gpio_clear_1 (rw) register accessor: Set pin output value to low (GPIO32 ~ GPIO34)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpio_clear_1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpio_clear_1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpio_clear_1`]
+module"]
+pub type GPIO_CLEAR_1 = crate::Reg<gpio_clear_1::GPIO_CLEAR_1_SPEC>;
+#[doc = "Set pin output value to low (GPIO32 ~ GPIO34)"]
+pub mod gpio_clear_1;
