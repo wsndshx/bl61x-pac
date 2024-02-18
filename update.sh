@@ -22,7 +22,7 @@ command -v rustfmt > /dev/null || fail "Please install rustfmt"
 # yaml_path="${3}"
 svd_path="svd\bl616.svd.patched"
 src_path="src"
-yaml_path="bl618.yaml"
+yaml_path="bl616.yaml"
 
 if [ ! -d "${src_path}" ]; then
   fail "src output dir (\`${src_path}') is not a directory"
@@ -33,6 +33,7 @@ if [ ! -f "${src_path}/lib.rs" ]; then
 fi
 
 set -x
+set -e
 
 # Remove the existing code in the src directory
 rm -v -rf "${src_path}/"
@@ -53,5 +54,8 @@ form -i lib.rs -o "${src_path}/" && rm lib.rs
 # find "${src_path}/" -name \*.rs -exec rustfmt -v {} \;
 cargo fmt
 
+grep -E 'feature = "rt"|extern crate riscv_rt' src/lib.rs | tee librs-patch
+grep -Ev 'feature = "rt"|extern crate riscv_rt' src/lib.rs > librs-temp && mv librs-temp src/lib.rs
+
 # 替换链接文件
-sed -i 's/device\.x/memory-bl618\.x/g' build.rs
+# sed -i 's/device\.x/memory-bl618\.x/g' build.rs

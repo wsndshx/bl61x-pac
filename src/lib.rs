@@ -9,7 +9,6 @@ use core::ops::Deref;
 use generic::*;
 #[doc = r"Common register and bit access and modify traits"]
 pub mod generic;
-#[cfg(feature = "rt")]
 extern "C" {}
 #[doc(hidden)]
 #[repr(C)]
@@ -17,7 +16,6 @@ pub union Vector {
     pub _handler: unsafe extern "C" fn(),
     pub _reserved: usize,
 }
-#[cfg(feature = "rt")]
 #[doc(hidden)]
 #[no_mangle]
 pub static __EXTERNAL_INTERRUPTS: [Vector; 0] = [];
