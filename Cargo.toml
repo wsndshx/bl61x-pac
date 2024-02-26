@@ -2,6 +2,13 @@
 name = "bl61x-pac"
 version = "0.1.0"
 edition = "2021"
+description = "Embedded Rust's Peripheral Access Crate for BL616/BL618 microcontrollers"
+readme = "README.md"
+repository = "https://github.com/wsndshx/bl61x-pac"
+license = "GPL-3.0-only"
+keywords = ["riscv", "bl616", "bl618", "pac"]
+categories = ["embedded", "hardware-support", "no-std"]
+exclude = ["/peripherals", "/svd", "/bl616.yaml", "/update.sh"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
